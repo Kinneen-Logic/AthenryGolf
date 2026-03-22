@@ -2,13 +2,14 @@ import Toybox.WatchUi;
 import Toybox.Lang;
 
 // Forerunner 245 — 4-button scheme
-// BACK cycles: Green → Scorecard → Shot Tracker → Settings → Green
+// BACK cycles: Green → Scorecard → Shot Tracker → Settings → Exit → Green
 //
 // GREEN:        UP next hole, DN prev, START score, BACK scorecard
 // SCORE ENTRY:  UP +1, DN -1, START save & next, BACK cancel
 // SCORECARD:    START edit toggle, UP/DN adjust (edit), BACK → shot
 // SHOT TRACKER: START mark/calc, BACK → settings
-// SETTINGS:     UP/DN toggle options, START toggle, BACK → green
+// SETTINGS:     UP/DN toggle options, START toggle, BACK → exit screen
+// EXIT SCREEN:  START exits app, BACK → green
 // SUMMARY:      DN/BACK → H18
 
 class GolfDelegate extends WatchUi.BehaviorDelegate {
@@ -81,6 +82,10 @@ class GolfDelegate extends WatchUi.BehaviorDelegate {
             } else {
                 _model.useMetres = !_model.useMetres;
             }
+        } else if (mode == :light && _model.lightIndex == 3) {
+            // START on exit screen — exit the app
+            WatchUi.popView(WatchUi.SLIDE_IMMEDIATE);
+            return true;
         } else if (mode == :summary) {
             _model.uiMode = :green;
         }
@@ -122,7 +127,7 @@ class GolfDelegate extends WatchUi.BehaviorDelegate {
                 WatchUi.requestUpdate();
                 return true;
             } else {
-                // Last submenu — wrap back to green
+                // Exit screen — wrap back to green
                 _model.uiMode = :green;
                 WatchUi.requestUpdate();
                 return true;

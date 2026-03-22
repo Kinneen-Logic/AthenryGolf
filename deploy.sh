@@ -17,7 +17,7 @@
 
 set -e
 
-PRG="bin/AthenryGolf.prg"
+PRG="AthenryGolf.prg"
 
 # ── Colours ──────────────────────────────────────────────────
 RED='\033[0;31m'

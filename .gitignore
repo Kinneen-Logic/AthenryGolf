@@ -18,3 +18,8 @@ external-mir/
 
 # Personal dev notes
 PROGRESS.md
+
+# Local scripts with hardcoded SDK paths
+sim.sh
+run.sh
+build-watch.sh

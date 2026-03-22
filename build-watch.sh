@@ -20,9 +20,7 @@ echo "── Building release AthenryGolf.prg ──"
   -r \
   -w
 
-# Keep bin/ copy in sync for deploy.sh
-cp AthenryGolf.prg bin/AthenryGolf.prg
-
 echo ""
 echo "✓ Release build complete → AthenryGolf.prg"
 echo "  Run ./deploy.sh to sideload to watch"
+

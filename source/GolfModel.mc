@@ -79,9 +79,9 @@ class GolfModel {
     // UI modes: :green, :scoreEntry, :light, :summary
     var uiMode as Symbol = :green;
 
-    // Within :light mode: 0=scorecard, 1=shot tracker, 2=settings
+    // Within :light mode: 0=scorecard, 1=shot tracker, 2=settings, 3=exit
     var lightIndex as Number = 0;
-    const LIGHT_COUNT = 3;
+    const LIGHT_COUNT = 4;
 
     // Settings
     var showHints    as Boolean = true;

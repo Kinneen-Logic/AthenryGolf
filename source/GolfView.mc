@@ -81,8 +81,10 @@ class GolfView extends WatchUi.View {
                 drawCardView(dc);
             } else if (idx == 1) {
                 drawShotView(dc);
-            } else {
+            } else if (idx == 2) {
                 drawSettingsView(dc);
+            } else {
+                drawExitView(dc);
             }
         } else if (mode == :summary) {
             drawSummaryView(dc);
@@ -477,6 +479,26 @@ class GolfView extends WatchUi.View {
         }
 
         drawHints(dc, w, h, "UP/DN Select  START Toggle  BACK Green");
+    }
+
+    private function drawExitView(dc as Graphics.Dc) as Void {
+        var w = dc.getWidth();
+        var h = dc.getHeight();
+        var cx = w / 2;
+
+        dc.setColor(Graphics.COLOR_DK_RED, Graphics.COLOR_DK_RED);
+        dc.fillRectangle(0, 0, w, 42);
+        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(cx, 14, Graphics.FONT_SMALL, "Exit App",
+            Graphics.TEXT_JUSTIFY_CENTER);
+
+        dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
+        dc.drawText(cx, h / 2 - 20, Graphics.FONT_SMALL, "Press START",
+            Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, h / 2 + 4, Graphics.FONT_XTINY, "to exit the app",
+            Graphics.TEXT_JUSTIFY_CENTER);
+
+        drawHints(dc, w, h, "START Exit  BACK Green");
     }
 
     private function scoreColor(diff as Number) as Number {

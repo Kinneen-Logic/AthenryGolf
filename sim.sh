@@ -1,4 +1,7 @@
-#!/bin/bash
+#!/bin/zsh
+# First-time setup: builds, starts simulator, loads app.
+# After exiting the app, just run: ./run.sh
+
 set -e
 
 SDK="$HOME/Library/Application Support/Garmin/ConnectIQ/Sdks/connectiq-sdk-mac-9.1.0-2026-03-09-6a872a80b"
@@ -33,7 +36,7 @@ MONKEYDO_PID=$!
 echo ""
 echo "✓ App running (PID $MONKEYDO_PID)"
 echo "  → Set GPS: Settings → Set Position → 53.299100, -8.749200"
-echo "  → To stop: kill $MONKEYDO_PID"
+echo "  → After exiting app, reload with: ./run.sh"
 echo ""
 
 wait $MONKEYDO_PID 2>/dev/null

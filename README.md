@@ -11,15 +11,17 @@ A hardcoded GPS golf app for Athenry Golf Club. No phone, no Bluetooth, no API n
 - Scorecard view with PGA-style birdie/bogey shapes
 
 ## Button layout (Forerunner 245)
-| Button | Green view | Shot view | Score view |
-|--------|-----------|-----------|------------|
-| UP | Next hole | — | Score +1 |
-| DOWN | Prev hole | — | Score -1 |
-| START | Cycle mode | Cycle mode | Cycle mode |
-| LIGHT | Mark shot | Mark/Calc | Mark shot |
-| LAP | — | Mark/Calc | Advance hole |
 
-START cycles: Green → Shot → Score → Scorecard → Green
+BACK cycles through all screens: **Green → Scorecard → Shot → Settings → Exit → Green**
+
+| Button | What it does (depends on current screen) |
+|--------|------------------------------------------|
+| UP | Next hole / Score +1 / Adjust card score up |
+| DOWN | Prev hole / Score -1 / Adjust card score down |
+| START | Enter score (green) · Save & next (score entry) · Edit/mark/toggle (submenus) · **Exit app** (exit screen) |
+| BACK | Advance to next screen in cycle · Cancel edit (scorecard) |
+
+**To exit the app:** BACK four times to reach the Exit screen → START.
 
 ## Setup
 
@@ -57,28 +59,25 @@ Create `.vscode/settings.json` in the project root (already present):
 ```
 The key path must point to `developer_key.der`. The extension scans the workspace parent folder for key files — keep unrelated Garmin files (sdkmanager launchers etc.) out of the project folder and its parent.
 
-### 6. Daily workflow — three scripts at project root
+### 6. Daily workflow
 
 **Simulate (test in simulator):**
 ```bash
-./sim.sh
+./sim.sh     # first time — starts simulator and loads app (takes ~6 sec)
+./run.sh     # after exiting the app — reloads without restarting simulator
 ```
-Builds debug, kills any old simulator, launches it and loads the app.
 In the simulator: **Settings → Set Position** → `53.2991, -8.7492` → OK to get GPS.
 
 **Deploy to watch:**
 ```bash
-./build-watch.sh   # compiles release .prg
+./build-watch.sh   # compiles release AthenryGolf.prg
 ./deploy.sh        # kills Garmin Express, launches OpenMTP
 ```
-In OpenMTP: right panel → navigate to `GARMIN/APPS/` → drag `bin/AthenryGolf.prg` in.
+In OpenMTP: right panel → navigate to `GARMIN/APPS/` → drag `AthenryGolf.prg` in.
 Unplug watch, wait 10 seconds, then: Hold UP → Activities & Apps → Athenry Golf.
 
 **Watch must be in MTP mode** for OpenMTP to see it:
 `Settings → System → USB Mode → MTP`
-
-**To exit the app on the watch:** press BACK 4 times → START to confirm exit.
-If completely stuck: hold LIGHT for 15–20 seconds → force restart.
 
 ## ⚠️ CALIBRATE THE COURSE DATA FIRST
 
@@ -102,10 +101,10 @@ Apps like **"GPS Fields Area Measure"** or **"GPS Coordinates"** (iOS free)
 let you log waypoints easily. Walk the 18 greens, export as CSV, paste in.
 
 ## Shot distance tracker
-1. Stand at tee/where you hit from
-2. Press LIGHT to mark your position (works from any screen)
+1. BACK to the Shot Tracker screen
+2. Press START to mark your position
 3. Walk to where the ball landed
-4. Press LIGHT again → jumps to Shot view showing distance in yards
+4. Press START again → shows distance in yards (or metres if set in Settings)
 
 ## Future: API version
 To add dynamic course selection, sign up at https://golfcourseapi.com (free tier, 300 req/day).

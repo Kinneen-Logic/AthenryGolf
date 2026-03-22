@@ -106,5 +106,15 @@ GPS golf app for a Garmin Forerunner 245 Music. Built in Monkey C (Connect IQ SD
 
 ## Outstanding
 
-- [ ] Walk Athenry Golf Club greens and replace placeholder GPS coordinates in `GolfModel.mc`
+**Done**
+- [x] Toolchain — Monkey C extension, Java, developer key, manifest schema, jungle syntax
+- [x] Core features — GPS distances (B/M/F), score entry, 18-hole scorecard, shot tracker, round summary
+- [x] UI polish — alignment, yards/metres units, PGA birdie/bogey shapes
+- [x] Sideloading — OpenMTP workflow, `deploy.sh` auto-launches with drag instructions
+- [x] Back button navigation — cycles Green → Scorecard → Shot → Settings without accidental app exit
+- [x] Deploy cleanup — removed dead libmtp path, single `AthenryGolf.prg` in project root
+- [x] App exit — dedicated Exit screen added to the BACK cycle (Green → Scorecard → Shot → Settings → Exit → Green); START on Exit screen exits, BACK keeps cycling
+
+**To Do**
+- [ ] Walk Athenry Golf Club greens and record GPS coordinates for all 18 holes in `GolfModel.mc`
 - [ ] Shot tracker real-world test on course
