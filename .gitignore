@@ -12,5 +12,9 @@ mir/
 internal-mir/
 external-mir/
 
-# Editor
+# Editor & AI assistant
 .vscode/
+.cursor/
+
+# Personal dev notes
+PROGRESS.md

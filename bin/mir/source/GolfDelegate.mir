@@ -689,9 +689,9 @@ _Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_91_55_97_4_sto
     }
     [ @file = "/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc"; @line = 99; @symbol_functiondef = [onBack,99,13,19]; @symbol_return<0> = [Boolean,99,25,32]; ]
     function onBack() as Boolean {
-_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_99_33_143_4_start:
+_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_99_33_145_4_start:
 [ "/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" 100 8 ]
-        [ "_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_99_33_143_4_start" "_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_99_33_143_4_stop" ]
+        [ "_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_99_33_145_4_start" "_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_99_33_145_4_stop" ]
         %mode.1 = local;
         symbol [ mode %mode.1 100 12 16 ];
         symbol [ _model %tmp.2 100 19 25 ];
@@ -742,15 +742,15 @@ _Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_102_28_109_8_s
         goto @_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_102_8_109_8_if_end;
 _Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_102_8_109_8_if_end:
 [ "/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" 111 8 ]
-_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_111_8_128_8_if_stmt:
+_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_111_8_130_8_if_stmt:
         %tmp.18 = lgetv %mode.1;
         symbol [ mode %tmp.18 111 12 16 ];
         %tmp.20 = const :light;
         symbol [ light %tmp.20 111 21 26 const ];
         %tmp.21 = eq %tmp.18 %tmp.20;
-        bf %tmp.21 @_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_111_8_128_8_if_end;
-_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_111_8_128_8_if_true:
-_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_111_28_128_8_start:
+        bf %tmp.21 @_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_111_8_130_8_if_end;
+_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_111_8_130_8_if_true:
+_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_111_28_130_8_start:
 [ "/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" 112 12 ]
 _Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_112_12_118_12_if_stmt:
 _Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_112_16_112_49_begin:
@@ -797,7 +797,7 @@ _Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_112_61_118_12_
         goto @_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_112_12_118_12_if_end;
 _Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_112_12_118_12_if_end:
 [ "/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" 119 12 ]
-_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_119_12_127_12_if_stmt:
+_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_119_12_129_12_if_stmt:
         symbol [ _model %tmp.40 119 16 22 ];
         %tmp.40 = getv ? :_model;
         symbol [ lightIndex %tmp.41 119 23 33 ];
@@ -809,8 +809,8 @@ _Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_119_12_127_12_
         %tmp.45 = 1;
         %tmp.46 = sub %tmp.44 %tmp.45;
         %tmp.47 = lt %tmp.41 %tmp.46;
-        bf %tmp.47 @_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_119_12_127_12_if_else_false;
-_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_119_12_127_12_if_true:
+        bf %tmp.47 @_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_119_12_129_12_if_else_false;
+_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_119_12_129_12_if_true:
 _Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_119_60_124_12_start:
 [ "/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" 121 16 ]
         symbol [ _model %tmp.48 121 16 22 ];
@@ -833,78 +833,91 @@ _Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_119_60_124_12_
         %tmp.56 = true;
         ret %tmp.56;
 _Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_119_60_124_12_stop:
-        goto @_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_119_12_127_12_if_end;
-_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_119_12_127_12_if_else_false:
-_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_124_19_127_12_start:
+        goto @_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_119_12_129_12_if_end;
+_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_119_12_129_12_if_else_false:
+_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_124_19_129_12_start:
 [ "/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" 126 16 ]
-        %tmp.57 = false;
-        ret %tmp.57;
-_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_124_19_127_12_stop:
-_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_119_12_127_12_if_end:
-_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_111_28_128_8_stop:
-        goto @_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_111_8_128_8_if_end;
-_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_111_8_128_8_if_end:
-[ "/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" 130 8 ]
-_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_130_8_134_8_if_stmt:
-        %tmp.58 = lgetv %mode.1;
-        symbol [ mode %tmp.58 130 12 16 ];
-        %tmp.60 = const :scoreEntry;
-        symbol [ scoreEntry %tmp.60 130 21 31 const ];
-        %tmp.61 = eq %tmp.58 %tmp.60;
-        bf %tmp.61 @_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_130_8_134_8_if_end;
-_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_130_8_134_8_if_true:
-_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_130_33_134_8_start:
-[ "/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" 131 12 ]
-        symbol [ _model %tmp.62 131 12 18 ];
-        %tmp.62 = getv self :_model;
-        %tmp.64 = const :green;
-        symbol [ green %tmp.64 131 29 34 const ];
-        symbol [ uiMode ? 131 19 25 ];
-        putv %tmp.62 :uiMode %tmp.64;
-[ "/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" 132 12 ]
-        symbol [ WatchUi %tmp.65 132 12 19 ];
-        %tmp.65 = getm $.Toybox.WatchUi;
-        symbol [ requestUpdate %tmp.66 132 20 33 ];
-        %tmp.66 = getv function %tmp.65 :requestUpdate;
-        invoke %tmp.65 %tmp.66();
+        symbol [ _model %tmp.57 126 16 22 ];
+        %tmp.57 = getv self :_model;
+        %tmp.59 = const :green;
+        symbol [ green %tmp.59 126 33 38 const ];
+        symbol [ uiMode ? 126 23 29 ];
+        putv %tmp.57 :uiMode %tmp.59;
+[ "/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" 127 16 ]
+        symbol [ WatchUi %tmp.60 127 16 23 ];
+        %tmp.60 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.61 127 24 37 ];
+        %tmp.61 = getv function %tmp.60 :requestUpdate;
+        invoke %tmp.60 %tmp.61();
+[ "/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" 128 16 ]
+        %tmp.62 = true;
+        ret %tmp.62;
+_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_124_19_129_12_stop:
+_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_119_12_129_12_if_end:
+_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_111_28_130_8_stop:
+        goto @_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_111_8_130_8_if_end;
+_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_111_8_130_8_if_end:
+[ "/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" 132 8 ]
+_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_132_8_136_8_if_stmt:
+        %tmp.63 = lgetv %mode.1;
+        symbol [ mode %tmp.63 132 12 16 ];
+        %tmp.65 = const :scoreEntry;
+        symbol [ scoreEntry %tmp.65 132 21 31 const ];
+        %tmp.66 = eq %tmp.63 %tmp.65;
+        bf %tmp.66 @_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_132_8_136_8_if_end;
+_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_132_8_136_8_if_true:
+_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_132_33_136_8_start:
 [ "/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" 133 12 ]
-        %tmp.67 = true;
-        ret %tmp.67;
-_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_130_33_134_8_stop:
-        goto @_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_130_8_134_8_if_end;
-_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_130_8_134_8_if_end:
-[ "/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" 136 8 ]
-_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_136_8_140_8_if_stmt:
-        %tmp.68 = lgetv %mode.1;
-        symbol [ mode %tmp.68 136 12 16 ];
-        %tmp.70 = const :summary;
-        symbol [ summary %tmp.70 136 21 28 const ];
-        %tmp.71 = eq %tmp.68 %tmp.70;
-        bf %tmp.71 @_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_136_8_140_8_if_end;
-_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_136_8_140_8_if_true:
-_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_136_30_140_8_start:
-[ "/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" 137 12 ]
-        symbol [ _model %tmp.73 137 12 18 ];
-        %tmp.73 = getv ? :_model;
-        symbol [ prevHole %tmp.74 137 19 27 ];
-        %tmp.74 = getv function %tmp.73 :prevHole;
-        invoke %tmp.73 %tmp.74();
-[ "/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" 138 12 ]
-        symbol [ WatchUi %tmp.75 138 12 19 ];
-        %tmp.75 = getm $.Toybox.WatchUi;
-        symbol [ requestUpdate %tmp.76 138 20 33 ];
-        %tmp.76 = getv function %tmp.75 :requestUpdate;
-        invoke %tmp.75 %tmp.76();
+        symbol [ _model %tmp.67 133 12 18 ];
+        %tmp.67 = getv self :_model;
+        %tmp.69 = const :green;
+        symbol [ green %tmp.69 133 29 34 const ];
+        symbol [ uiMode ? 133 19 25 ];
+        putv %tmp.67 :uiMode %tmp.69;
+[ "/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" 134 12 ]
+        symbol [ WatchUi %tmp.70 134 12 19 ];
+        %tmp.70 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.71 134 20 33 ];
+        %tmp.71 = getv function %tmp.70 :requestUpdate;
+        invoke %tmp.70 %tmp.71();
+[ "/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" 135 12 ]
+        %tmp.72 = true;
+        ret %tmp.72;
+_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_132_33_136_8_stop:
+        goto @_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_132_8_136_8_if_end;
+_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_132_8_136_8_if_end:
+[ "/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" 138 8 ]
+_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_138_8_142_8_if_stmt:
+        %tmp.73 = lgetv %mode.1;
+        symbol [ mode %tmp.73 138 12 16 ];
+        %tmp.75 = const :summary;
+        symbol [ summary %tmp.75 138 21 28 const ];
+        %tmp.76 = eq %tmp.73 %tmp.75;
+        bf %tmp.76 @_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_138_8_142_8_if_end;
+_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_138_8_142_8_if_true:
+_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_138_30_142_8_start:
 [ "/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" 139 12 ]
-        %tmp.77 = true;
-        ret %tmp.77;
-_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_136_30_140_8_stop:
-        goto @_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_136_8_140_8_if_end;
-_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_136_8_140_8_if_end:
-[ "/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" 142 8 ]
-        %tmp.78 = false;
-        ret %tmp.78;
-_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_99_33_143_4_stop:
+        symbol [ _model %tmp.78 139 12 18 ];
+        %tmp.78 = getv ? :_model;
+        symbol [ prevHole %tmp.79 139 19 27 ];
+        %tmp.79 = getv function %tmp.78 :prevHole;
+        invoke %tmp.78 %tmp.79();
+[ "/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" 140 12 ]
+        symbol [ WatchUi %tmp.80 140 12 19 ];
+        %tmp.80 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.81 140 20 33 ];
+        %tmp.81 = getv function %tmp.80 :requestUpdate;
+        invoke %tmp.80 %tmp.81();
+[ "/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" 141 12 ]
+        %tmp.82 = true;
+        ret %tmp.82;
+_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_138_30_142_8_stop:
+        goto @_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_138_8_142_8_if_end;
+_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_138_8_142_8_if_end:
+[ "/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" 144 8 ]
+        %tmp.83 = false;
+        ret %tmp.83;
+_Users_aido_Other_CodeProjects_AthenryGolf_source_GolfDelegate_mc_99_33_145_4_stop:
     }
 }
 [ @file = "/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc"; @line = 1; ]

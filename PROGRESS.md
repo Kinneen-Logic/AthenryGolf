@@ -92,12 +92,19 @@ GPS golf app for a Garmin Forerunner 245 Music. Built in Monkey C (Connect IQ SD
 | `.cursor/rules/garmin-monkeyc-setup.mdc` | Build & SDK reference |
 | `.cursor/rules/app-architecture.mdc` | App structure & Monkey C gotchas |
 | `.cursor/rules/deploy.mdc` | Deployment reference |
-| `.cursor/rules/DEPLOY_TROUBLESHOOTING.md` | Full deploy diagnostic history |
+
+---
+
+### Session 5 — Navigation & Deploy Cleanup
+**Goal:** Fix back-button dead-end and tidy deploy script.
+
+**Changes:**
+- **Back button wrap-around:** Pressing BACK from the Settings screen (last submenu) previously returned `false`, which caused the app to exit entirely. Fixed to set `uiMode = :green` so the full BACK cycle is: Green → Scorecard → Shot Tracker → Settings → Green. Settings hint updated from "BACK Close" to "BACK Green".
+- **Deploy script cleaned up:** Removed the dead `mtp-sendfile` (libmtp) automated transfer step. The FR245M is confirmed undetectable by libmtp (product ID 0x4c05 not in its database). Script now goes straight to OpenMTP after detecting the watch, with no misleading "Trying automated MTP transfer..." message.
 
 ---
 
 ## Outstanding
 
 - [ ] Walk Athenry Golf Club greens and replace placeholder GPS coordinates in `GolfModel.mc`
-- [ ] Confirm `Settings → System → USB Mode → MTP` on watch and test fully automated deploy
 - [ ] Shot tracker real-world test on course

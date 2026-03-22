@@ -9,21 +9,15 @@
 #  What it does:
 #    1. Kills Garmin Express
 #    2. Waits for watch to be detected
-#    3. Tries mtp-sendfile (libmtp) — fully automated if it works
-#    4. Falls back to OpenMTP with the file revealed in Finder
+#    3. Launches OpenMTP — drag AthenryGolf.prg to GARMIN/APPS/
 #
-#  Prerequisites (run once):
-#    brew install libmtp
-#    brew install --cask macfuse   (may help libmtp on Apple Silicon)
+#  Note: libmtp cannot detect the FR245M (product ID 0x4c05 not in its
+#  database). OpenMTP is the only working deploy path on macOS.
 # ─────────────────────────────────────────────────────────────
 
 set -e
 
 PRG="bin/AthenryGolf.prg"
-
-# The FR245M (vendor 0x091e, product 0x4c05) is not in libmtp's device database.
-# libmtp will not detect it. OpenMTP has its own MTP stack and works fine.
-# deploy.sh auto-launches OpenMTP as the primary deploy path.
 
 # ── Colours ──────────────────────────────────────────────────
 RED='\033[0;31m'
@@ -67,52 +61,13 @@ while ! ioreg -p IOUSB -l -w 0 2>/dev/null | grep -q "idVendor.*2334"; do
 done
 echo "${GREEN}✓ Watch detected (vendor ID 2334)${NC}"
 
-# ── Step 4: Try libmtp CLI (automated path) ───────────────────
-MTP_OK=0
-if command -v mtp-sendfile &> /dev/null; then
-    echo "\n${YELLOW}→ Trying automated MTP transfer...${NC}"
-    sleep 3   # let MTP stack settle
-
-    if [ -n "$APPS_FOLDER_ID" ]; then
-        # Folder ID is known — send directly
-        if mtp-sendfile "$PRG" "AthenryGolf.prg" "$APPS_FOLDER_ID" 2>/dev/null; then
-            MTP_OK=1
-        fi
-    else
-        # Try to discover the APPS folder ID
-        FOLDERS=$(mtp-folders 2>/dev/null || sudo mtp-folders 2>/dev/null || true)
-        if [ -n "$FOLDERS" ]; then
-            GARMIN_ID=$(echo "$FOLDERS" | grep "Name: GARMIN$" | sed -E 's/.*Folder ID: ([0-9]+).*/\1/')
-            APPS_ID=$(echo "$FOLDERS" | grep "Name: APPS$" | grep "Parent: ${GARMIN_ID}" | sed -E 's/.*Folder ID: ([0-9]+).*/\1/')
-            if [ -n "$APPS_ID" ]; then
-                echo "${GREEN}✓ GARMIN/APPS found (folder ID: $APPS_ID)${NC}"
-                echo "  Tip: set APPS_FOLDER_ID=$APPS_ID in deploy.sh to skip discovery next time"
-                if mtp-sendfile "$PRG" "AthenryGolf.prg" "$APPS_ID" 2>/dev/null; then
-                    MTP_OK=1
-                fi
-            fi
-        fi
-    fi
-fi
-
-if [ $MTP_OK -eq 1 ]; then
-    echo ""
-    echo "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-    echo "${GREEN}  ✓ Deployed via MTP — done!            ${NC}"
-    echo "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-    echo ""
-    echo "  Unplug watch → wait 10s → Hold UP → Activities & Apps → Athenry Golf"
-    exit 0
-fi
-
-# ── Step 5: OpenMTP fallback ──────────────────────────────────
+# ── Step 4: Launch OpenMTP ────────────────────────────────────
 echo ""
 echo "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo "${YELLOW}  CLI MTP not available — using OpenMTP ${NC}"
+echo "${YELLOW}  Launching OpenMTP...                  ${NC}"
 echo "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
 
-# Launch OpenMTP
 if open -a OpenMTP 2>/dev/null; then
     echo "${GREEN}✓ OpenMTP launched${NC}"
     echo ""

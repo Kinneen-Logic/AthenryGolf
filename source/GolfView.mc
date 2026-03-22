@@ -476,7 +476,7 @@ class GolfView extends WatchUi.View {
             dc.drawText(cx - 60, 90, Graphics.FONT_XTINY, ">", Graphics.TEXT_JUSTIFY_LEFT);
         }
 
-        drawHints(dc, w, h, "UP/DN Select  START Toggle  BACK Close");
+        drawHints(dc, w, h, "UP/DN Select  START Toggle  BACK Green");
     }
 
     private function scoreColor(diff as Number) as Number {

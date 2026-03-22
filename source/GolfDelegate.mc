@@ -8,7 +8,7 @@ import Toybox.Lang;
 // SCORE ENTRY:  UP +1, DN -1, START save & next, BACK cancel
 // SCORECARD:    START edit toggle, UP/DN adjust (edit), BACK → shot
 // SHOT TRACKER: START mark/calc, BACK → settings
-// SETTINGS:     UP/DN toggle options, BACK → green
+// SETTINGS:     UP/DN toggle options, START toggle, BACK → green
 // SUMMARY:      DN/BACK → H18
 
 class GolfDelegate extends WatchUi.BehaviorDelegate {
@@ -122,8 +122,10 @@ class GolfDelegate extends WatchUi.BehaviorDelegate {
                 WatchUi.requestUpdate();
                 return true;
             } else {
-                // Last submenu — exit the app
-                return false;
+                // Last submenu — wrap back to green
+                _model.uiMode = :green;
+                WatchUi.requestUpdate();
+                return true;
             }
         }
 

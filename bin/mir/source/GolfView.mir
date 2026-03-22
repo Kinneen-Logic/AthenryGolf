@@ -4138,7 +4138,7 @@ _Users_aido_Other_CodeProjects_AthenryGolf_source_GolfView_mc_474_8_477_8_if_end
         symbol [ w %tmp.174 479 22 23 ];
         %tmp.175 = lgetv %h.2;
         symbol [ h %tmp.175 479 25 26 ];
-        %tmp.176 = "UP/DN Select  START Toggle  BACK Close";
+        %tmp.176 = "UP/DN Select  START Toggle  BACK Green";
         invoke %tmp.171 %tmp.172(%tmp.173, %tmp.174, %tmp.175, %tmp.176);
 _Users_aido_Other_CodeProjects_AthenryGolf_source_GolfView_mc_439_65_480_4_stop:
     }
