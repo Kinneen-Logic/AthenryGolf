@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Garmin Connect IQ build artifacts
+*.prg
+*.prg.debug.xml
+bin/
+gen/
+mir/
+internal-mir/
+external-mir/
+
+# Editor
+.vscode/
