@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<iq:manifest xmlns:iq="http://www.garmin.com/xml/connectiq" version="1">
+  <iq:application
+    id="a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+    type="watch-app"
+    name="@Strings.AppName"
+    entry="AthenryGolfApp"
+    launcherIcon="@Drawables.LauncherIcon"
+    minSdkVersion="3.3.0">
+    <iq:products>
+      <iq:product id="fr245m"/>
+    </iq:products>
+    <iq:permissions>
+      <iq:uses-permission id="Positioning"/>
+    </iq:permissions>
+    <iq:languages>
+      <iq:language>eng</iq:language>
+    </iq:languages>
+    <iq:barrels/>
+  </iq:application>
+</iq:manifest>

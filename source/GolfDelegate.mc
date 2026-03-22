@@ -1,0 +1,144 @@
+import Toybox.WatchUi;
+import Toybox.Lang;
+
+// Forerunner 245 — 4-button scheme
+// BACK cycles: Green → Scorecard → Shot Tracker → Settings → Green
+//
+// GREEN:        UP next hole, DN prev, START score, BACK scorecard
+// SCORE ENTRY:  UP +1, DN -1, START save & next, BACK cancel
+// SCORECARD:    START edit toggle, UP/DN adjust (edit), BACK → shot
+// SHOT TRACKER: START mark/calc, BACK → settings
+// SETTINGS:     UP/DN toggle options, BACK → green
+// SUMMARY:      DN/BACK → H18
+
+class GolfDelegate extends WatchUi.BehaviorDelegate {
+
+    private var _model as GolfModel;
+    private var _view  as GolfView;
+
+    function initialize(model as GolfModel, view as GolfView) {
+        BehaviorDelegate.initialize();
+        _model = model;
+        _view  = view;
+    }
+
+    function onPreviousPage() as Boolean {
+        var mode = _model.uiMode;
+        if (mode == :green) {
+            _model.nextHole();
+        } else if (mode == :scoreEntry) {
+            _model.adjustScore(1);
+        } else if (mode == :light && _model.lightIndex == 0 && _model.editActive) {
+            _model.adjustScoreForHole(_model.editHole, 1);
+        } else if (mode == :light && _model.lightIndex == 2) {
+            _model.settingIndex = (_model.settingIndex + 1) % 2;
+        }
+        WatchUi.requestUpdate();
+        return true;
+    }
+
+    function onNextPage() as Boolean {
+        var mode = _model.uiMode;
+        if (mode == :green) {
+            _model.prevHole();
+        } else if (mode == :scoreEntry) {
+            _model.adjustScore(-1);
+        } else if (mode == :light && _model.lightIndex == 0 && _model.editActive) {
+            _model.adjustScoreForHole(_model.editHole, -1);
+        } else if (mode == :light && _model.lightIndex == 2) {
+            _model.settingIndex = (_model.settingIndex + 1) % 2;
+        } else if (mode == :summary) {
+            _model.prevHole();
+        }
+        WatchUi.requestUpdate();
+        return true;
+    }
+
+    function onSelect() as Boolean {
+        var mode = _model.uiMode;
+        if (mode == :green) {
+            _model.uiMode = :scoreEntry;
+        } else if (mode == :scoreEntry) {
+            _model.nextHole();
+        } else if (mode == :light && _model.lightIndex == 0) {
+            if (_model.editActive) {
+                _model.editHole = (_model.editHole + 1) % 18;
+            } else {
+                _model.editHole = _model.currentHole;
+                _model.editActive = true;
+                _view.startBlink();
+            }
+        } else if (mode == :light && _model.lightIndex == 1) {
+            if (_model.shotMarked) {
+                _model.calculateShotDist();
+            } else {
+                    _model.markShot();
+            }
+        } else if (mode == :light && _model.lightIndex == 2) {
+            // START toggles the selected setting
+            if (_model.settingIndex == 0) {
+                _model.showHints = !_model.showHints;
+            } else {
+                _model.useMetres = !_model.useMetres;
+            }
+        } else if (mode == :summary) {
+            _model.uiMode = :green;
+        }
+        WatchUi.requestUpdate();
+        return true;
+    }
+
+    function onKey(evt as WatchUi.KeyEvent) as Boolean {
+        var key = evt.getKey();
+        if (key == WatchUi.KEY_START || key == WatchUi.KEY_ENTER) {
+            return onSelect();
+        }
+        return false;
+    }
+
+    function onBack() as Boolean {
+        var mode = _model.uiMode;
+
+        if (mode == :green) {
+            // Enter the secondary menu (scorecard → shot → settings)
+            _model.lightIndex = 0;
+            _model.editActive = false;
+            _model.uiMode = :light;
+            WatchUi.requestUpdate();
+            return true;
+        }
+
+        if (mode == :light) {
+            if (_model.lightIndex == 0 && _model.editActive) {
+                // Cancel scorecard edit
+                _model.editActive = false;
+                _view.stopBlink();
+                WatchUi.requestUpdate();
+                return true;
+            }
+            if (_model.lightIndex < _model.LIGHT_COUNT - 1) {
+                // Advance through submenus
+                _model.lightIndex = _model.lightIndex + 1;
+                WatchUi.requestUpdate();
+                return true;
+            } else {
+                // Last submenu — exit the app
+                return false;
+            }
+        }
+
+        if (mode == :scoreEntry) {
+            _model.uiMode = :green;
+            WatchUi.requestUpdate();
+            return true;
+        }
+
+        if (mode == :summary) {
+            _model.prevHole();
+            WatchUi.requestUpdate();
+            return true;
+        }
+
+        return false;
+    }
+}

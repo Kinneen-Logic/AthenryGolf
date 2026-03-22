@@ -1,0 +1,5 @@
+project.manifest = manifest.xml
+
+# Forerunner 245 Music build target
+fr245m.sourcePath = source
+fr245m.resourcePath = resources

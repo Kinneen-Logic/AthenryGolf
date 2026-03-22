@@ -1,0 +1,982 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+    <manifest filename="/Users/aido/Other CodeProjects/AthenryGolf/manifest.xml"/>
+    <pcToLineNum>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc" id="1" lineNum="25" parent="globals" pc="268435457" symbol="getApp"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc" id="1" lineNum="26" parent="globals" pc="268435467" symbol="getApp"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/gen/006-B3077-00/source/Rez.mcgen" id="2" lineNum="7" parent="globals/Rez" pc="268435483" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="3" lineNum="14" parent="globals/GolfDelegate" pc="268435507" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc" id="4" lineNum="5" parent="globals/AthenryGolfApp" pc="268435526" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="5" lineNum="68" parent="globals/GolfModel" pc="268435545" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="5" lineNum="69" parent="globals/GolfModel" pc="268435562" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="5" lineNum="73" parent="globals/GolfModel" pc="268435579" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="5" lineNum="74" parent="globals/GolfModel" pc="268435596" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="5" lineNum="24" parent="globals/GolfModel" pc="268435613" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="5" lineNum="65" parent="globals/GolfModel" pc="268437751" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="6" lineNum="7" parent="globals/GolfView" pc="268438000" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="99" parent="globals/GolfDelegate" pc="268438019" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="100" parent="globals/GolfDelegate" pc="268438023" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="102" parent="globals/GolfDelegate" pc="268438039" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="104" parent="globals/GolfDelegate" pc="268438050" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="105" parent="globals/GolfDelegate" pc="268438069" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="106" parent="globals/GolfDelegate" pc="268438085" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="107" parent="globals/GolfDelegate" pc="268438104" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="108" parent="globals/GolfDelegate" pc="268438120" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="111" parent="globals/GolfDelegate" pc="268438123" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="112" parent="globals/GolfDelegate" pc="268438134" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="114" parent="globals/GolfDelegate" pc="268438174" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="115" parent="globals/GolfDelegate" pc="268438190" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="116" parent="globals/GolfDelegate" pc="268438208" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="117" parent="globals/GolfDelegate" pc="268438224" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="119" parent="globals/GolfDelegate" pc="268438227" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="121" parent="globals/GolfDelegate" pc="268438265" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="122" parent="globals/GolfDelegate" pc="268438299" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="123" parent="globals/GolfDelegate" pc="268438315" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="126" parent="globals/GolfDelegate" pc="268438318" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="130" parent="globals/GolfDelegate" pc="268438321" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="131" parent="globals/GolfDelegate" pc="268438332" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="132" parent="globals/GolfDelegate" pc="268438351" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="133" parent="globals/GolfDelegate" pc="268438367" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="136" parent="globals/GolfDelegate" pc="268438370" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="137" parent="globals/GolfDelegate" pc="268438381" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="138" parent="globals/GolfDelegate" pc="268438399" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="139" parent="globals/GolfDelegate" pc="268438415" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="7" lineNum="142" parent="globals/GolfDelegate" pc="268438418" symbol="onBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="8" lineNum="25" parent="globals/GolfDelegate" pc="268438421" symbol="onPreviousPage"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="8" lineNum="26" parent="globals/GolfDelegate" pc="268438425" symbol="onPreviousPage"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="8" lineNum="27" parent="globals/GolfDelegate" pc="268438441" symbol="onPreviousPage"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="8" lineNum="28" parent="globals/GolfDelegate" pc="268438452" symbol="onPreviousPage"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="8" lineNum="29" parent="globals/GolfDelegate" pc="268438473" symbol="onPreviousPage"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="8" lineNum="30" parent="globals/GolfDelegate" pc="268438484" symbol="onPreviousPage"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="8" lineNum="31" parent="globals/GolfDelegate" pc="268438510" symbol="onPreviousPage"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="8" lineNum="32" parent="globals/GolfDelegate" pc="268438561" symbol="onPreviousPage"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="8" lineNum="33" parent="globals/GolfDelegate" pc="268438601" symbol="onPreviousPage"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="8" lineNum="34" parent="globals/GolfDelegate" pc="268438635" symbol="onPreviousPage"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="8" lineNum="36" parent="globals/GolfDelegate" pc="268438675" symbol="onPreviousPage"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="8" lineNum="37" parent="globals/GolfDelegate" pc="268438691" symbol="onPreviousPage"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="9" lineNum="19" parent="globals/GolfDelegate" pc="268438694" symbol="initialize"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="9" lineNum="20" parent="globals/GolfDelegate" pc="268438696" symbol="initialize"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="9" lineNum="21" parent="globals/GolfDelegate" pc="268438714" symbol="initialize"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="9" lineNum="22" parent="globals/GolfDelegate" pc="268438724" symbol="initialize"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="10" lineNum="40" parent="globals/GolfDelegate" pc="268438735" symbol="onNextPage"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="10" lineNum="41" parent="globals/GolfDelegate" pc="268438739" symbol="onNextPage"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="10" lineNum="42" parent="globals/GolfDelegate" pc="268438755" symbol="onNextPage"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="10" lineNum="43" parent="globals/GolfDelegate" pc="268438766" symbol="onNextPage"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="10" lineNum="44" parent="globals/GolfDelegate" pc="268438787" symbol="onNextPage"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="10" lineNum="45" parent="globals/GolfDelegate" pc="268438798" symbol="onNextPage"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="10" lineNum="46" parent="globals/GolfDelegate" pc="268438824" symbol="onNextPage"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="10" lineNum="47" parent="globals/GolfDelegate" pc="268438875" symbol="onNextPage"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="10" lineNum="48" parent="globals/GolfDelegate" pc="268438915" symbol="onNextPage"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="10" lineNum="49" parent="globals/GolfDelegate" pc="268438949" symbol="onNextPage"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="10" lineNum="50" parent="globals/GolfDelegate" pc="268438992" symbol="onNextPage"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="10" lineNum="51" parent="globals/GolfDelegate" pc="268439003" symbol="onNextPage"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="10" lineNum="53" parent="globals/GolfDelegate" pc="268439021" symbol="onNextPage"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="10" lineNum="54" parent="globals/GolfDelegate" pc="268439037" symbol="onNextPage"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="11" lineNum="57" parent="globals/GolfDelegate" pc="268439040" symbol="onSelect"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="11" lineNum="58" parent="globals/GolfDelegate" pc="268439044" symbol="onSelect"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="11" lineNum="59" parent="globals/GolfDelegate" pc="268439060" symbol="onSelect"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="11" lineNum="60" parent="globals/GolfDelegate" pc="268439071" symbol="onSelect"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="11" lineNum="61" parent="globals/GolfDelegate" pc="268439093" symbol="onSelect"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="11" lineNum="62" parent="globals/GolfDelegate" pc="268439104" symbol="onSelect"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="11" lineNum="63" parent="globals/GolfDelegate" pc="268439125" symbol="onSelect"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="11" lineNum="64" parent="globals/GolfDelegate" pc="268439159" symbol="onSelect"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="11" lineNum="65" parent="globals/GolfDelegate" pc="268439176" symbol="onSelect"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="11" lineNum="67" parent="globals/GolfDelegate" pc="268439219" symbol="onSelect"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="11" lineNum="68" parent="globals/GolfDelegate" pc="268439247" symbol="onSelect"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="11" lineNum="69" parent="globals/GolfDelegate" pc="268439263" symbol="onSelect"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="11" lineNum="71" parent="globals/GolfDelegate" pc="268439284" symbol="onSelect"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="11" lineNum="72" parent="globals/GolfDelegate" pc="268439318" symbol="onSelect"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="11" lineNum="73" parent="globals/GolfDelegate" pc="268439335" symbol="onSelect"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="11" lineNum="75" parent="globals/GolfDelegate" pc="268439356" symbol="onSelect"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="11" lineNum="77" parent="globals/GolfDelegate" pc="268439377" symbol="onSelect"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="11" lineNum="79" parent="globals/GolfDelegate" pc="268439411" symbol="onSelect"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="11" lineNum="80" parent="globals/GolfDelegate" pc="268439434" symbol="onSelect"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="11" lineNum="82" parent="globals/GolfDelegate" pc="268439466" symbol="onSelect"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="11" lineNum="84" parent="globals/GolfDelegate" pc="268439498" symbol="onSelect"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="11" lineNum="85" parent="globals/GolfDelegate" pc="268439509" symbol="onSelect"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="11" lineNum="87" parent="globals/GolfDelegate" pc="268439528" symbol="onSelect"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="11" lineNum="88" parent="globals/GolfDelegate" pc="268439544" symbol="onSelect"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="12" lineNum="91" parent="globals/GolfDelegate" pc="268439547" symbol="onKey"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="12" lineNum="92" parent="globals/GolfDelegate" pc="268439551" symbol="onKey"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="12" lineNum="93" parent="globals/GolfDelegate" pc="268439564" symbol="onKey"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="12" lineNum="94" parent="globals/GolfDelegate" pc="268439586" symbol="onKey"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfDelegate.mc" id="12" lineNum="96" parent="globals/GolfDelegate" pc="268439598" symbol="onKey"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc" id="14" lineNum="17" parent="globals/AthenryGolfApp" pc="268439601" symbol="getInitialView"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc" id="14" lineNum="18" parent="globals/AthenryGolfApp" pc="268439605" symbol="getInitialView"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc" id="14" lineNum="19" parent="globals/AthenryGolfApp" pc="268439629" symbol="getInitialView"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc" id="14" lineNum="20" parent="globals/AthenryGolfApp" pc="268439655" symbol="getInitialView"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc" id="14" lineNum="21" parent="globals/AthenryGolfApp" pc="268439683" symbol="getInitialView"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc" id="15" lineNum="7" parent="globals/AthenryGolfApp" pc="268439710" symbol="initialize"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc" id="15" lineNum="8" parent="globals/AthenryGolfApp" pc="268439712" symbol="initialize"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="17" lineNum="244" parent="globals/GolfModel" pc="268439731" symbol="calculateShotDist"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="17" lineNum="245" parent="globals/GolfModel" pc="268439733" symbol="calculateShotDist"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="17" lineNum="245" parent="globals/GolfModel" pc="268439757" symbol="calculateShotDist"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="17" lineNum="246" parent="globals/GolfModel" pc="268439758" symbol="calculateShotDist"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="17" lineNum="248" parent="globals/GolfModel" pc="268439809" symbol="calculateShotDist"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="17" lineNum="249" parent="globals/GolfModel" pc="268439819" symbol="calculateShotDist"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="18" lineNum="109" parent="globals/GolfModel" pc="268439830" symbol="getStrokeIndex"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="18" lineNum="110" parent="globals/GolfModel" pc="268439832" symbol="getStrokeIndex"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="19" lineNum="226" parent="globals/GolfModel" pc="268439856" symbol="distToBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="19" lineNum="227" parent="globals/GolfModel" pc="268439858" symbol="distToBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="19" lineNum="227" parent="globals/GolfModel" pc="268439870" symbol="distToBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="19" lineNum="228" parent="globals/GolfModel" pc="268439876" symbol="distToBack"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="20" lineNum="173" parent="globals/GolfModel" pc="268439950" symbol="prevHole"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="20" lineNum="174" parent="globals/GolfModel" pc="268439952" symbol="prevHole"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="20" lineNum="175" parent="globals/GolfModel" pc="268439969" symbol="prevHole"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="20" lineNum="176" parent="globals/GolfModel" pc="268439988" symbol="prevHole"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="20" lineNum="177" parent="globals/GolfModel" pc="268439998" symbol="prevHole"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="20" lineNum="178" parent="globals/GolfModel" pc="268440008" symbol="prevHole"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="20" lineNum="179" parent="globals/GolfModel" pc="268440021" symbol="prevHole"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="21" lineNum="235" parent="globals/GolfModel" pc="268440035" symbol="markShot"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="21" lineNum="236" parent="globals/GolfModel" pc="268440037" symbol="markShot"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="21" lineNum="236" parent="globals/GolfModel" pc="268440049" symbol="markShot"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="21" lineNum="237" parent="globals/GolfModel" pc="268440050" symbol="markShot"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="21" lineNum="238" parent="globals/GolfModel" pc="268440066" symbol="markShot"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="21" lineNum="239" parent="globals/GolfModel" pc="268440082" symbol="markShot"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="21" lineNum="240" parent="globals/GolfModel" pc="268440092" symbol="markShot"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="21" lineNum="241" parent="globals/GolfModel" pc="268440102" symbol="markShot"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="22" lineNum="117" parent="globals/GolfModel" pc="268440116" symbol="scoreVsPar"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="22" lineNum="118" parent="globals/GolfModel" pc="268440120" symbol="scoreVsPar"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="22" lineNum="119" parent="globals/GolfModel" pc="268440127" symbol="scoreVsPar"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="22" lineNum="120" parent="globals/GolfModel" pc="268440134" symbol="scoreVsPar"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="22" lineNum="121" parent="globals/GolfModel" pc="268440155" symbol="scoreVsPar"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="22" lineNum="122" parent="globals/GolfModel" pc="268440175" symbol="scoreVsPar"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="22" lineNum="123" parent="globals/GolfModel" pc="268440191" symbol="scoreVsPar"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="22" lineNum="126" parent="globals/GolfModel" pc="268440226" symbol="scoreVsPar"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="23" lineNum="185" parent="globals/GolfModel" pc="268440232" symbol="updatePosition"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="23" lineNum="186" parent="globals/GolfModel" pc="268440236" symbol="updatePosition"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="23" lineNum="187" parent="globals/GolfModel" pc="268440249" symbol="updatePosition"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="23" lineNum="188" parent="globals/GolfModel" pc="268440268" symbol="updatePosition"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="23" lineNum="189" parent="globals/GolfModel" pc="268440278" symbol="updatePosition"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="23" lineNum="191" parent="globals/GolfModel" pc="268440288" symbol="updatePosition"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="23" lineNum="192" parent="globals/GolfModel" pc="268440348" symbol="updatePosition"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="23" lineNum="194" parent="globals/GolfModel" pc="268440349" symbol="updatePosition"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="23" lineNum="195" parent="globals/GolfModel" pc="268440359" symbol="updatePosition"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="23" lineNum="196" parent="globals/GolfModel" pc="268440369" symbol="updatePosition"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="24" lineNum="101" parent="globals/GolfModel" pc="268440380" symbol="getPar"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="24" lineNum="102" parent="globals/GolfModel" pc="268440382" symbol="getPar"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="25" lineNum="105" parent="globals/GolfModel" pc="268440406" symbol="getParForHole"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="25" lineNum="106" parent="globals/GolfModel" pc="268440408" symbol="getParForHole"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="26" lineNum="212" parent="globals/GolfModel" pc="268440426" symbol="distToFront"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="26" lineNum="213" parent="globals/GolfModel" pc="268440428" symbol="distToFront"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="26" lineNum="213" parent="globals/GolfModel" pc="268440440" symbol="distToFront"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="26" lineNum="214" parent="globals/GolfModel" pc="268440446" symbol="distToFront"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="27" lineNum="139" parent="globals/GolfModel" pc="268440520" symbol="totalPar"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="27" lineNum="140" parent="globals/GolfModel" pc="268440524" symbol="totalPar"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="27" lineNum="141" parent="globals/GolfModel" pc="268440531" symbol="totalPar"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="27" lineNum="142" parent="globals/GolfModel" pc="268440549" symbol="totalPar"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="27" lineNum="144" parent="globals/GolfModel" pc="268440584" symbol="totalPar"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="28" lineNum="154" parent="globals/GolfModel" pc="268440587" symbol="adjustScoreForHole"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="28" lineNum="155" parent="globals/GolfModel" pc="268440591" symbol="adjustScoreForHole"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="28" lineNum="156" parent="globals/GolfModel" pc="268440607" symbol="adjustScoreForHole"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="28" lineNum="156" parent="globals/GolfModel" pc="268440618" symbol="adjustScoreForHole"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="28" lineNum="157" parent="globals/GolfModel" pc="268440625" symbol="adjustScoreForHole"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="28" lineNum="157" parent="globals/GolfModel" pc="268440636" symbol="adjustScoreForHole"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="28" lineNum="158" parent="globals/GolfModel" pc="268440643" symbol="adjustScoreForHole"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="29" lineNum="161" parent="globals/GolfModel" pc="268440657" symbol="nextHole"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="29" lineNum="162" parent="globals/GolfModel" pc="268440659" symbol="nextHole"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="29" lineNum="163" parent="globals/GolfModel" pc="268440676" symbol="nextHole"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="29" lineNum="164" parent="globals/GolfModel" pc="268440695" symbol="nextHole"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="29" lineNum="165" parent="globals/GolfModel" pc="268440705" symbol="nextHole"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="29" lineNum="166" parent="globals/GolfModel" pc="268440715" symbol="nextHole"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="29" lineNum="167" parent="globals/GolfModel" pc="268440728" symbol="nextHole"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="29" lineNum="169" parent="globals/GolfModel" pc="268440742" symbol="nextHole"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="30" lineNum="219" parent="globals/GolfModel" pc="268440756" symbol="distToMiddle"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="30" lineNum="220" parent="globals/GolfModel" pc="268440758" symbol="distToMiddle"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="30" lineNum="220" parent="globals/GolfModel" pc="268440770" symbol="distToMiddle"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="30" lineNum="221" parent="globals/GolfModel" pc="268440776" symbol="distToMiddle"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="31" lineNum="147" parent="globals/GolfModel" pc="268440850" symbol="adjustScore"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="31" lineNum="148" parent="globals/GolfModel" pc="268440854" symbol="adjustScore"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="31" lineNum="149" parent="globals/GolfModel" pc="268440876" symbol="adjustScore"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="31" lineNum="149" parent="globals/GolfModel" pc="268440887" symbol="adjustScore"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="31" lineNum="150" parent="globals/GolfModel" pc="268440894" symbol="adjustScore"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="31" lineNum="150" parent="globals/GolfModel" pc="268440905" symbol="adjustScore"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="31" lineNum="151" parent="globals/GolfModel" pc="268440912" symbol="adjustScore"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="32" lineNum="129" parent="globals/GolfModel" pc="268440932" symbol="totalStrokes"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="32" lineNum="130" parent="globals/GolfModel" pc="268440936" symbol="totalStrokes"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="32" lineNum="131" parent="globals/GolfModel" pc="268440943" symbol="totalStrokes"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="32" lineNum="132" parent="globals/GolfModel" pc="268440961" symbol="totalStrokes"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="32" lineNum="133" parent="globals/GolfModel" pc="268440981" symbol="totalStrokes"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="32" lineNum="136" parent="globals/GolfModel" pc="268441010" symbol="totalStrokes"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="33" lineNum="201" parent="globals/GolfModel" pc="268441013" symbol="&lt;globals/GolfModel/&lt;&gt;distYards&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="33" lineNum="203" parent="globals/GolfModel" pc="268441017" symbol="&lt;globals/GolfModel/&lt;&gt;distYards&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="33" lineNum="204" parent="globals/GolfModel" pc="268441028" symbol="&lt;globals/GolfModel/&lt;&gt;distYards&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="33" lineNum="205" parent="globals/GolfModel" pc="268441051" symbol="&lt;globals/GolfModel/&lt;&gt;distYards&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="33" lineNum="206" parent="globals/GolfModel" pc="268441074" symbol="&lt;globals/GolfModel/&lt;&gt;distYards&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="33" lineNum="207" parent="globals/GolfModel" pc="268441107" symbol="&lt;globals/GolfModel/&lt;&gt;distYards&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="33" lineNum="208" parent="globals/GolfModel" pc="268441129" symbol="&lt;globals/GolfModel/&lt;&gt;distYards&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="33" lineNum="209" parent="globals/GolfModel" pc="268441160" symbol="&lt;globals/GolfModel/&lt;&gt;distYards&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="35" lineNum="113" parent="globals/GolfModel" pc="268441192" symbol="holeNumber"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfModel.mc" id="35" lineNum="114" parent="globals/GolfModel" pc="268441194" symbol="holeNumber"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="36" lineNum="64" parent="globals/GolfView" pc="268441209" symbol="onBlink"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="36" lineNum="65" parent="globals/GolfView" pc="268441211" symbol="onBlink"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="36" lineNum="66" parent="globals/GolfView" pc="268441240" symbol="onBlink"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="37" lineNum="37" parent="globals/GolfView" pc="268441257" symbol="pollPosition"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="37" lineNum="38" parent="globals/GolfView" pc="268441261" symbol="pollPosition"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="37" lineNum="39" parent="globals/GolfView" pc="268441278" symbol="pollPosition"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="37" lineNum="40" parent="globals/GolfView" pc="268441291" symbol="pollPosition"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="37" lineNum="41" parent="globals/GolfView" pc="268441311" symbol="pollPosition"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="38" lineNum="21" parent="globals/GolfView" pc="268441328" symbol="onShow"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="38" lineNum="22" parent="globals/GolfView" pc="268441330" symbol="onShow"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="38" lineNum="24" parent="globals/GolfView" pc="268441367" symbol="onShow"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="38" lineNum="25" parent="globals/GolfView" pc="268441401" symbol="onShow"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="39" lineNum="45" parent="globals/GolfView" pc="268441443" symbol="onPosition"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="39" lineNum="46" parent="globals/GolfView" pc="268441445" symbol="onPosition"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="39" lineNum="47" parent="globals/GolfView" pc="268441465" symbol="onPosition"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="194" parent="globals/GolfView" pc="268441482" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="195" parent="globals/GolfView" pc="268441486" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="196" parent="globals/GolfView" pc="268441499" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="197" parent="globals/GolfView" pc="268441512" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="198" parent="globals/GolfView" pc="268441522" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="200" parent="globals/GolfView" pc="268441538" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="201" parent="globals/GolfView" pc="268441560" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="202" parent="globals/GolfView" pc="268441589" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="203" parent="globals/GolfView" pc="268441611" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="204" parent="globals/GolfView" pc="268441616" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="205" parent="globals/GolfView" pc="268441632" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="206" parent="globals/GolfView" pc="268441651" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="207" parent="globals/GolfView" pc="268441672" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="210" parent="globals/GolfView" pc="268441724" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="211" parent="globals/GolfView" pc="268441735" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="212" parent="globals/GolfView" pc="268441768" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="216" parent="globals/GolfView" pc="268441829" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="217" parent="globals/GolfView" pc="268441851" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="221" parent="globals/GolfView" pc="268441888" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="225" parent="globals/GolfView" pc="268441922" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="226" parent="globals/GolfView" pc="268441929" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="227" parent="globals/GolfView" pc="268441936" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="228" parent="globals/GolfView" pc="268441943" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="229" parent="globals/GolfView" pc="268441950" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="230" parent="globals/GolfView" pc="268441969" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="231" parent="globals/GolfView" pc="268441982" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="232" parent="globals/GolfView" pc="268441989" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="234" parent="globals/GolfView" pc="268442005" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="235" parent="globals/GolfView" pc="268442023" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="237" parent="globals/GolfView" pc="268442036" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="238" parent="globals/GolfView" pc="268442054" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="239" parent="globals/GolfView" pc="268442064" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="240" parent="globals/GolfView" pc="268442074" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="241" parent="globals/GolfView" pc="268442087" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="242" parent="globals/GolfView" pc="268442107" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="243" parent="globals/GolfView" pc="268442126" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="244" parent="globals/GolfView" pc="268442147" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="247" parent="globals/GolfView" pc="268442173" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="248" parent="globals/GolfView" pc="268442186" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="251" parent="globals/GolfView" pc="268442193" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="252" parent="globals/GolfView" pc="268442197" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="253" parent="globals/GolfView" pc="268442210" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="255" parent="globals/GolfView" pc="268442226" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="256" parent="globals/GolfView" pc="268442253" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="257" parent="globals/GolfView" pc="268442276" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="258" parent="globals/GolfView" pc="268442298" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="259" parent="globals/GolfView" pc="268442318" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="262" parent="globals/GolfView" pc="268442321" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="263" parent="globals/GolfView" pc="268442326" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="264" parent="globals/GolfView" pc="268442348" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="267" parent="globals/GolfView" pc="268442368" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="268" parent="globals/GolfView" pc="268442379" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="269" parent="globals/GolfView" pc="268442399" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="270" parent="globals/GolfView" pc="268442418" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="273" parent="globals/GolfView" pc="268442452" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="274" parent="globals/GolfView" pc="268442463" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="275" parent="globals/GolfView" pc="268442485" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="276" parent="globals/GolfView" pc="268442503" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="277" parent="globals/GolfView" pc="268442530" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="278" parent="globals/GolfView" pc="268442541" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="279" parent="globals/GolfView" pc="268442563" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="280" parent="globals/GolfView" pc="268442584" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="281" parent="globals/GolfView" pc="268442595" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="282" parent="globals/GolfView" pc="268442617" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="283" parent="globals/GolfView" pc="268442658" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="284" parent="globals/GolfView" pc="268442669" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="285" parent="globals/GolfView" pc="268442691" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="286" parent="globals/GolfView" pc="268442729" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="289" parent="globals/GolfView" pc="268442791" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="290" parent="globals/GolfView" pc="268442819" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="291" parent="globals/GolfView" pc="268442838" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="297" parent="globals/GolfView" pc="268442888" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="298" parent="globals/GolfView" pc="268442907" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="300" parent="globals/GolfView" pc="268442926" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="301" parent="globals/GolfView" pc="268442948" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="303" parent="globals/GolfView" pc="268442989" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="304" parent="globals/GolfView" pc="268443000" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="305" parent="globals/GolfView" pc="268443035" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="306" parent="globals/GolfView" pc="268443057" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="311" parent="globals/GolfView" pc="268443100" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="312" parent="globals/GolfView" pc="268443105" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="40" lineNum="314" parent="globals/GolfView" pc="268443129" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="41" lineNum="379" parent="globals/GolfView" pc="268443153" symbol="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="41" lineNum="380" parent="globals/GolfView" pc="268443157" symbol="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="41" lineNum="381" parent="globals/GolfView" pc="268443170" symbol="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="41" lineNum="382" parent="globals/GolfView" pc="268443183" symbol="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="41" lineNum="384" parent="globals/GolfView" pc="268443193" symbol="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="41" lineNum="385" parent="globals/GolfView" pc="268443215" symbol="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="41" lineNum="386" parent="globals/GolfView" pc="268443244" symbol="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="41" lineNum="387" parent="globals/GolfView" pc="268443266" symbol="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="41" lineNum="390" parent="globals/GolfView" pc="268443300" symbol="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="41" lineNum="391" parent="globals/GolfView" pc="268443319" symbol="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="41" lineNum="393" parent="globals/GolfView" pc="268443338" symbol="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="41" lineNum="394" parent="globals/GolfView" pc="268443349" symbol="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="41" lineNum="395" parent="globals/GolfView" pc="268443371" symbol="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="41" lineNum="397" parent="globals/GolfView" pc="268443405" symbol="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="41" lineNum="400" parent="globals/GolfView" pc="268443445" symbol="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="41" lineNum="402" parent="globals/GolfView" pc="268443452" symbol="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="41" lineNum="403" parent="globals/GolfView" pc="268443474" symbol="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="41" lineNum="405" parent="globals/GolfView" pc="268443508" symbol="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="41" lineNum="406" parent="globals/GolfView" pc="268443530" symbol="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="41" lineNum="409" parent="globals/GolfView" pc="268443570" symbol="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="41" lineNum="410" parent="globals/GolfView" pc="268443592" symbol="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="41" lineNum="413" parent="globals/GolfView" pc="268443629" symbol="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="41" lineNum="414" parent="globals/GolfView" pc="268443664" symbol="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="41" lineNum="415" parent="globals/GolfView" pc="268443694" symbol="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="41" lineNum="419" parent="globals/GolfView" pc="268443725" symbol="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="42" lineNum="50" parent="globals/GolfView" pc="268443749" symbol="startBlink"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="42" lineNum="51" parent="globals/GolfView" pc="268443751" symbol="startBlink"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="42" lineNum="52" parent="globals/GolfView" pc="268443767" symbol="startBlink"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="42" lineNum="53" parent="globals/GolfView" pc="268443801" symbol="startBlink"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="44" lineNum="165" parent="globals/GolfView" pc="268443843" symbol="&lt;globals/GolfView/&lt;&gt;drawScoreEntry&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="44" lineNum="166" parent="globals/GolfView" pc="268443847" symbol="&lt;globals/GolfView/&lt;&gt;drawScoreEntry&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="44" lineNum="167" parent="globals/GolfView" pc="268443860" symbol="&lt;globals/GolfView/&lt;&gt;drawScoreEntry&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="44" lineNum="168" parent="globals/GolfView" pc="268443873" symbol="&lt;globals/GolfView/&lt;&gt;drawScoreEntry&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="44" lineNum="170" parent="globals/GolfView" pc="268443883" symbol="&lt;globals/GolfView/&lt;&gt;drawScoreEntry&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="44" lineNum="171" parent="globals/GolfView" pc="268443905" symbol="&lt;globals/GolfView/&lt;&gt;drawScoreEntry&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="44" lineNum="172" parent="globals/GolfView" pc="268443934" symbol="&lt;globals/GolfView/&lt;&gt;drawScoreEntry&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="44" lineNum="173" parent="globals/GolfView" pc="268443956" symbol="&lt;globals/GolfView/&lt;&gt;drawScoreEntry&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="44" lineNum="177" parent="globals/GolfView" pc="268444032" symbol="&lt;globals/GolfView/&lt;&gt;drawScoreEntry&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="44" lineNum="178" parent="globals/GolfView" pc="268444063" symbol="&lt;globals/GolfView/&lt;&gt;drawScoreEntry&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="44" lineNum="179" parent="globals/GolfView" pc="268444082" symbol="&lt;globals/GolfView/&lt;&gt;drawScoreEntry&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="44" lineNum="181" parent="globals/GolfView" pc="268444089" symbol="&lt;globals/GolfView/&lt;&gt;drawScoreEntry&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="44" lineNum="182" parent="globals/GolfView" pc="268444119" symbol="&lt;globals/GolfView/&lt;&gt;drawScoreEntry&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="44" lineNum="185" parent="globals/GolfView" pc="268444159" symbol="&lt;globals/GolfView/&lt;&gt;drawScoreEntry&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="44" lineNum="186" parent="globals/GolfView" pc="268444181" symbol="&lt;globals/GolfView/&lt;&gt;drawScoreEntry&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="44" lineNum="189" parent="globals/GolfView" pc="268444227" symbol="&lt;globals/GolfView/&lt;&gt;drawScoreEntry&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="45" lineNum="482" parent="globals/GolfView" pc="268444251" symbol="&lt;globals/GolfView/&lt;&gt;scoreColor&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="45" lineNum="483" parent="globals/GolfView" pc="268444253" symbol="&lt;globals/GolfView/&lt;&gt;scoreColor&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="45" lineNum="483" parent="globals/GolfView" pc="268444264" symbol="&lt;globals/GolfView/&lt;&gt;scoreColor&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="45" lineNum="484" parent="globals/GolfView" pc="268444270" symbol="&lt;globals/GolfView/&lt;&gt;scoreColor&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="45" lineNum="484" parent="globals/GolfView" pc="268444281" symbol="&lt;globals/GolfView/&lt;&gt;scoreColor&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="45" lineNum="485" parent="globals/GolfView" pc="268444287" symbol="&lt;globals/GolfView/&lt;&gt;scoreColor&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="45" lineNum="485" parent="globals/GolfView" pc="268444298" symbol="&lt;globals/GolfView/&lt;&gt;scoreColor&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="45" lineNum="486" parent="globals/GolfView" pc="268444304" symbol="&lt;globals/GolfView/&lt;&gt;scoreColor&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="45" lineNum="486" parent="globals/GolfView" pc="268444315" symbol="&lt;globals/GolfView/&lt;&gt;scoreColor&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="45" lineNum="487" parent="globals/GolfView" pc="268444321" symbol="&lt;globals/GolfView/&lt;&gt;scoreColor&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="46" lineNum="439" parent="globals/GolfView" pc="268444327" symbol="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="46" lineNum="440" parent="globals/GolfView" pc="268444331" symbol="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="46" lineNum="441" parent="globals/GolfView" pc="268444344" symbol="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="46" lineNum="442" parent="globals/GolfView" pc="268444357" symbol="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="46" lineNum="444" parent="globals/GolfView" pc="268444367" symbol="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="46" lineNum="445" parent="globals/GolfView" pc="268444389" symbol="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="46" lineNum="446" parent="globals/GolfView" pc="268444418" symbol="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="46" lineNum="447" parent="globals/GolfView" pc="268444440" symbol="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="46" lineNum="451" parent="globals/GolfView" pc="268444474" symbol="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="46" lineNum="452" parent="globals/GolfView" pc="268444496" symbol="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="46" lineNum="454" parent="globals/GolfView" pc="268444531" symbol="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="46" lineNum="456" parent="globals/GolfView" pc="268444571" symbol="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="46" lineNum="458" parent="globals/GolfView" pc="268444618" symbol="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="46" lineNum="460" parent="globals/GolfView" pc="268444677" symbol="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="46" lineNum="461" parent="globals/GolfView" pc="268444682" symbol="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="46" lineNum="462" parent="globals/GolfView" pc="268444704" symbol="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="46" lineNum="466" parent="globals/GolfView" pc="268444744" symbol="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="46" lineNum="467" parent="globals/GolfView" pc="268444766" symbol="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="46" lineNum="469" parent="globals/GolfView" pc="268444801" symbol="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="46" lineNum="471" parent="globals/GolfView" pc="268444841" symbol="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="46" lineNum="472" parent="globals/GolfView" pc="268444863" symbol="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="46" lineNum="474" parent="globals/GolfView" pc="268444922" symbol="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="46" lineNum="475" parent="globals/GolfView" pc="268444927" symbol="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="46" lineNum="476" parent="globals/GolfView" pc="268444949" symbol="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="46" lineNum="479" parent="globals/GolfView" pc="268444989" symbol="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="47" lineNum="424" parent="globals/GolfView" pc="268445013" symbol="&lt;globals/GolfView/&lt;&gt;fmtDist&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="47" lineNum="425" parent="globals/GolfView" pc="268445017" symbol="&lt;globals/GolfView/&lt;&gt;fmtDist&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="47" lineNum="426" parent="globals/GolfView" pc="268445034" symbol="&lt;globals/GolfView/&lt;&gt;fmtDist&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="47" lineNum="427" parent="globals/GolfView" pc="268445067" symbol="&lt;globals/GolfView/&lt;&gt;fmtDist&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="47" lineNum="429" parent="globals/GolfView" pc="268445085" symbol="&lt;globals/GolfView/&lt;&gt;fmtDist&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="48" lineNum="490" parent="globals/GolfView" pc="268445103" symbol="&lt;globals/GolfView/&lt;&gt;scoreLabel&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="48" lineNum="491" parent="globals/GolfView" pc="268445105" symbol="&lt;globals/GolfView/&lt;&gt;scoreLabel&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="48" lineNum="491" parent="globals/GolfView" pc="268445116" symbol="&lt;globals/GolfView/&lt;&gt;scoreLabel&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="48" lineNum="492" parent="globals/GolfView" pc="268445122" symbol="&lt;globals/GolfView/&lt;&gt;scoreLabel&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="48" lineNum="492" parent="globals/GolfView" pc="268445133" symbol="&lt;globals/GolfView/&lt;&gt;scoreLabel&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="48" lineNum="493" parent="globals/GolfView" pc="268445139" symbol="&lt;globals/GolfView/&lt;&gt;scoreLabel&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="48" lineNum="493" parent="globals/GolfView" pc="268445150" symbol="&lt;globals/GolfView/&lt;&gt;scoreLabel&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="48" lineNum="494" parent="globals/GolfView" pc="268445156" symbol="&lt;globals/GolfView/&lt;&gt;scoreLabel&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="48" lineNum="494" parent="globals/GolfView" pc="268445167" symbol="&lt;globals/GolfView/&lt;&gt;scoreLabel&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="48" lineNum="495" parent="globals/GolfView" pc="268445173" symbol="&lt;globals/GolfView/&lt;&gt;scoreLabel&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="48" lineNum="495" parent="globals/GolfView" pc="268445184" symbol="&lt;globals/GolfView/&lt;&gt;scoreLabel&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="48" lineNum="496" parent="globals/GolfView" pc="268445190" symbol="&lt;globals/GolfView/&lt;&gt;scoreLabel&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="48" lineNum="496" parent="globals/GolfView" pc="268445201" symbol="&lt;globals/GolfView/&lt;&gt;scoreLabel&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="48" lineNum="497" parent="globals/GolfView" pc="268445207" symbol="&lt;globals/GolfView/&lt;&gt;scoreLabel&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="48" lineNum="497" parent="globals/GolfView" pc="268445218" symbol="&lt;globals/GolfView/&lt;&gt;scoreLabel&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="48" lineNum="498" parent="globals/GolfView" pc="268445224" symbol="&lt;globals/GolfView/&lt;&gt;scoreLabel&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="48" lineNum="498" parent="globals/GolfView" pc="268445235" symbol="&lt;globals/GolfView/&lt;&gt;scoreLabel&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="48" lineNum="499" parent="globals/GolfView" pc="268445241" symbol="&lt;globals/GolfView/&lt;&gt;scoreLabel&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="49" lineNum="56" parent="globals/GolfView" pc="268445250" symbol="stopBlink"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="49" lineNum="57" parent="globals/GolfView" pc="268445252" symbol="stopBlink"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="49" lineNum="58" parent="globals/GolfView" pc="268445265" symbol="stopBlink"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="49" lineNum="59" parent="globals/GolfView" pc="268445283" symbol="stopBlink"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="49" lineNum="61" parent="globals/GolfView" pc="268445292" symbol="stopBlink"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="50" lineNum="13" parent="globals/GolfView" pc="268445309" symbol="initialize"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="50" lineNum="14" parent="globals/GolfView" pc="268445311" symbol="initialize"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="50" lineNum="15" parent="globals/GolfView" pc="268445329" symbol="initialize"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="51" lineNum="28" parent="globals/GolfView" pc="268445340" symbol="onHide"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="51" lineNum="29" parent="globals/GolfView" pc="268445342" symbol="onHide"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="51" lineNum="30" parent="globals/GolfView" pc="268445364" symbol="onHide"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="51" lineNum="31" parent="globals/GolfView" pc="268445377" symbol="onHide"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="51" lineNum="32" parent="globals/GolfView" pc="268445395" symbol="onHide"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="51" lineNum="34" parent="globals/GolfView" pc="268445404" symbol="onHide"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="52" lineNum="69" parent="globals/GolfView" pc="268445417" symbol="onUpdate"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="52" lineNum="70" parent="globals/GolfView" pc="268445421" symbol="onUpdate"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="52" lineNum="71" parent="globals/GolfView" pc="268445443" symbol="onUpdate"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="52" lineNum="73" parent="globals/GolfView" pc="268445455" symbol="onUpdate"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="52" lineNum="74" parent="globals/GolfView" pc="268445471" symbol="onUpdate"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="52" lineNum="75" parent="globals/GolfView" pc="268445482" symbol="onUpdate"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="52" lineNum="76" parent="globals/GolfView" pc="268445497" symbol="onUpdate"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="52" lineNum="77" parent="globals/GolfView" pc="268445508" symbol="onUpdate"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="52" lineNum="78" parent="globals/GolfView" pc="268445523" symbol="onUpdate"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="52" lineNum="79" parent="globals/GolfView" pc="268445534" symbol="onUpdate"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="52" lineNum="80" parent="globals/GolfView" pc="268445550" symbol="onUpdate"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="52" lineNum="81" parent="globals/GolfView" pc="268445561" symbol="onUpdate"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="52" lineNum="82" parent="globals/GolfView" pc="268445576" symbol="onUpdate"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="52" lineNum="83" parent="globals/GolfView" pc="268445587" symbol="onUpdate"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="52" lineNum="85" parent="globals/GolfView" pc="268445602" symbol="onUpdate"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="52" lineNum="87" parent="globals/GolfView" pc="268445617" symbol="onUpdate"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="52" lineNum="88" parent="globals/GolfView" pc="268445628" symbol="onUpdate"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="320" parent="globals/GolfView" pc="268445643" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="321" parent="globals/GolfView" pc="268445647" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="322" parent="globals/GolfView" pc="268445660" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="323" parent="globals/GolfView" pc="268445673" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="325" parent="globals/GolfView" pc="268445683" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="326" parent="globals/GolfView" pc="268445705" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="327" parent="globals/GolfView" pc="268445734" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="328" parent="globals/GolfView" pc="268445756" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="331" parent="globals/GolfView" pc="268445790" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="332" parent="globals/GolfView" pc="268445808" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="333" parent="globals/GolfView" pc="268445830" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="335" parent="globals/GolfView" pc="268445873" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="336" parent="globals/GolfView" pc="268445896" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="339" parent="globals/GolfView" pc="268445897" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="340" parent="globals/GolfView" pc="268445914" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="341" parent="globals/GolfView" pc="268445936" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="343" parent="globals/GolfView" pc="268445979" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="344" parent="globals/GolfView" pc="268446001" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="346" parent="globals/GolfView" pc="268446038" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="347" parent="globals/GolfView" pc="268446062" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="348" parent="globals/GolfView" pc="268446079" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="349" parent="globals/GolfView" pc="268446101" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="353" parent="globals/GolfView" pc="268446135" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="354" parent="globals/GolfView" pc="268446152" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="355" parent="globals/GolfView" pc="268446206" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="357" parent="globals/GolfView" pc="268446216" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="358" parent="globals/GolfView" pc="268446241" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="360" parent="globals/GolfView" pc="268446248" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="361" parent="globals/GolfView" pc="268446270" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="363" parent="globals/GolfView" pc="268446310" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="364" parent="globals/GolfView" pc="268446332" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="366" parent="globals/GolfView" pc="268446372" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="368" parent="globals/GolfView" pc="268446396" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="369" parent="globals/GolfView" pc="268446418" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="371" parent="globals/GolfView" pc="268446461" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="53" lineNum="373" parent="globals/GolfView" pc="268446498" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="54" lineNum="432" parent="globals/GolfView" pc="268446522" symbol="&lt;globals/GolfView/&lt;&gt;drawHints&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="54" lineNum="433" parent="globals/GolfView" pc="268446524" symbol="&lt;globals/GolfView/&lt;&gt;drawHints&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="54" lineNum="433" parent="globals/GolfView" pc="268446542" symbol="&lt;globals/GolfView/&lt;&gt;drawHints&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="54" lineNum="434" parent="globals/GolfView" pc="268446543" symbol="&lt;globals/GolfView/&lt;&gt;drawHints&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="54" lineNum="435" parent="globals/GolfView" pc="268446565" symbol="&lt;globals/GolfView/&lt;&gt;drawHints&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="94" parent="globals/GolfView" pc="268446606" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="95" parent="globals/GolfView" pc="268446610" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="96" parent="globals/GolfView" pc="268446623" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="97" parent="globals/GolfView" pc="268446636" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="99" parent="globals/GolfView" pc="268446646" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="100" parent="globals/GolfView" pc="268446668" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="101" parent="globals/GolfView" pc="268446697" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="103" parent="globals/GolfView" pc="268446719" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="106" parent="globals/GolfView" pc="268446771" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="107" parent="globals/GolfView" pc="268446790" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="108" parent="globals/GolfView" pc="268446822" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="112" parent="globals/GolfView" pc="268446883" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="113" parent="globals/GolfView" pc="268446890" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="114" parent="globals/GolfView" pc="268446897" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="116" parent="globals/GolfView" pc="268446904" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="117" parent="globals/GolfView" pc="268446922" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="118" parent="globals/GolfView" pc="268446944" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="120" parent="globals/GolfView" pc="268446978" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="121" parent="globals/GolfView" pc="268447007" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="122" parent="globals/GolfView" pc="268447036" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="123" parent="globals/GolfView" pc="268447043" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="124" parent="globals/GolfView" pc="268447053" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="125" parent="globals/GolfView" pc="268447069" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="126" parent="globals/GolfView" pc="268447076" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="127" parent="globals/GolfView" pc="268447098" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="128" parent="globals/GolfView" pc="268447129" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="129" parent="globals/GolfView" pc="268447160" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="130" parent="globals/GolfView" pc="268447191" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="131" parent="globals/GolfView" pc="268447222" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="132" parent="globals/GolfView" pc="268447253" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="134" parent="globals/GolfView" pc="268447287" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="135" parent="globals/GolfView" pc="268447306" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="136" parent="globals/GolfView" pc="268447325" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="138" parent="globals/GolfView" pc="268447344" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="139" parent="globals/GolfView" pc="268447373" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="140" parent="globals/GolfView" pc="268447410" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="141" parent="globals/GolfView" pc="268447417" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="142" parent="globals/GolfView" pc="268447427" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="143" parent="globals/GolfView" pc="268447443" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="145" parent="globals/GolfView" pc="268447450" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="146" parent="globals/GolfView" pc="268447472" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="147" parent="globals/GolfView" pc="268447503" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="148" parent="globals/GolfView" pc="268447525" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="150" parent="globals/GolfView" pc="268447564" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="151" parent="globals/GolfView" pc="268447586" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="152" parent="globals/GolfView" pc="268447617" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="154" parent="globals/GolfView" pc="268447656" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="155" parent="globals/GolfView" pc="268447678" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="156" parent="globals/GolfView" pc="268447709" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="157" parent="globals/GolfView" pc="268447731" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry filename="/Users/aido/Other CodeProjects/AthenryGolf/source/GolfView.mc" id="55" lineNum="160" parent="globals/GolfView" pc="268447770" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+    </pcToLineNum>
+    <symbolTable>
+        <entry field="true" id="17" symbol="currentHole"/>
+        <entry id="63" method="true" symbol="pollPosition"/>
+        <entry id="44" method="true" symbol="totalPar"/>
+        <entry id="8388639" module="true" symbol="Graphics"/>
+        <entry id="64" method="true" symbol="&lt;globals/GolfView/&lt;&gt;scoreColor&gt;"/>
+        <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+        <entry id="61" method="true" symbol="onBlink"/>
+        <entry id="47" symbol="green"/>
+        <entry id="6" object="true" symbol="GolfDelegate"/>
+        <entry id="30" method="true" symbol="holeNumber"/>
+        <entry id="71" symbol="scoreEntry"/>
+        <entry id="26" method="true" symbol="getPar"/>
+        <entry id="55" method="true" symbol="&lt;globals/GolfView/&lt;&gt;drawHints&gt;"/>
+        <entry id="28" method="true" symbol="getStrokeIndex"/>
+        <entry id="23" method="true" symbol="&lt;globals/GolfModel/&lt;&gt;distYards&gt;"/>
+        <entry id="33" method="true" symbol="markShot"/>
+        <entry id="53" method="true" symbol="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;"/>
+        <entry id="8" object="true" symbol="GolfView"/>
+        <entry id="62" method="true" symbol="onPosition"/>
+        <entry id="45" method="true" symbol="totalStrokes"/>
+        <entry field="true" id="8388611" module="true" symbol="Toybox"/>
+        <entry field="true" id="11" symbol="LIGHT_COUNT"/>
+        <entry field="true" id="69" symbol="AppName"/>
+        <entry id="4" module="true" symbol="globals/Rez/Strings"/>
+        <entry id="54" method="true" symbol="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;"/>
+        <entry id="8388648" module="true" symbol="WatchUi"/>
+        <entry id="8389081" method="true" symbol="onBack"/>
+        <entry field="true" id="37" symbol="scores"/>
+        <entry field="true" id="19" symbol="currentLon"/>
+        <entry id="2" module="true" symbol="globals/Rez"/>
+        <entry id="72" symbol="summary"/>
+        <entry id="14" method="true" symbol="adjustScoreForHole"/>
+        <entry id="8389124" method="true" symbol="onUpdate"/>
+        <entry field="true" id="15" symbol="blinkOn"/>
+        <entry field="true" id="31" symbol="lastShotDist"/>
+        <entry field="true" id="18" symbol="currentLat"/>
+        <entry id="8388771" module="true" object="true" symbol="Drawables"/>
+        <entry id="8389079" method="true" symbol="onPreviousPage"/>
+        <entry id="8389275" method="true" symbol="getApp"/>
+        <entry field="true" id="12" symbol="&lt;globals/GolfModel/&lt;&gt;_holes&gt;"/>
+        <entry id="20" method="true" symbol="distToBack"/>
+        <entry id="8389122" method="true" symbol="onLayout"/>
+        <entry id="21" method="true" symbol="distToFront"/>
+        <entry field="true" id="32" symbol="lightIndex"/>
+        <entry field="true" id="49" symbol="useMetres"/>
+        <entry id="34" method="true" symbol="nextHole"/>
+        <entry id="59" method="true" symbol="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;"/>
+        <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
+        <entry id="48" method="true" symbol="updatePosition"/>
+        <entry field="true" id="40" symbol="shotMarked"/>
+        <entry field="true" id="24" symbol="editActive"/>
+        <entry field="true" id="9" symbol="&lt;globals/GolfDelegate/&lt;&gt;_model&gt;"/>
+        <entry id="8389619" method="true" symbol="onSelect"/>
+        <entry id="8388769" module="true" object="true" symbol="Rez"/>
+        <entry field="true" id="42" symbol="shotMarkedLon"/>
+        <entry id="5" object="true" symbol="AthenryGolfApp"/>
+        <entry id="27" method="true" symbol="getParForHole"/>
+        <entry field="true" id="38" symbol="settingIndex"/>
+        <entry id="22" method="true" symbol="distToMiddle"/>
+        <entry id="8388640" module="true" symbol="Lang"/>
+        <entry field="true" id="68" symbol="LauncherIcon"/>
+        <entry id="8388610" symbol="statics"/>
+        <entry id="16" method="true" symbol="calculateShotDist"/>
+        <entry id="8389123" method="true" symbol="onShow"/>
+        <entry id="70" symbol="light"/>
+        <entry field="true" id="41" symbol="shotMarkedLat"/>
+        <entry id="8389350" module="true" symbol="globals"/>
+        <entry field="true" id="29" symbol="gpsReady"/>
+        <entry field="true" id="46" symbol="uiMode"/>
+        <entry id="8388770" module="true" object="true" symbol="Strings"/>
+        <entry id="8388702" method="true" symbol="initialize"/>
+        <entry id="8389279" method="true" symbol="onStart"/>
+        <entry id="60" method="true" symbol="&lt;globals/GolfView/&lt;&gt;fmtDist&gt;"/>
+        <entry id="65" method="true" symbol="&lt;globals/GolfView/&lt;&gt;scoreLabel&gt;"/>
+        <entry id="8388641" module="true" symbol="Math"/>
+        <entry id="35" method="true" symbol="prevHole"/>
+        <entry field="true" id="25" symbol="editHole"/>
+        <entry id="66" method="true" symbol="startBlink"/>
+        <entry id="8389280" method="true" symbol="getInitialView"/>
+        <entry id="8389281" method="true" symbol="onStop"/>
+        <entry id="67" method="true" symbol="stopBlink"/>
+        <entry field="true" id="10" symbol="&lt;globals/GolfDelegate/&lt;&gt;_view&gt;"/>
+        <entry field="true" id="43" symbol="showHints"/>
+        <entry id="8389097" method="true" symbol="onKey"/>
+        <entry id="56" method="true" symbol="&lt;globals/GolfView/&lt;&gt;drawScoreEntry&gt;"/>
+        <entry id="36" method="true" symbol="scoreVsPar"/>
+        <entry field="true" id="39" symbol="shotCalculated"/>
+        <entry id="57" method="true" symbol="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;"/>
+        <entry id="13" method="true" symbol="adjustScore"/>
+        <entry id="8388646" module="true" object="true" symbol="Timer"/>
+        <entry id="7" object="true" symbol="GolfModel"/>
+        <entry id="8388642" module="true" symbol="Position"/>
+        <entry field="true" id="51" symbol="&lt;globals/GolfView/&lt;&gt;_gpsPollTimer&gt;"/>
+        <entry id="58" method="true" symbol="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;"/>
+        <entry id="8389125" method="true" symbol="onHide"/>
+        <entry field="true" id="50" symbol="&lt;globals/GolfView/&lt;&gt;_blinkTimer&gt;"/>
+        <entry field="true" id="52" symbol="&lt;globals/GolfView/&lt;&gt;_model&gt;"/>
+        <entry id="8389078" method="true" symbol="onNextPage"/>
+        <entry id="8388635" module="true" symbol="Application"/>
+    </symbolTable>
+    <localVars>
+        <entry arg="true" endPc="268438734" name="model" stackId="1" startPc="268438694"/>
+        <entry arg="true" endPc="268438734" name="view" stackId="2" startPc="268438694"/>
+        <entry arg="true" endPc="268439600" name="evt" stackId="1" startPc="268439547"/>
+        <entry endPc="268440225" name="i" stackId="3" startPc="268440155"/>
+        <entry arg="true" endPc="268440379" name="info" stackId="1" startPc="268440232"/>
+        <entry endPc="268440378" name="loc" stackId="2" startPc="268440249"/>
+        <entry endPc="268440378" name="lat" stackId="3" startPc="268440249"/>
+        <entry endPc="268440378" name="lon" stackId="4" startPc="268440249"/>
+        <entry arg="true" endPc="268440425" name="hole" stackId="1" startPc="268440406"/>
+        <entry endPc="268440583" name="i" stackId="2" startPc="268440549"/>
+        <entry arg="true" endPc="268440656" name="hole" stackId="1" startPc="268440587"/>
+        <entry arg="true" endPc="268440656" name="delta" stackId="2" startPc="268440587"/>
+        <entry endPc="268440655" name="s" stackId="3" startPc="268440591"/>
+        <entry arg="true" endPc="268440931" name="delta" stackId="1" startPc="268440850"/>
+        <entry endPc="268440930" name="s" stackId="2" startPc="268440854"/>
+        <entry endPc="268441009" name="i" stackId="2" startPc="268440961"/>
+        <entry arg="true" endPc="268441191" name="lat1" stackId="1" startPc="268441013"/>
+        <entry arg="true" endPc="268441191" name="lon1" stackId="2" startPc="268441013"/>
+        <entry arg="true" endPc="268441191" name="lat2" stackId="3" startPc="268441013"/>
+        <entry arg="true" endPc="268441191" name="lon2" stackId="4" startPc="268441013"/>
+        <entry endPc="268441326" name="info" stackId="1" startPc="268441261"/>
+        <entry arg="true" endPc="268441481" name="info" stackId="1" startPc="268441443"/>
+        <entry arg="true" endPc="268443152" name="dc" stackId="1" startPc="268441482"/>
+        <entry endPc="268443151" name="w" stackId="2" startPc="268441486"/>
+        <entry endPc="268443151" name="h" stackId="3" startPc="268441486"/>
+        <entry endPc="268443151" name="cx" stackId="4" startPc="268441486"/>
+        <entry endPc="268443151" name="editing" stackId="5" startPc="268441486"/>
+        <entry endPc="268441884" name="eh" stackId="6" startPc="268441616"/>
+        <entry endPc="268441884" name="es" stackId="7" startPc="268441616"/>
+        <entry endPc="268441884" name="ep" stackId="8" startPc="268441616"/>
+        <entry endPc="268443151" name="cellW" stackId="9" startPc="268441486"/>
+        <entry endPc="268443151" name="cellH" stackId="10" startPc="268441486"/>
+        <entry endPc="268443151" name="gap" stackId="11" startPc="268441486"/>
+        <entry endPc="268443151" name="cols" stackId="12" startPc="268441486"/>
+        <entry endPc="268443151" name="rowW" stackId="13" startPc="268441486"/>
+        <entry endPc="268443151" name="startX" stackId="14" startPc="268441486"/>
+        <entry endPc="268443151" name="row1Y" stackId="15" startPc="268441486"/>
+        <entry endPc="268443151" name="row2Y" stackId="16" startPc="268441486"/>
+        <entry endPc="268443151" name="fh" stackId="17" startPc="268441486"/>
+        <entry endPc="268443151" name="textYOff" stackId="18" startPc="268441486"/>
+        <entry endPc="268442887" name="i" stackId="19" startPc="268442054"/>
+        <entry endPc="268442874" name="col" stackId="20" startPc="268442054"/>
+        <entry endPc="268442874" name="row" stackId="21" startPc="268442054"/>
+        <entry endPc="268442874" name="x" stackId="22" startPc="268442054"/>
+        <entry endPc="268442874" name="y" stackId="23" startPc="268442054"/>
+        <entry endPc="268442874" name="score" stackId="24" startPc="268442054"/>
+        <entry endPc="268442874" name="par" stackId="25" startPc="268442054"/>
+        <entry endPc="268442874" name="diff" stackId="26" startPc="268442054"/>
+        <entry endPc="268442874" name="tx" stackId="27" startPc="268442054"/>
+        <entry endPc="268442874" name="ty" stackId="28" startPc="268442054"/>
+        <entry endPc="268442874" name="shapeCx" stackId="29" startPc="268442054"/>
+        <entry endPc="268442874" name="shapeCy" stackId="30" startPc="268442054"/>
+        <entry endPc="268442874" name="r" stackId="31" startPc="268442054"/>
+        <entry endPc="268442874" name="isEditCell" stackId="32" startPc="268442054"/>
+        <entry endPc="268442448" name="dotColor" stackId="33" startPc="268442379"/>
+        <entry endPc="268442874" name="numColor" stackId="34" startPc="268442452"/>
+        <entry endPc="268443151" name="total" stackId="35" startPc="268441486"/>
+        <entry endPc="268443151" name="vpar" stackId="36" startPc="268441486"/>
+        <entry endPc="268443099" name="vparStr" stackId="37" startPc="268443000"/>
+        <entry arg="true" endPc="268443748" name="dc" stackId="1" startPc="268443153"/>
+        <entry endPc="268443747" name="w" stackId="2" startPc="268443157"/>
+        <entry endPc="268443747" name="h" stackId="3" startPc="268443157"/>
+        <entry endPc="268443747" name="cx" stackId="4" startPc="268443157"/>
+        <entry endPc="268443747" name="total" stackId="5" startPc="268443157"/>
+        <entry endPc="268443747" name="par" stackId="6" startPc="268443157"/>
+        <entry endPc="268443724" name="diff" stackId="7" startPc="268443445"/>
+        <entry endPc="268443724" name="vsParStr" stackId="8" startPc="268443445"/>
+        <entry arg="true" endPc="268444250" name="dc" stackId="1" startPc="268443843"/>
+        <entry endPc="268444249" name="w" stackId="2" startPc="268443847"/>
+        <entry endPc="268444249" name="h" stackId="3" startPc="268443847"/>
+        <entry endPc="268444249" name="cx" stackId="4" startPc="268443847"/>
+        <entry endPc="268444249" name="score" stackId="5" startPc="268443847"/>
+        <entry endPc="268444249" name="par" stackId="6" startPc="268443847"/>
+        <entry endPc="268444249" name="diff" stackId="7" startPc="268443847"/>
+        <entry arg="true" endPc="268444326" name="diff" stackId="1" startPc="268444251"/>
+        <entry arg="true" endPc="268445012" name="dc" stackId="1" startPc="268444327"/>
+        <entry endPc="268445011" name="w" stackId="2" startPc="268444331"/>
+        <entry endPc="268445011" name="h" stackId="3" startPc="268444331"/>
+        <entry endPc="268445011" name="cx" stackId="4" startPc="268444331"/>
+        <entry endPc="268445011" name="row0Selected" stackId="5" startPc="268444331"/>
+        <entry endPc="268445011" name="row1Selected" stackId="6" startPc="268444331"/>
+        <entry arg="true" endPc="268445102" name="d" stackId="1" startPc="268445013"/>
+        <entry arg="true" endPc="268445249" name="score" stackId="1" startPc="268445103"/>
+        <entry arg="true" endPc="268445249" name="par" stackId="2" startPc="268445103"/>
+        <entry arg="true" endPc="268445249" name="diff" stackId="3" startPc="268445103"/>
+        <entry arg="true" endPc="268445339" name="model" stackId="1" startPc="268445309"/>
+        <entry arg="true" endPc="268445642" name="dc" stackId="1" startPc="268445417"/>
+        <entry endPc="268445641" name="mode" stackId="2" startPc="268445421"/>
+        <entry endPc="268445615" name="idx" stackId="3" startPc="268445534"/>
+        <entry arg="true" endPc="268446521" name="dc" stackId="1" startPc="268445643"/>
+        <entry endPc="268446520" name="w" stackId="2" startPc="268445647"/>
+        <entry endPc="268446520" name="h" stackId="3" startPc="268445647"/>
+        <entry endPc="268446520" name="cx" stackId="4" startPc="268445647"/>
+        <entry endPc="268446394" name="shotNumStr" stackId="5" startPc="268446079"/>
+        <entry endPc="268446394" name="shotUnit" stackId="6" startPc="268446079"/>
+        <entry arg="true" endPc="268446605" name="dc" stackId="1" startPc="268446522"/>
+        <entry arg="true" endPc="268446605" name="w" stackId="2" startPc="268446522"/>
+        <entry arg="true" endPc="268446605" name="h" stackId="3" startPc="268446522"/>
+        <entry arg="true" endPc="268446605" name="hint" stackId="4" startPc="268446522"/>
+        <entry arg="true" endPc="268447793" name="dc" stackId="1" startPc="268446606"/>
+        <entry endPc="268447792" name="w" stackId="2" startPc="268446610"/>
+        <entry endPc="268447792" name="h" stackId="3" startPc="268446610"/>
+        <entry endPc="268447792" name="cx" stackId="4" startPc="268446610"/>
+        <entry endPc="268447792" name="si" stackId="5" startPc="268446610"/>
+        <entry endPc="268447792" name="siStr" stackId="6" startPc="268446610"/>
+        <entry endPc="268447792" name="y1" stackId="7" startPc="268446610"/>
+        <entry endPc="268447792" name="y2" stackId="8" startPc="268446610"/>
+        <entry endPc="268447792" name="y3" stackId="9" startPc="268446610"/>
+        <entry endPc="268447283" name="noGpsLabelW" stackId="10" startPc="268446922"/>
+        <entry endPc="268447283" name="noGpsDistW" stackId="11" startPc="268446922"/>
+        <entry endPc="268447283" name="noGpsGap" stackId="12" startPc="268446922"/>
+        <entry endPc="268447283" name="noGpsRowW" stackId="13" startPc="268446922"/>
+        <entry endPc="268447283" name="noGpsLx" stackId="14" startPc="268446922"/>
+        <entry endPc="268447283" name="noGpsDx" stackId="15" startPc="268446922"/>
+        <entry endPc="268447769" name="front" stackId="16" startPc="268447287"/>
+        <entry endPc="268447769" name="middle" stackId="17" startPc="268447287"/>
+        <entry endPc="268447769" name="back" stackId="18" startPc="268447287"/>
+        <entry endPc="268447769" name="labelW" stackId="19" startPc="268447287"/>
+        <entry endPc="268447769" name="distW" stackId="20" startPc="268447287"/>
+        <entry endPc="268447769" name="rowGap" stackId="21" startPc="268447287"/>
+        <entry endPc="268447769" name="rowW" stackId="22" startPc="268447287"/>
+        <entry endPc="268447769" name="lx" stackId="23" startPc="268447287"/>
+        <entry endPc="268447769" name="dx" stackId="24" startPc="268447287"/>
+    </localVars>
+    <deviceInfo deviceVersion="8fc30743a4191ec19bcafa28e3ffcc2b5a958a17" partNumber="006-B3077-00"/>
+    <annotations>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+    </annotations>
+    <dataEntryOffsetMappings>
+        <dataEntry label="globals" offset="55" parentId="" symbolId="globals" type="module"/>
+        <dataEntry label="globals/Rez" offset="142" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry label="globals/GolfDelegate" offset="189" parentId="globals" symbolId="GolfDelegate" type="class"/>
+        <dataEntry label="globals/AthenryGolfApp" offset="292" parentId="globals" symbolId="AthenryGolfApp" type="class"/>
+        <dataEntry label="globals/GolfModel" offset="363" parentId="globals" symbolId="GolfModel" type="class"/>
+        <dataEntry label="globals/GolfView" offset="714" parentId="globals" symbolId="GolfView" type="class"/>
+        <dataEntry label="globals/Rez/Drawables" offset="937" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry label="globals/Rez/Strings" offset="976" parentId="Rez" symbolId="Strings" type="module"/>
+    </dataEntryOffsetMappings>
+    <functions>
+        <functionEntry accessMode="public" endPc="268435482" name="getApp" startPc="268435457">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435506" name="&lt;init&gt;" parent="Rez" startPc="268435483">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435525" name="&lt;init&gt;" parent="GolfDelegate" startPc="268435507">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435544" name="&lt;init&gt;" parent="AthenryGolfApp" startPc="268435526">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437999" name="&lt;init&gt;" parent="GolfModel" startPc="268435545">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438018" name="&lt;init&gt;" parent="GolfView" startPc="268438000">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Drawables">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438420" name="onBack" parent="GolfDelegate" startPc="268438019">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438693" name="onPreviousPage" parent="GolfDelegate" startPc="268438421">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438734" name="initialize" parent="GolfDelegate" startPc="268438694">
+            <param id="model"/>
+            <param id="view"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439039" name="onNextPage" parent="GolfDelegate" startPc="268438735">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439546" name="onSelect" parent="GolfDelegate" startPc="268439040">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439600" name="onKey" parent="GolfDelegate" startPc="268439547">
+            <param id="evt"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onStart" parent="AthenryGolfApp">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439709" name="getInitialView" parent="AthenryGolfApp" startPc="268439601">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439730" name="initialize" parent="AthenryGolfApp" startPc="268439710">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onStop" parent="AthenryGolfApp">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439829" name="calculateShotDist" parent="GolfModel" startPc="268439731">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439855" name="getStrokeIndex" parent="GolfModel" startPc="268439830">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439949" name="distToBack" parent="GolfModel" startPc="268439856">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440034" name="prevHole" parent="GolfModel" startPc="268439950">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440115" name="markShot" parent="GolfModel" startPc="268440035">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440231" name="scoreVsPar" parent="GolfModel" startPc="268440116">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440379" name="updatePosition" parent="GolfModel" startPc="268440232">
+            <param id="info"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440405" name="getPar" parent="GolfModel" startPc="268440380">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440425" name="getParForHole" parent="GolfModel" startPc="268440406">
+            <param id="hole"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440519" name="distToFront" parent="GolfModel" startPc="268440426">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440586" name="totalPar" parent="GolfModel" startPc="268440520">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440656" name="adjustScoreForHole" parent="GolfModel" startPc="268440587">
+            <param id="hole"/>
+            <param id="delta"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440755" name="nextHole" parent="GolfModel" startPc="268440657">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440849" name="distToMiddle" parent="GolfModel" startPc="268440756">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440931" name="adjustScore" parent="GolfModel" startPc="268440850">
+            <param id="delta"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441012" name="totalStrokes" parent="GolfModel" startPc="268440932">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268441191" name="&lt;globals/GolfModel/&lt;&gt;distYards&gt;" parent="GolfModel" startPc="268441013">
+            <param id="lat1"/>
+            <param id="lon1"/>
+            <param id="lat2"/>
+            <param id="lon2"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="GolfModel">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441208" name="holeNumber" parent="GolfModel" startPc="268441192">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441256" name="onBlink" parent="GolfView" startPc="268441209">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441327" name="pollPosition" parent="GolfView" startPc="268441257">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441442" name="onShow" parent="GolfView" startPc="268441328">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441481" name="onPosition" parent="GolfView" startPc="268441443">
+            <param id="info"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268443152" name="&lt;globals/GolfView/&lt;&gt;drawCardView&gt;" parent="GolfView" startPc="268441482">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268443748" name="&lt;globals/GolfView/&lt;&gt;drawSummaryView&gt;" parent="GolfView" startPc="268443153">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268443842" name="startBlink" parent="GolfView" startPc="268443749">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onLayout" parent="GolfView">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268444250" name="&lt;globals/GolfView/&lt;&gt;drawScoreEntry&gt;" parent="GolfView" startPc="268443843">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268444326" name="&lt;globals/GolfView/&lt;&gt;scoreColor&gt;" parent="GolfView" startPc="268444251">
+            <param id="diff"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268445012" name="&lt;globals/GolfView/&lt;&gt;drawSettingsView&gt;" parent="GolfView" startPc="268444327">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268445102" name="&lt;globals/GolfView/&lt;&gt;fmtDist&gt;" parent="GolfView" startPc="268445013">
+            <param id="d"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268445249" name="&lt;globals/GolfView/&lt;&gt;scoreLabel&gt;" parent="GolfView" startPc="268445103">
+            <param id="score"/>
+            <param id="par"/>
+            <param id="diff"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268445308" name="stopBlink" parent="GolfView" startPc="268445250">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268445339" name="initialize" parent="GolfView" startPc="268445309">
+            <param id="model"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268445416" name="onHide" parent="GolfView" startPc="268445340">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268445642" name="onUpdate" parent="GolfView" startPc="268445417">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268446521" name="&lt;globals/GolfView/&lt;&gt;drawShotView&gt;" parent="GolfView" startPc="268445643">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268446605" name="&lt;globals/GolfView/&lt;&gt;drawHints&gt;" parent="GolfView" startPc="268446522">
+            <param id="dc"/>
+            <param id="w"/>
+            <param id="h"/>
+            <param id="hint"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268447793" name="&lt;globals/GolfView/&lt;&gt;drawGreenView&gt;" parent="GolfView" startPc="268446606">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+    </functions>
+</debugInfo>

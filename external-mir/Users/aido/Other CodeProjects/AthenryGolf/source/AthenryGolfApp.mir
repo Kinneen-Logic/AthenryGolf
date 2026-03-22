@@ -1,0 +1,99 @@
+[ @file = "/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Application,1,14,25]; ]
+import Toybox.Application;
+[ @file = "/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Lang,2,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [WatchUi,3,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc"; @line = 5; @symbol_classdef = [AthenryGolfApp,5,6,20]; @symbol_extends<0> = [Application,5,29,40]; @symbol_extends<1> = [AppBase,5,41,48]; ]
+class AthenryGolfApp extends Application.AppBase {
+    [ @file = "/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc"; @line = 5; ]
+    <init> {
+    }
+    [ @file = "/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc"; @line = 5; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc"; @line = 7; @symbol_functiondef = [initialize,7,13,23]; ]
+    function initialize() as Void {
+_Users_aido_Other_CodeProjects_AthenryGolf_source_AthenryGolfApp_mc_7_26_9_4_start:
+[ "/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc" 8 8 ]
+        symbol [ AppBase %tmp.2 8 8 15 ];
+        %tmp.2 = getv ? :AppBase;
+        symbol [ initialize %tmp.3 8 16 26 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_Users_aido_Other_CodeProjects_AthenryGolf_source_AthenryGolfApp_mc_7_26_9_4_stop:
+    }
+    [ @file = "/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc"; @line = 11; @symbol_functiondef = [onStart,11,13,20]; @symbol_param<0> = [state,11,21,26]; @symbol_param<0>_type<0> = [Lang,11,30,34]; @symbol_param<0>_type<1> = [Dictionary,11,35,45]; ]
+    function onStart(state as Lang.Dictionary or Null) as Void {
+    }
+    [ @file = "/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc"; @line = 14; @symbol_functiondef = [onStop,14,13,19]; @symbol_param<0> = [state,14,20,25]; @symbol_param<0>_type<0> = [Lang,14,29,33]; @symbol_param<0>_type<1> = [Dictionary,14,34,44]; ]
+    function onStop(state as Lang.Dictionary or Null) as Void {
+    }
+    [ @file = "/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc"; @line = 17; @symbol_functiondef = [getInitialView,17,13,27]; @symbol_return<0> = [WatchUi,17,35,42]; @symbol_return<1> = [Views,17,43,48]; @symbol_return<2> = [WatchUi,17,56,63]; @symbol_return<3> = [Views,17,64,69]; @symbol_return<4> = [WatchUi,17,71,78]; @symbol_return<5> = [InputDelegates,17,79,93]; ]
+    function getInitialView() as [WatchUi.Views] or [WatchUi.Views, WatchUi.InputDelegates] {
+_Users_aido_Other_CodeProjects_AthenryGolf_source_AthenryGolfApp_mc_17_96_22_4_start:
+[ "/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc" 18 8 ]
+        [ "_Users_aido_Other_CodeProjects_AthenryGolf_source_AthenryGolfApp_mc_17_96_22_4_start" "_Users_aido_Other_CodeProjects_AthenryGolf_source_AthenryGolfApp_mc_17_96_22_4_stop" ]
+        %model.1 = local;
+        symbol [ model %model.1 18 12 17 ];
+        symbol [ GolfModel %tmp.4 18 24 33 ];
+        %tmp.4 = getv ? :GolfModel;
+        %tmp.1 = newc %tmp.4 ();
+        lputv %model.1 %tmp.1;
+        symbol [ model %model.1 18 12 17 ];
+[ "/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc" 19 8 ]
+        [ "_Users_aido_Other_CodeProjects_AthenryGolf_source_AthenryGolfApp_mc_17_96_22_4_start" "_Users_aido_Other_CodeProjects_AthenryGolf_source_AthenryGolfApp_mc_17_96_22_4_stop" ]
+        %view.2 = local;
+        symbol [ view %view.2 19 12 16 ];
+        symbol [ GolfView %tmp.8 19 23 31 ];
+        %tmp.8 = getv ? :GolfView;
+        %tmp.9 = lgetv %model.1;
+        symbol [ model %tmp.9 19 32 37 ];
+        %tmp.5 = newc %tmp.8 (%tmp.9);
+        lputv %view.2 %tmp.5;
+        symbol [ view %view.2 19 12 16 ];
+[ "/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc" 20 8 ]
+        [ "_Users_aido_Other_CodeProjects_AthenryGolf_source_AthenryGolfApp_mc_17_96_22_4_start" "_Users_aido_Other_CodeProjects_AthenryGolf_source_AthenryGolfApp_mc_17_96_22_4_stop" ]
+        %delegate.3 = local;
+        symbol [ delegate %delegate.3 20 12 20 ];
+        symbol [ GolfDelegate %tmp.13 20 27 39 ];
+        %tmp.13 = getv ? :GolfDelegate;
+        %tmp.14 = lgetv %model.1;
+        symbol [ model %tmp.14 20 40 45 ];
+        %tmp.15 = lgetv %view.2;
+        symbol [ view %tmp.15 20 47 51 ];
+        %tmp.10 = newc %tmp.13 (%tmp.14, %tmp.15);
+        lputv %delegate.3 %tmp.10;
+        symbol [ delegate %delegate.3 20 12 20 ];
+[ "/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc" 21 8 ]
+        %tmp.16 = newa 2;
+        %tmp.17 = lgetv %view.2;
+        symbol [ view %tmp.17 21 16 20 ];
+        %tmp.18 = dup %tmp.16;
+        %tmp.19 = aputv %tmp.18 0 %tmp.17;
+        %tmp.20 = lgetv %delegate.3;
+        symbol [ delegate %tmp.20 21 22 30 ];
+        %tmp.21 = dup %tmp.19;
+        %tmp.22 = aputv %tmp.21 1 %tmp.20;
+        ret %tmp.22;
+_Users_aido_Other_CodeProjects_AthenryGolf_source_AthenryGolfApp_mc_17_96_22_4_stop:
+    }
+}
+[ @file = "/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc"; @line = 25; @symbol_functiondef = [getApp,25,9,15]; @symbol_return<0> = [AthenryGolfApp,25,21,35]; ]
+function getApp() as AthenryGolfApp {
+_Users_aido_Other_CodeProjects_AthenryGolf_source_AthenryGolfApp_mc_25_36_27_0_start:
+[ "/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc" 26 4 ]
+    symbol [ Application %tmp.1 26 11 22 ];
+    %tmp.1 = getm $.Toybox.Application;
+    symbol [ getApp %tmp.2 26 23 29 ];
+    %tmp.2 = getv function %tmp.1 :getApp;
+    %tmp.3 = invoke %tmp.1 %tmp.2();
+    %tmp.4 = as %tmp.3 AthenryGolfApp;
+    symbol [ AthenryGolfApp %tmp.4 26 35 49 ];
+    ret %tmp.4;
+_Users_aido_Other_CodeProjects_AthenryGolf_source_AthenryGolfApp_mc_25_36_27_0_stop:
+}
+[ @file = "/Users/aido/Other CodeProjects/AthenryGolf/source/AthenryGolfApp.mc"; @line = 1; ]
+<init> {
+}
