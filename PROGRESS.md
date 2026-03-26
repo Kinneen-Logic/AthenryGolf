@@ -118,7 +118,29 @@ GPS golf app for a Garmin Forerunner 245 Music. Built in Monkey C (Connect IQ SD
 - [x] Shell scripts — replaced the Monkey C extension's build/run commands (`Monkey C: Build for Device`, `Run in Simulator` etc.) with `sim.sh`, `run.sh`, `build-watch.sh`, and `deploy.sh`; the extension commands are unreliable, output to inconsistent locations, and require too many manual steps
 
 **To Do**
-- [ ] Walk Athenry Golf Club greens and record GPS coordinates for all 18 holes in `GolfModel.mc`
+- [x] Walk Athenry Golf Club greens and record GPS coordinates for all 18 holes in `GolfModel.mc`
+- [x] Update par and stroke index from official scorecard
+- [ ] Verify H11/H12 and H13/H14 green assignments on-course (GPS logger reused labels — see Session 6)
 - [ ] Shot tracker real-world test on course
 
 Saturday and Sunday 21/22 March time spent ~6 hours
+
+---
+
+### Session 6 — Real GPS Coordinates & Scorecard Data
+**Goal:** Replace all placeholder course data with real Athenry Golf Club coordinates and official par/SI values.
+
+**What was done:**
+- Walked all 18 greens and recorded Front/Middle/Back pin positions using BasicAirData GPS Logger for Android (KML export: `20260326-112903 - Athenry FMB Greens.kml`)
+- Imported all 54 GPS coordinates into `GolfModel.mc` — all holes now have real lat/lon for F/M/B green distances
+- Updated all par and stroke index values from the official Athenry scorecard (total par 70, front 35 / back 35; front 9 odd SIs 1–17, back 9 even SIs 2–18)
+
+**Data issue found and resolved:**
+- The GPS logger app did not advance its hole label when recording holes 12 and 13 — both were saved under the H11 and H14 names respectively, leaving H12 and H13 absent from the KML
+- Resolved by cross-referencing GPS coordinates against the course layout map (`athenry_layout.png`): H11 group A (lon ~-8.845, more west) = H11; H11 group B (lon ~-8.843, more east) = H12; H14 group B (lat ~53.288, more north) = H13; H14 group A (lat ~53.285, same latitude band as H15–H17) = H14
+- These assignments are best estimates from the map — to be verified on-course
+
+**Par changes from placeholders:**
+- H4: 5 → **4**, H6: 4 → **3**, H10: 4 → **5** (441m hole), H13: 5 → **4**, H17: 4 → **3**, H18: 5 → **4**
+
+Thursday 26 March
