@@ -314,18 +314,17 @@ class GolfView extends WatchUi.View {
             var isEditCell = editing && isCursor;
 
             if (isCursor && !editing) {
-                // Browsing: solid underscore cursor
+                // Browsing: solid underscore, score not shown (header has the detail)
                 dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
                 dc.drawText(tx, ty, Graphics.FONT_XTINY, "_",
                     Graphics.TEXT_JUSTIFY_CENTER);
                 continue;
             }
-            if (isEditCell && !_model.blinkOn) {
-                // Editing, blink-off: underscore
-                dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-                dc.drawText(tx, ty, Graphics.FONT_XTINY, "_",
-                    Graphics.TEXT_JUSTIFY_CENTER);
-                continue;
+            if (isEditCell && _model.blinkOn) {
+                // Editing, blink-on: draw a white border around the cell so the
+                // score remains visible at all times
+                dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+                dc.drawRectangle(x, y, cellW, cellH);
             }
 
             if (score == 0) {

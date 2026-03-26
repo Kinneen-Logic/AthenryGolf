@@ -34,7 +34,7 @@ class GolfDelegate extends WatchUi.BehaviorDelegate {
             if (_model.editActive) {
                 _model.adjustScoreForHole(_model.editHole, 1);
             } else {
-                _model.editHole = (_model.editHole + 17) % 18; // browse prev
+                _model.editHole = (_model.editHole + 1) % 18; // browse next
             }
         } else if (mode == :light && _model.lightIndex == 2) {
             _model.settingIndex = (_model.settingIndex + 1) % 2;
@@ -53,7 +53,7 @@ class GolfDelegate extends WatchUi.BehaviorDelegate {
             if (_model.editActive) {
                 _model.adjustScoreForHole(_model.editHole, -1);
             } else {
-                _model.editHole = (_model.editHole + 1) % 18; // browse next
+                _model.editHole = (_model.editHole + 17) % 18; // browse prev
             }
         } else if (mode == :light && _model.lightIndex == 2) {
             _model.settingIndex = (_model.settingIndex + 1) % 2;
