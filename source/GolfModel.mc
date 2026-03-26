@@ -137,6 +137,26 @@ class GolfModel {
         return total;
     }
 
+    function front9Strokes() as Number {
+        var total = 0;
+        for (var i = 0; i < 9; i++) {
+            if ((scores[i] as Number) > 0) {
+                total += scores[i] as Number;
+            }
+        }
+        return total;
+    }
+
+    function back9Strokes() as Number {
+        var total = 0;
+        for (var i = 9; i < 18; i++) {
+            if ((scores[i] as Number) > 0) {
+                total += scores[i] as Number;
+            }
+        }
+        return total;
+    }
+
     function totalPar() as Number {
         var total = 0;
         for (var i = 0; i < 18; i++) {

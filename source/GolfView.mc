@@ -290,19 +290,11 @@ class GolfView extends WatchUi.View {
 
             var isEditCell = editing && i == _model.editHole;
             if (isEditCell && !_model.blinkOn) {
-                dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_WHITE);
-                dc.fillRectangle(x, y, cellW, cellH);
                 continue;
             }
 
-            if (isEditCell) {
-                dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_WHITE);
-                dc.fillRectangle(x, y, cellW, cellH);
-            }
-
             if (score == 0) {
-                var dotColor = isEditCell ? Graphics.COLOR_BLACK : 0x333333;
-                dc.setColor(dotColor, Graphics.COLOR_TRANSPARENT);
+                dc.setColor(0x333333, Graphics.COLOR_TRANSPARENT);
                 dc.drawText(tx, ty, Graphics.FONT_XTINY, "-",
                     Graphics.TEXT_JUSTIFY_CENTER);
             } else {
@@ -322,30 +314,52 @@ class GolfView extends WatchUi.View {
                     dc.drawRectangle(shapeCx - r + 2, shapeCy - r + 2, r * 2 - 4, r * 2 - 4);
                 }
 
-                var numColor = isEditCell ? Graphics.COLOR_BLACK : scoreColor(diff);
-                dc.setColor(numColor, Graphics.COLOR_TRANSPARENT);
+                dc.setColor(scoreColor(diff), Graphics.COLOR_TRANSPARENT);
                 dc.drawText(tx, ty, Graphics.FONT_XTINY, score.toString(),
                     Graphics.TEXT_JUSTIFY_CENTER);
             }
         }
 
-        // Totals
-        var total = _model.totalStrokes();
-        var vpar  = _model.scoreVsPar();
-        var divY  = row3Y + cellH + 6;
+        // Totals — exclude the hole currently being edited so numbers
+        // only move when a score is committed, not during live adjustment.
+        var total    = 0;
+        var vpar     = 0;
+        var outScore = 0;
+        var inScore  = 0;
+        for (var i = 0; i < 18; i++) {
+            if (editing && i == _model.editHole) { continue; }
+            var s = _model.scores[i] as Number;
+            if (s > 0) {
+                var p = _model.getParForHole(i);
+                total += s;
+                vpar  += s - p;
+                if (i < 9) { outScore += s; } else { inScore += s; }
+            }
+        }
 
+        var divY = row3Y + cellH + 6;
         dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
         dc.drawLine(40, divY, w - 40, divY);
 
         if (total > 0) {
-            var vparStr = vpar > 0 ? "+" + vpar : vpar.toString();
+            var vparStr   = vpar > 0 ? "(+" + vpar + ")" : "(" + vpar.toString() + ")";
+            var vparColor = vpar < 0 ? Graphics.COLOR_GREEN
+                                     : (vpar > 0 ? Graphics.COLOR_RED
+                                                 : Graphics.COLOR_WHITE);
             dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, divY + 4, Graphics.FONT_TINY,
-                total + " strokes",
-                Graphics.TEXT_JUSTIFY_CENTER);
-            dc.setColor(scoreColor(vpar), Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, divY + 24, Graphics.FONT_TINY,
+            dc.drawText(cx - 2, divY + 6, Graphics.FONT_TINY,
+                total + " strokes ",
+                Graphics.TEXT_JUSTIFY_RIGHT);
+            dc.setColor(vparColor, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(cx - 2, divY + 6, Graphics.FONT_TINY,
                 vparStr,
+                Graphics.TEXT_JUSTIFY_LEFT);
+
+            var outStr = outScore > 0 ? outScore.toString() : "-";
+            var inStr  = inScore  > 0 ? inScore.toString()  : "-";
+            dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(cx, divY + 28, Graphics.FONT_XTINY,
+                "Out " + outStr + "   In " + inStr,
                 Graphics.TEXT_JUSTIFY_CENTER);
         }
 
