@@ -98,32 +98,43 @@ class GolfView extends WatchUi.View {
         var h = dc.getHeight();
         var cx = w / 2;
 
+        // ── Header band ─────────────────────────
+        var fhSmall = dc.getFontHeight(Graphics.FONT_SMALL);
+        var fhTiny  = dc.getFontHeight(Graphics.FONT_TINY);
+        var headerH = fhSmall + fhTiny + 12;  // two text lines + padding
+
         dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_GREEN);
-        dc.fillRectangle(0, 0, w, 52);
+        dc.fillRectangle(0, 0, w, headerH);
         dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
-        // Line 1: hole number
-        dc.drawText(cx, 6, Graphics.FONT_SMALL, "Hole " + _model.holeNumber(),
+
+        var line1Y = (headerH - fhSmall - fhTiny - 4) / 2;
+        dc.drawText(cx, line1Y, Graphics.FONT_SMALL,
+            "Hole " + _model.holeNumber(),
             Graphics.TEXT_JUSTIFY_CENTER);
-        // Line 2: par and zero-padded SI — FONT_TINY balances FONT_SMALL above
         var si = _model.getStrokeIndex();
         var siStr = si < 10 ? "SI 0" + si : "SI " + si;
-        dc.drawText(cx, 28, Graphics.FONT_TINY,
+        dc.drawText(cx, line1Y + fhSmall + 4, Graphics.FONT_TINY,
             "Par " + _model.getPar() + "   " + siStr,
             Graphics.TEXT_JUSTIFY_CENTER);
 
-        var y1 = 64;
-        var y2 = 102;
-        var y3 = 140;
+        // ── Distance rows: B / M / F ────────────
+        // Evenly distribute 3 rows in the space between header and hints.
+        var fhMed    = dc.getFontHeight(Graphics.FONT_MEDIUM);
+        var hintsTop = h - 44;
+        var available = hintsTop - headerH;
+        var rowStep  = available / 3;
+        var y1 = headerH + (rowStep - fhMed) / 2;
+        var y2 = y1 + rowStep;
+        var y3 = y2 + rowStep;
 
         if (!_model.gpsReady) {
             dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, 56, Graphics.FONT_XTINY, "Acquiring GPS...",
+            dc.drawText(cx, headerH + 2, Graphics.FONT_XTINY, "Acquiring GPS...",
                 Graphics.TEXT_JUSTIFY_CENTER);
             var noGpsLabelW = (dc.getTextDimensions("B", Graphics.FONT_SMALL) as Array<Number>)[0];
             var noGpsDistW  = (dc.getTextDimensions("---", Graphics.FONT_MEDIUM) as Array<Number>)[0];
             var noGpsGap    = 8;
-            var noGpsRowW   = noGpsLabelW + noGpsGap + noGpsDistW;
-            var noGpsLx     = cx - noGpsRowW / 2 + noGpsLabelW;
+            var noGpsLx     = cx - (noGpsLabelW + noGpsGap + noGpsDistW) / 2 + noGpsLabelW;
             var noGpsDx     = noGpsLx + noGpsGap;
             dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
             dc.drawText(noGpsLx, y1, Graphics.FONT_SMALL, "B", Graphics.TEXT_JUSTIFY_RIGHT);
@@ -139,10 +150,9 @@ class GolfView extends WatchUi.View {
 
             var labelW = (dc.getTextDimensions("M", Graphics.FONT_SMALL) as Array<Number>)[0];
             var distW  = (dc.getTextDimensions(fmtDist(middle), Graphics.FONT_MEDIUM) as Array<Number>)[0];
-            var rowGap = 8;
-            var rowW   = labelW + rowGap + distW;
-            var lx     = cx - rowW / 2 + labelW;
-            var dx     = lx + rowGap;
+            var gap    = 8;
+            var lx     = cx - (labelW + gap + distW) / 2 + labelW;
+            var dx     = lx + gap;
 
             dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
             dc.drawText(lx, y1, Graphics.FONT_SMALL, "B", Graphics.TEXT_JUSTIFY_RIGHT);
@@ -159,14 +169,14 @@ class GolfView extends WatchUi.View {
             dc.drawText(dx, y3, Graphics.FONT_MEDIUM, fmtDist(front), Graphics.TEXT_JUSTIFY_LEFT);
         }
 
-        // Score badge — left gutter at M-row height, clear of distances and bezel
+        // ── Score badge: left gutter, vertically at M-row centre ────
         var holeScore = _model.scores[_model.currentHole] as Number;
         if (holeScore > 0) {
             var par  = _model.getPar();
             var diff = holeScore - par;
-            var bx   = 30;
-            var by   = y2;
-            var r    = 14;
+            var bx   = w / 8;
+            var by   = y2 + fhMed / 2;  // centre of M row
+            var r    = fhMed / 2;
             if (diff <= -2) {
                 dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
                 dc.drawCircle(bx, by, r);
