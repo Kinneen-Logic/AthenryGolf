@@ -120,3 +120,5 @@ GPS golf app for a Garmin Forerunner 245 Music. Built in Monkey C (Connect IQ SD
 **To Do**
 - [ ] Walk Athenry Golf Club greens and record GPS coordinates for all 18 holes in `GolfModel.mc`
 - [ ] Shot tracker real-world test on course
+
+Saturday and Sunday 21/22 March time spent ~6 hours
