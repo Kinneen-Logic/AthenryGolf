@@ -262,19 +262,21 @@ class GolfView extends WatchUi.View {
         var eh = _model.editHole;
         var es = _model.scores[eh] as Number;
         var ep = _model.getParForHole(eh);
-        var hPrefix = editing ? "Editing " : "";
-        dc.drawText(cx, 6, Graphics.FONT_XTINY,
-            hPrefix + "H" + (eh + 1) + "  Par " + ep,
+        var hLine1 = editing ? "Editing H" + (eh + 1) + "  Par " + ep
+                             : "H" + (eh + 1) + "  Par " + ep;
+        dc.drawText(cx, 6, Graphics.FONT_XTINY, hLine1,
             Graphics.TEXT_JUSTIFY_CENTER);
-        if (es > 0) {
-            dc.setColor(scoreColor(es - ep), Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, 19, Graphics.FONT_TINY,
-                es + " " + scoreLabel(es, ep, es - ep),
-                Graphics.TEXT_JUSTIFY_CENTER);
-        } else {
-            dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, 19, Graphics.FONT_TINY, "No score",
-                Graphics.TEXT_JUSTIFY_CENTER);
+        if (editing) {
+            if (es > 0) {
+                dc.setColor(scoreColor(es - ep), Graphics.COLOR_TRANSPARENT);
+                dc.drawText(cx, 19, Graphics.FONT_TINY,
+                    es + " " + scoreLabel(es, ep, es - ep),
+                    Graphics.TEXT_JUSTIFY_CENTER);
+            } else {
+                dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
+                dc.drawText(cx, 19, Graphics.FONT_TINY, "No score",
+                    Graphics.TEXT_JUSTIFY_CENTER);
+            }
         }
 
         // Grid: 3 rows × 6 holes
@@ -313,12 +315,17 @@ class GolfView extends WatchUi.View {
             var isCursor  = (i == _model.editHole);
             var isEditCell = editing && isCursor;
 
-            if (isCursor && !editing) {
-                // Browsing: solid underscore, score not shown (header has the detail)
+            if (isCursor && !editing && score == 0) {
+                // Browsing an unscored hole — show underscore placeholder only
                 dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
                 dc.drawText(tx, ty, Graphics.FONT_XTINY, "_",
                     Graphics.TEXT_JUSTIFY_CENTER);
                 continue;
+            }
+            if (isCursor && !editing) {
+                // Browsing a scored hole — dim border shows cursor position
+                dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
+                dc.drawRectangle(x, y, cellW, cellH);
             }
             if (isEditCell && _model.blinkOn) {
                 // Editing, blink-on: draw a white border around the cell so the
