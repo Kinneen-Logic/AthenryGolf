@@ -143,12 +143,20 @@ class GolfView extends WatchUi.View {
 
         if (!_model.gpsReady) {
             // . → .. → ... cycling, full cycle every ~1.2 s (3 × 400 ms)
-            var phase = ((System.getTimer() / 400) % 3).toNumber();
-            var dots  = phase == 0 ? "." : (phase == 1 ? ".." : "...");
+            var phase   = ((System.getTimer() / 400) % 3).toNumber();
+            var dots    = phase == 0 ? "." : (phase == 1 ? ".." : "...");
+            var fhAnim  = dc.getFontHeight(Graphics.FONT_SMALL);
+            var animY   = headerH + (hintsTop - headerH - fhAnim) / 2;
+            // Centre the full "Acquiring GPS..." block so the label never drifts.
+            // Measure label + widest dots to get a fixed block width.
+            var labelW  = (dc.getTextDimensions("Acquiring GPS", Graphics.FONT_SMALL) as Array<Number>)[0];
+            var maxDotW = (dc.getTextDimensions("...", Graphics.FONT_SMALL) as Array<Number>)[0];
+            var pivot   = cx - (labelW + maxDotW) / 2 + labelW;
             dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, headerH + (hintsTop - headerH - fhMed) / 2,
-                Graphics.FONT_MEDIUM, "Acquiring GPS" + dots,
-                Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(pivot, animY, Graphics.FONT_SMALL, "Acquiring GPS",
+                Graphics.TEXT_JUSTIFY_RIGHT);
+            dc.drawText(pivot, animY, Graphics.FONT_SMALL, dots,
+                Graphics.TEXT_JUSTIFY_LEFT);
         } else {
             var front  = _model.distToFront();
             var middle = _model.distToMiddle();
