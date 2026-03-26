@@ -257,25 +257,23 @@ class GolfView extends WatchUi.View {
         dc.setColor(0x008080, 0x008080);
         dc.fillRectangle(0, 0, w, 42);
         dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
-        if (editing) {
-            var eh = _model.editHole;
-            var es = _model.scores[eh] as Number;
-            var ep = _model.getParForHole(eh);
-            dc.drawText(cx, 6, Graphics.FONT_XTINY,
-                "Editing H" + (eh + 1) + "  Par " + ep,
+
+        // Header always shows the cursor hole — "Editing" prefix only when in edit mode
+        var eh = _model.editHole;
+        var es = _model.scores[eh] as Number;
+        var ep = _model.getParForHole(eh);
+        var hPrefix = editing ? "Editing " : "";
+        dc.drawText(cx, 6, Graphics.FONT_XTINY,
+            hPrefix + "H" + (eh + 1) + "  Par " + ep,
+            Graphics.TEXT_JUSTIFY_CENTER);
+        if (es > 0) {
+            dc.setColor(scoreColor(es - ep), Graphics.COLOR_TRANSPARENT);
+            dc.drawText(cx, 19, Graphics.FONT_TINY,
+                es + " " + scoreLabel(es, ep, es - ep),
                 Graphics.TEXT_JUSTIFY_CENTER);
-            if (es > 0) {
-                dc.setColor(scoreColor(es - ep), Graphics.COLOR_TRANSPARENT);
-                dc.drawText(cx, 19, Graphics.FONT_TINY,
-                    es + " " + scoreLabel(es, ep, es - ep),
-                    Graphics.TEXT_JUSTIFY_CENTER);
-            } else {
-                dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
-                dc.drawText(cx, 19, Graphics.FONT_TINY, "No score",
-                    Graphics.TEXT_JUSTIFY_CENTER);
-            }
         } else {
-            dc.drawText(cx, 14, Graphics.FONT_SMALL, "Scorecard",
+            dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(cx, 19, Graphics.FONT_TINY, "No score",
                 Graphics.TEXT_JUSTIFY_CENTER);
         }
 
@@ -312,8 +310,18 @@ class GolfView extends WatchUi.View {
             var shapeCy = ty + fh / 2;
             var r = fh / 2 + 2;
 
-            var isEditCell = editing && i == _model.editHole;
+            var isCursor  = (i == _model.editHole);
+            var isEditCell = editing && isCursor;
+
+            if (isCursor && !editing) {
+                // Browsing: solid underscore cursor
+                dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
+                dc.drawText(tx, ty, Graphics.FONT_XTINY, "_",
+                    Graphics.TEXT_JUSTIFY_CENTER);
+                continue;
+            }
             if (isEditCell && !_model.blinkOn) {
+                // Editing, blink-off: underscore
                 dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
                 dc.drawText(tx, ty, Graphics.FONT_XTINY, "_",
                     Graphics.TEXT_JUSTIFY_CENTER);
@@ -396,9 +404,9 @@ class GolfView extends WatchUi.View {
         }
 
         if (editing) {
-            drawHints(dc, w, h, "UP+ DN-", "START Hole");
+            drawHints(dc, w, h, "UP+ DN-", "START Done");
         } else {
-            drawHints(dc, w, h, "START Edit", "BACK Shot");
+            drawHints(dc, w, h, "UP/DN Hole  START Edit", "BACK Shot");
         }
     }
 

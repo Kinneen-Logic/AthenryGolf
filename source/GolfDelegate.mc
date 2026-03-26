@@ -4,13 +4,14 @@ import Toybox.Lang;
 // Forerunner 245 — 4-button scheme
 // BACK cycles: Green → Scorecard → Shot Tracker → Settings → Exit → Green
 //
-// GREEN:        UP next hole, DN prev, START score, BACK scorecard
-// SCORE ENTRY:  UP +1, DN -1, START save & next, BACK cancel
-// SCORECARD:    START edit toggle, UP/DN adjust (edit), BACK → shot
-// SHOT TRACKER: START mark/calc, BACK → settings
-// SETTINGS:     UP/DN toggle options, START toggle, BACK → exit screen
-// EXIT SCREEN:  START exits app, BACK → green
-// SUMMARY:      DN/BACK → H18
+// GREEN:             UP next hole, DN prev, START score, BACK scorecard
+// SCORE ENTRY:       UP +1, DN -1, START save & next, BACK cancel
+// SCORECARD browse:  UP/DN move cursor, START enter edit, BACK → shot
+// SCORECARD edit:    UP/DN adjust score, START confirm, BACK cancel
+// SHOT TRACKER:      START mark/calc, BACK → settings
+// SETTINGS:          UP/DN toggle options, START toggle, BACK → exit screen
+// EXIT SCREEN:       START exits app, BACK → green
+// SUMMARY:           DN/BACK → H18
 
 class GolfDelegate extends WatchUi.BehaviorDelegate {
 
@@ -29,8 +30,12 @@ class GolfDelegate extends WatchUi.BehaviorDelegate {
             _model.nextHole();
         } else if (mode == :scoreEntry) {
             _model.adjustScore(1);
-        } else if (mode == :light && _model.lightIndex == 0 && _model.editActive) {
-            _model.adjustScoreForHole(_model.editHole, 1);
+        } else if (mode == :light && _model.lightIndex == 0) {
+            if (_model.editActive) {
+                _model.adjustScoreForHole(_model.editHole, 1);
+            } else {
+                _model.editHole = (_model.editHole + 17) % 18; // browse prev
+            }
         } else if (mode == :light && _model.lightIndex == 2) {
             _model.settingIndex = (_model.settingIndex + 1) % 2;
         }
@@ -44,8 +49,12 @@ class GolfDelegate extends WatchUi.BehaviorDelegate {
             _model.prevHole();
         } else if (mode == :scoreEntry) {
             _model.adjustScore(-1);
-        } else if (mode == :light && _model.lightIndex == 0 && _model.editActive) {
-            _model.adjustScoreForHole(_model.editHole, -1);
+        } else if (mode == :light && _model.lightIndex == 0) {
+            if (_model.editActive) {
+                _model.adjustScoreForHole(_model.editHole, -1);
+            } else {
+                _model.editHole = (_model.editHole + 1) % 18; // browse next
+            }
         } else if (mode == :light && _model.lightIndex == 2) {
             _model.settingIndex = (_model.settingIndex + 1) % 2;
         } else if (mode == :summary) {
@@ -63,9 +72,11 @@ class GolfDelegate extends WatchUi.BehaviorDelegate {
             _model.nextHole();
         } else if (mode == :light && _model.lightIndex == 0) {
             if (_model.editActive) {
-                _model.editHole = (_model.editHole + 1) % 18;
+                // Confirm edit — return to browsing on same hole
+                _model.editActive = false;
+                _view.stopBlink();
             } else {
-                _model.editHole = _model.currentHole;
+                // Enter edit for the cursor hole
                 _model.editActive = true;
                 _view.startBlink();
             }
@@ -97,9 +108,10 @@ class GolfDelegate extends WatchUi.BehaviorDelegate {
         var mode = _model.uiMode;
 
         if (mode == :green) {
-            // Enter the secondary menu (scorecard → shot → settings)
+            // Enter the secondary menu — cursor starts on current hole
             _model.lightIndex = 0;
             _model.editActive = false;
+            _model.editHole   = _model.currentHole;
             _model.uiMode = :light;
             WatchUi.requestUpdate();
             return true;
