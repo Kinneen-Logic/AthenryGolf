@@ -310,11 +310,8 @@ class GolfView extends WatchUi.View {
                 dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
                 dc.drawRectangle(x, y, cellW, cellH);
             }
-            if (isEditCell && _model.blinkOn) {
-                // Editing, blink-on: draw a white border around the cell so the
-                // score remains visible at all times
-                dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-                dc.drawRectangle(x, y, cellW, cellH);
+            if (isEditCell && !_model.blinkOn) {
+                continue;  // blink-off: hide number+shape to make it flash
             }
 
             if (score == 0) {
