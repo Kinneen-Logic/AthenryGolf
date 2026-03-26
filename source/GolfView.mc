@@ -3,6 +3,7 @@ import Toybox.Graphics;
 import Toybox.Position;
 import Toybox.Lang;
 import Toybox.Timer;
+import Toybox.System;
 
 class GolfView extends WatchUi.View {
 
@@ -38,8 +39,8 @@ class GolfView extends WatchUi.View {
         var info = Position.getInfo();
         if (info.position != null) {
             _model.updatePosition(info);
-            WatchUi.requestUpdate();
         }
+        WatchUi.requestUpdate();
     }
 
     function onPosition(info as Position.Info) as Void {
@@ -128,21 +129,13 @@ class GolfView extends WatchUi.View {
         var y3 = y2 + rowStep;
 
         if (!_model.gpsReady) {
+            // Animate ". / .. / ..." cycling on every 700 ms tick
+            var phase = ((System.getTimer() / 700) % 3).toNumber();
+            var dots  = phase == 0 ? "." : (phase == 1 ? ".." : "...");
             dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, headerH + 2, Graphics.FONT_XTINY, "Acquiring GPS...",
+            dc.drawText(cx, headerH + (hintsTop - headerH - fhMed) / 2,
+                Graphics.FONT_MEDIUM, "Acquiring GPS" + dots,
                 Graphics.TEXT_JUSTIFY_CENTER);
-            var noGpsLabelW = (dc.getTextDimensions("B", Graphics.FONT_SMALL) as Array<Number>)[0];
-            var noGpsDistW  = (dc.getTextDimensions("---", Graphics.FONT_MEDIUM) as Array<Number>)[0];
-            var noGpsGap    = 8;
-            var noGpsLx     = cx - (noGpsLabelW + noGpsGap + noGpsDistW) / 2 + noGpsLabelW;
-            var noGpsDx     = noGpsLx + noGpsGap;
-            dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(noGpsLx, y1, Graphics.FONT_SMALL, "B", Graphics.TEXT_JUSTIFY_RIGHT);
-            dc.drawText(noGpsLx, y2, Graphics.FONT_SMALL, "M", Graphics.TEXT_JUSTIFY_RIGHT);
-            dc.drawText(noGpsLx, y3, Graphics.FONT_SMALL, "F", Graphics.TEXT_JUSTIFY_RIGHT);
-            dc.drawText(noGpsDx, y1, Graphics.FONT_MEDIUM, "---", Graphics.TEXT_JUSTIFY_LEFT);
-            dc.drawText(noGpsDx, y2, Graphics.FONT_MEDIUM, "---", Graphics.TEXT_JUSTIFY_LEFT);
-            dc.drawText(noGpsDx, y3, Graphics.FONT_MEDIUM, "---", Graphics.TEXT_JUSTIFY_LEFT);
         } else {
             var front  = _model.distToFront();
             var middle = _model.distToMiddle();
