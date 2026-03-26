@@ -190,7 +190,7 @@ class GolfView extends WatchUi.View {
                 Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
         }
 
-        drawHints(dc, w, h, "START Score  BACK More");
+        drawHints(dc, w, h, "START Score", "BACK More");
     }
 
     // ── Score entry (START from green) ──────────
@@ -219,7 +219,7 @@ class GolfView extends WatchUi.View {
         dc.drawText(cx, 116, Graphics.FONT_SMALL, scoreLabel(score, par, diff),
             Graphics.TEXT_JUSTIFY_CENTER);
 
-        drawHints(dc, w, h, "UP+ DN-  START Next");
+        drawHints(dc, w, h, "UP+ DN-", "START Next");
     }
 
     // ── Scorecard with inline edit ──────────────
@@ -364,9 +364,9 @@ class GolfView extends WatchUi.View {
         }
 
         if (editing) {
-            drawHints(dc, w, h, "UP+ DN-  START Hole");
+            drawHints(dc, w, h, "UP+ DN-", "START Hole");
         } else {
-            drawHints(dc, w, h, "START Edit  BACK Shot");
+            drawHints(dc, w, h, "START Edit", "BACK Shot");
         }
     }
 
@@ -387,7 +387,7 @@ class GolfView extends WatchUi.View {
             dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
             dc.drawText(cx, h / 2 - 10, Graphics.FONT_MEDIUM, "No GPS",
                 Graphics.TEXT_JUSTIFY_CENTER);
-            drawHints(dc, w, h, "BACK Close");
+            drawHints(dc, w, h, "BACK Close", "");
             return;
         }
 
@@ -398,7 +398,7 @@ class GolfView extends WatchUi.View {
             dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
             dc.drawText(cx, h / 2, Graphics.FONT_XTINY, "then press START",
                 Graphics.TEXT_JUSTIFY_CENTER);
-            drawHints(dc, w, h, "START Calc  BACK Next");
+            drawHints(dc, w, h, "START Calc", "BACK Next");
         } else if (_model.shotCalculated) {
             dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
             dc.drawText(cx, 50, Graphics.FONT_XTINY, "Last shot",
@@ -418,14 +418,14 @@ class GolfView extends WatchUi.View {
             dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
             dc.drawText(cx, h / 2 + 30, Graphics.FONT_SMALL, shotUnit,
                 Graphics.TEXT_JUSTIFY_CENTER);
-            drawHints(dc, w, h, "START New  BACK Next");
+            drawHints(dc, w, h, "START New", "BACK Next");
         } else {
             dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
             dc.drawText(cx, h / 2 - 30, Graphics.FONT_SMALL, "Press START",
                 Graphics.TEXT_JUSTIFY_CENTER);
             dc.drawText(cx, h / 2, Graphics.FONT_XTINY, "to mark position",
                 Graphics.TEXT_JUSTIFY_CENTER);
-            drawHints(dc, w, h, "START Mark  BACK Next");
+            drawHints(dc, w, h, "START Mark", "BACK Next");
         }
     }
 
@@ -471,7 +471,7 @@ class GolfView extends WatchUi.View {
                 Graphics.TEXT_JUSTIFY_CENTER);
         }
 
-        drawHints(dc, w, h, "DN or BACK to H18");
+        drawHints(dc, w, h, "DN or BACK to H18", "");
     }
 
     // ── Helpers ─────────────────────────────────
@@ -484,11 +484,19 @@ class GolfView extends WatchUi.View {
         return d.toString() + "Y";
     }
 
-    private function drawHints(dc as Graphics.Dc, w as Number, h as Number, hint as String) as Void {
+    private function drawHints(dc as Graphics.Dc, w as Number, h as Number, line1 as String, line2 as String) as Void {
         if (!_model.showHints) { return; }
+        var cx = w / 2;
         dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(w / 2, h - 42, Graphics.FONT_XTINY, hint,
-            Graphics.TEXT_JUSTIFY_CENTER);
+        if (line2.length() == 0) {
+            dc.drawText(cx, h - 35, Graphics.FONT_XTINY, line1,
+                Graphics.TEXT_JUSTIFY_CENTER);
+        } else {
+            dc.drawText(cx, h - 42, Graphics.FONT_XTINY, line1,
+                Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(cx, h - 28, Graphics.FONT_XTINY, line2,
+                Graphics.TEXT_JUSTIFY_CENTER);
+        }
     }
 
     private function drawSettingsView(dc as Graphics.Dc) as Void {
@@ -496,42 +504,59 @@ class GolfView extends WatchUi.View {
         var h = dc.getHeight();
         var cx = w / 2;
 
+        var headerH = 42;
         dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_DK_GRAY);
-        dc.fillRectangle(0, 0, w, 42);
+        dc.fillRectangle(0, 0, w, headerH);
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, 14, Graphics.FONT_SMALL, "Settings",
-            Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, headerH / 2, Graphics.FONT_SMALL, "Settings",
+            Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+
+        // Vertically centre two rows between header bottom and hints top.
+        // All positions derived from actual font height — no magic numbers.
+        var fh       = dc.getFontHeight(Graphics.FONT_TINY);
+        var hintsTop = h - 44;
+        var rowGap   = fh / 2;
+        var blockH   = fh * 2 + rowGap;
+        var row0Y    = headerH + (hintsTop - headerH - blockH) / 2;
+        var row1Y    = row0Y + fh + rowGap;
+
+        // Chevron sits a fixed gap left of the widest label ("Button hints")
+        var labelW   = (dc.getTextDimensions("Button hints", Graphics.FONT_TINY) as Array<Number>)[0];
+        var chevronX = cx - 8 - labelW - 8;
 
         // Row 0: Button hints
-        var row0Selected = (_model.settingIndex == 0);
-        dc.setColor(row0Selected ? Graphics.COLOR_WHITE : Graphics.COLOR_LT_GRAY,
+        var row0Sel = (_model.settingIndex == 0);
+        dc.setColor(row0Sel ? Graphics.COLOR_WHITE : Graphics.COLOR_LT_GRAY,
             Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx - 10, 60, Graphics.FONT_XTINY, "Button hints",
+        dc.drawText(cx - 8, row0Y, Graphics.FONT_TINY, "Button hints",
             Graphics.TEXT_JUSTIFY_RIGHT);
         dc.setColor(_model.showHints ? Graphics.COLOR_GREEN : Graphics.COLOR_RED,
             Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, 60, Graphics.FONT_XTINY,
-            _model.showHints ? "  ON" : "  OFF", Graphics.TEXT_JUSTIFY_LEFT);
-        if (row0Selected) {
+        dc.drawText(cx + 8, row0Y, Graphics.FONT_TINY,
+            _model.showHints ? "ON" : "OFF", Graphics.TEXT_JUSTIFY_LEFT);
+        if (row0Sel) {
             dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx - 60, 60, Graphics.FONT_XTINY, ">", Graphics.TEXT_JUSTIFY_LEFT);
+            dc.drawText(chevronX, row0Y, Graphics.FONT_TINY, ">",
+                Graphics.TEXT_JUSTIFY_LEFT);
         }
 
         // Row 1: Distance units
-        var row1Selected = (_model.settingIndex == 1);
-        dc.setColor(row1Selected ? Graphics.COLOR_WHITE : Graphics.COLOR_LT_GRAY,
+        var row1Sel = (_model.settingIndex == 1);
+        dc.setColor(row1Sel ? Graphics.COLOR_WHITE : Graphics.COLOR_LT_GRAY,
             Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx - 10, 90, Graphics.FONT_XTINY, "Distance",
+        dc.drawText(cx - 8, row1Y, Graphics.FONT_TINY, "Distance",
             Graphics.TEXT_JUSTIFY_RIGHT);
         dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, 90, Graphics.FONT_XTINY,
-            _model.useMetres ? "  Metres" : "  Yards", Graphics.TEXT_JUSTIFY_LEFT);
-        if (row1Selected) {
+        dc.drawText(cx + 8, row1Y, Graphics.FONT_TINY,
+            _model.useMetres ? "Metres" : "Yards", Graphics.TEXT_JUSTIFY_LEFT);
+        if (row1Sel) {
             dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx - 60, 90, Graphics.FONT_XTINY, ">", Graphics.TEXT_JUSTIFY_LEFT);
+            dc.drawText(chevronX, row1Y, Graphics.FONT_TINY, ">",
+                Graphics.TEXT_JUSTIFY_LEFT);
         }
 
-        drawHints(dc, w, h, "UP/DN Select  START Toggle  BACK Green");
+        // Keep each hint line short — the round bezel clips the bottom corners
+        drawHints(dc, w, h, "UP/DN Select", "START Toggle  BACK");
     }
 
     private function drawExitView(dc as Graphics.Dc) as Void {
@@ -551,7 +576,7 @@ class GolfView extends WatchUi.View {
         dc.drawText(cx, h / 2 + 4, Graphics.FONT_XTINY, "to exit the app",
             Graphics.TEXT_JUSTIFY_CENTER);
 
-        drawHints(dc, w, h, "START Exit  BACK Green");
+        drawHints(dc, w, h, "START Exit", "BACK Green");
     }
 
     private function scoreColor(diff as Number) as Number {
