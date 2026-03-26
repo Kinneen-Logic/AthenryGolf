@@ -9,6 +9,7 @@ class GolfView extends WatchUi.View {
 
     private var _model as GolfModel;
     private var _gpsPollTimer as Timer.Timer?;
+    private var _gpsAnimTimer as Timer.Timer?;
     private var _blinkTimer as Timer.Timer?;
 
     function initialize(model as GolfModel) {
@@ -24,6 +25,8 @@ class GolfView extends WatchUi.View {
             method(:onPosition));
         _gpsPollTimer = new Timer.Timer();
         _gpsPollTimer.start(method(:pollPosition), 2000, true);
+        _gpsAnimTimer = new Timer.Timer();
+        _gpsAnimTimer.start(method(:onGpsAnim), 400, true);
     }
 
     function onHide() as Void {
@@ -32,7 +35,17 @@ class GolfView extends WatchUi.View {
             _gpsPollTimer.stop();
             _gpsPollTimer = null;
         }
+        if (_gpsAnimTimer != null) {
+            _gpsAnimTimer.stop();
+            _gpsAnimTimer = null;
+        }
         stopBlink();
+    }
+
+    function onGpsAnim() as Void {
+        if (!_model.gpsReady) {
+            WatchUi.requestUpdate();
+        }
     }
 
     function pollPosition() as Void {
@@ -129,8 +142,8 @@ class GolfView extends WatchUi.View {
         var y3 = y2 + rowStep;
 
         if (!_model.gpsReady) {
-            // Animate ". / .. / ..." cycling on every 700 ms tick
-            var phase = ((System.getTimer() / 700) % 3).toNumber();
+            // . → .. → ... cycling, full cycle every ~1.2 s (3 × 400 ms)
+            var phase = ((System.getTimer() / 400) % 3).toNumber();
             var dots  = phase == 0 ? "." : (phase == 1 ? ".." : "...");
             dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
             dc.drawText(cx, headerH + (hintsTop - headerH - fhMed) / 2,
