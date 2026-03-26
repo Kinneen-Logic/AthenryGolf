@@ -290,6 +290,9 @@ class GolfView extends WatchUi.View {
 
             var isEditCell = editing && i == _model.editHole;
             if (isEditCell && !_model.blinkOn) {
+                dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
+                dc.drawText(tx, ty, Graphics.FONT_XTINY, "_",
+                    Graphics.TEXT_JUSTIFY_CENTER);
                 continue;
             }
 
@@ -355,12 +358,17 @@ class GolfView extends WatchUi.View {
                 vparStr,
                 Graphics.TEXT_JUSTIFY_LEFT);
 
-            var outStr = outScore > 0 ? outScore.toString() : "-";
-            var inStr  = inScore  > 0 ? inScore.toString()  : "-";
-            dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, divY + 28, Graphics.FONT_XTINY,
-                "Out " + outStr + "   In " + inStr,
-                Graphics.TEXT_JUSTIFY_CENTER);
+            var outDone = _model.front9Complete();
+            var inDone  = _model.back9Complete();
+            if (outDone || inDone) {
+                var outStr = outDone ? "Out " + outScore : "";
+                var inStr  = inDone  ? "In "  + inScore  : "";
+                var sep    = (outDone && inDone) ? "   " : "";
+                dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
+                dc.drawText(cx, divY + 28, Graphics.FONT_XTINY,
+                    outStr + sep + inStr,
+                    Graphics.TEXT_JUSTIFY_CENTER);
+            }
         }
 
         if (editing) {

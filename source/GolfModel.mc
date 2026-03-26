@@ -157,6 +157,20 @@ class GolfModel {
         return total;
     }
 
+    function front9Complete() as Boolean {
+        for (var i = 0; i < 9; i++) {
+            if ((scores[i] as Number) == 0) { return false; }
+        }
+        return true;
+    }
+
+    function back9Complete() as Boolean {
+        for (var i = 9; i < 18; i++) {
+            if ((scores[i] as Number) == 0) { return false; }
+        }
+        return true;
+    }
+
     function totalPar() as Number {
         var total = 0;
         for (var i = 0; i < 18; i++) {
