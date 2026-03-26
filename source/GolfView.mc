@@ -159,6 +159,37 @@ class GolfView extends WatchUi.View {
             dc.drawText(dx, y3, Graphics.FONT_MEDIUM, fmtDist(front), Graphics.TEXT_JUSTIFY_LEFT);
         }
 
+        // Score badge — left gutter at M-row height, clear of distances and bezel
+        var holeScore = _model.scores[_model.currentHole] as Number;
+        if (holeScore > 0) {
+            var par  = _model.getPar();
+            var diff = holeScore - par;
+            var bx   = 30;
+            var by   = y2;
+            var r    = 14;
+            if (diff <= -2) {
+                dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
+                dc.drawCircle(bx, by, r);
+                dc.drawCircle(bx, by, r - 3);
+            } else if (diff == -1) {
+                dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_TRANSPARENT);
+                dc.drawCircle(bx, by, r);
+            } else if (diff == 0) {
+                dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
+                dc.drawCircle(bx, by, r);
+            } else if (diff == 1) {
+                dc.setColor(Graphics.COLOR_ORANGE, Graphics.COLOR_TRANSPARENT);
+                dc.drawRectangle(bx - r, by - r, r * 2, r * 2);
+            } else if (diff >= 2) {
+                dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
+                dc.drawRectangle(bx - r, by - r, r * 2, r * 2);
+                dc.drawRectangle(bx - r + 2, by - r + 2, r * 2 - 4, r * 2 - 4);
+            }
+            dc.setColor(scoreColor(diff), Graphics.COLOR_TRANSPARENT);
+            dc.drawText(bx, by, Graphics.FONT_TINY, holeScore.toString(),
+                Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+        }
+
         drawHints(dc, w, h, "START Score  BACK More");
     }
 

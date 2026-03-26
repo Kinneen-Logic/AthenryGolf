@@ -93,14 +93,6 @@ class GolfDelegate extends WatchUi.BehaviorDelegate {
         return true;
     }
 
-    function onKey(evt as WatchUi.KeyEvent) as Boolean {
-        var key = evt.getKey();
-        if (key == WatchUi.KEY_START || key == WatchUi.KEY_ENTER) {
-            return onSelect();
-        }
-        return false;
-    }
-
     function onBack() as Boolean {
         var mode = _model.uiMode;
 
