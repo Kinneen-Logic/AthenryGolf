@@ -262,22 +262,8 @@ class GolfView extends WatchUi.View {
         var eh = _model.editHole;
         var es = _model.scores[eh] as Number;
         var ep = _model.getParForHole(eh);
-        var hLine1 = editing ? "Editing H" + (eh + 1) + "  Par " + ep
-                             : "H" + (eh + 1) + "  Par " + ep;
-        dc.drawText(cx, 6, Graphics.FONT_XTINY, hLine1,
+        dc.drawText(cx, 6, Graphics.FONT_XTINY, "H" + (eh + 1) + "  Par " + ep,
             Graphics.TEXT_JUSTIFY_CENTER);
-        if (editing) {
-            if (es > 0) {
-                dc.setColor(scoreColor(es - ep), Graphics.COLOR_TRANSPARENT);
-                dc.drawText(cx, 19, Graphics.FONT_TINY,
-                    es + " " + scoreLabel(es, ep, es - ep),
-                    Graphics.TEXT_JUSTIFY_CENTER);
-            } else {
-                dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
-                dc.drawText(cx, 19, Graphics.FONT_TINY, "No score",
-                    Graphics.TEXT_JUSTIFY_CENTER);
-            }
-        }
 
         // Grid: 3 rows × 6 holes
         var cellW  = 30;
