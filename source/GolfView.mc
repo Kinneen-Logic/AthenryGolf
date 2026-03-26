@@ -242,12 +242,12 @@ class GolfView extends WatchUi.View {
                 Graphics.TEXT_JUSTIFY_CENTER);
             if (es > 0) {
                 dc.setColor(scoreColor(es - ep), Graphics.COLOR_TRANSPARENT);
-                dc.drawText(cx, 20, Graphics.FONT_SMALL,
+                dc.drawText(cx, 19, Graphics.FONT_TINY,
                     es + " " + scoreLabel(es, ep, es - ep),
                     Graphics.TEXT_JUSTIFY_CENTER);
             } else {
                 dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
-                dc.drawText(cx, 20, Graphics.FONT_SMALL, "No score",
+                dc.drawText(cx, 19, Graphics.FONT_TINY, "No score",
                     Graphics.TEXT_JUSTIFY_CENTER);
             }
         } else {
@@ -255,23 +255,26 @@ class GolfView extends WatchUi.View {
                 Graphics.TEXT_JUSTIFY_CENTER);
         }
 
-        var cellW = 22;
-        var cellH = 18;
-        var gap   = 2;
-        var cols  = 9;
-        var rowW  = cols * cellW + (cols - 1) * gap;
+        // Grid: 3 rows × 6 holes
+        var cellW  = 30;
+        var cellH  = 22;
+        var colGap = 4;
+        var rowGap = 6;
+        var cols   = 6;
+        var rowW   = cols * cellW + (cols - 1) * colGap;
         var startX = (w - rowW) / 2;
-        var row1Y  = 48;
-        var row2Y  = row1Y + cellH + gap + 4;
+        var row1Y  = 50;
+        var row2Y  = row1Y + cellH + rowGap;
+        var row3Y  = row2Y + cellH + rowGap;
 
         var fh = dc.getFontHeight(Graphics.FONT_XTINY);
         var textYOff = (cellH - fh) / 2;
 
         for (var i = 0; i < 18; i++) {
-            var col = i % 9;
-            var row = i / 9;
-            var x   = startX + col * (cellW + gap);
-            var y   = row == 0 ? row1Y : row2Y;
+            var col = i % cols;
+            var row = i / cols;
+            var x   = startX + col * (cellW + colGap);
+            var y   = row == 0 ? row1Y : (row == 1 ? row2Y : row3Y);
             var score = _model.scores[i] as Number;
             var par   = _model.getParForHole(i);
             var diff  = score > 0 ? score - par : 0;
@@ -326,18 +329,23 @@ class GolfView extends WatchUi.View {
             }
         }
 
-        // Totals — only count holes with scores entered
+        // Totals
         var total = _model.totalStrokes();
         var vpar  = _model.scoreVsPar();
+        var divY  = row3Y + cellH + 6;
 
         dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawLine(30, h - 58, w - 30, h - 58);
+        dc.drawLine(40, divY, w - 40, divY);
 
         if (total > 0) {
             var vparStr = vpar > 0 ? "+" + vpar : vpar.toString();
             dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, h - 54, Graphics.FONT_XTINY,
-                total + " strokes  " + vparStr,
+            dc.drawText(cx, divY + 4, Graphics.FONT_TINY,
+                total + " strokes",
+                Graphics.TEXT_JUSTIFY_CENTER);
+            dc.setColor(scoreColor(vpar), Graphics.COLOR_TRANSPARENT);
+            dc.drawText(cx, divY + 24, Graphics.FONT_TINY,
+                vparStr,
                 Graphics.TEXT_JUSTIFY_CENTER);
         }
 
