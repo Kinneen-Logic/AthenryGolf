@@ -185,7 +185,7 @@ class GolfView extends WatchUi.View {
 
         // ── Score badge: left gutter, vertically at M-row centre ────
         var holeScore = _model.scores[_model.currentHole] as Number;
-        if (holeScore > 0) {
+        if (_model.gpsReady && holeScore > 0) {
             var par  = _model.getPar();
             var diff = holeScore - par;
             var bx   = w / 8;
@@ -197,9 +197,6 @@ class GolfView extends WatchUi.View {
                 dc.drawCircle(bx, by, r - 3);
             } else if (diff == -1) {
                 dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_TRANSPARENT);
-                dc.drawCircle(bx, by, r);
-            } else if (diff == 0) {
-                dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
                 dc.drawCircle(bx, by, r);
             } else if (diff == 1) {
                 dc.setColor(Graphics.COLOR_ORANGE, Graphics.COLOR_TRANSPARENT);
