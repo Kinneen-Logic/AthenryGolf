@@ -67,6 +67,9 @@ class GolfDelegate extends WatchUi.BehaviorDelegate {
     function onSelect() as Boolean {
         var mode = _model.uiMode;
         if (mode == :green) {
+            if ((_model.scores[_model.currentHole] as Number) == 0) {
+                _model.scores[_model.currentHole] = _model.getPar();
+            }
             _model.uiMode = :scoreEntry;
         } else if (mode == :scoreEntry) {
             _model.nextHole();
@@ -77,6 +80,9 @@ class GolfDelegate extends WatchUi.BehaviorDelegate {
                 _view.stopBlink();
             } else {
                 // Enter edit for the cursor hole
+                if ((_model.scores[_model.editHole] as Number) == 0) {
+                    _model.scores[_model.editHole] = _model.getParForHole(_model.editHole);
+                }
                 _model.editActive = true;
                 _view.startBlink();
             }
