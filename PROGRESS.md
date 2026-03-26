@@ -143,4 +143,46 @@ Saturday and Sunday 21/22 March time spent ~6 hours
 **Par changes from placeholders:**
 - H4: 5 → **4**, H6: 4 → **3**, H10: 4 → **5** (441m hole), H13: 5 → **4**, H17: 4 → **3**, H18: 5 → **4**
 
-Thursday 26 March
+---
+
+### Session 7 — Score Badge & Scorecard Grid
+**Goal:** Surface scored holes on the green view and rework the scorecard layout.
+
+**What was done:**
+- Added a score badge to the green view — positioned in the left gutter at the M-row centre; shows the PGA shape (circle/square) and hole score so you can glance at progress without leaving the green screen
+- Fixed score entry not auto-advancing to the next hole after START
+- Rebuilt the scorecard grid: 3 rows × 6 holes replacing the old cluttered layout
+- Fixed Eagle label vertical position and font size in the scorecard header
+
+---
+
+### Session 8 — Scorecard Polish & GPS Animation
+**Goal:** Add Out/In totals, tighten the scorecard UX, and improve GPS acquisition feedback.
+
+**What was done:**
+- Added Out/In sub-totals below the scorecard grid — only appear once the front 9 or back 9 is fully complete
+- Combined total line into a single inline `"54 strokes (+7)"` format with colour-coded vs-par
+- Running totals no longer update live while adjusting a score — only commit on START, preventing distracting number jumps
+- Edit cursor changed from white box to same-background so score remains visible
+- Hints stacked and re-centred to respect the round bezel clipping zone
+- GPS acquiring animation: cycles `. → .. → ...` on a 400 ms timer with a fixed label pivot so text never drifts
+- Scorecard: UP/DN now browses holes (cursor moves), START toggles edit mode for the selected hole — one-direction-only START navigation removed
+- Cursor indicator: unscored holes show `_`, edit-active hole shows a blinking `0`; UP/DN directions corrected
+
+---
+
+### Session 9 — UI Polish Pass
+**Goal:** Clean up score defaults, cursor visibility, and scorecard header clutter.
+
+**What was done:**
+- Score entry and card edit now **default to par** when a hole has no score yet — user adjusts up/down from par rather than up from 0
+- Scored holes are now **visible while the browse cursor passes over them** — previously the `continue` after drawing `_` hid the score entirely; now only unscored cells show `_`
+- Added a **dim gray border** around the cursor cell in browse mode so position is always clear without obscuring the score or shape
+- Scorecard header simplified: browse mode shows `"H4  Par 4"` only; removed score/label line and "Editing" prefix — score detail is visible in the grid cell itself
+- Green view: **score badge hidden when GPS not yet acquired** — acquiring animation has the screen to itself
+- Green view: **par no longer gets a shape** — par is the baseline, shown as plain white number with no circle
+- Edit mode: the **number and shape blink** instead of a white border flashing around the cell — number disappears on blink-off, reappears on blink-on
+
+---
+
+Thursday 26 March — time spent ~7.5 hours (4 hr walking greens with GPS logger, ~3.5 hrs coding)
