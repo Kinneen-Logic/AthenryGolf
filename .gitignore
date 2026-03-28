@@ -19,6 +19,10 @@ external-mir/
 # Personal dev notes
 PROGRESS.md
 
+# Golf API data (API key / private reference)
+golfapi_coordinates_raw.json
+golfapi_coordinates_comparison.md
+
 # Local scripts with hardcoded SDK paths
 sim.sh
 run.sh

@@ -115,7 +115,7 @@ class GolfView extends WatchUi.View {
         // ── Header band ─────────────────────────
         var fhSmall = dc.getFontHeight(Graphics.FONT_SMALL);
         var fhTiny  = dc.getFontHeight(Graphics.FONT_TINY);
-        var headerH = fhSmall + fhTiny + 12;  // two text lines + padding
+        var headerH = fhSmall + fhTiny + 12;
 
         dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_GREEN);
         dc.fillRectangle(0, 0, w, headerH);
@@ -135,24 +135,17 @@ class GolfView extends WatchUi.View {
             "Par " + _model.getPar() + "  " + ydStr + "  " + siStr,
             Graphics.TEXT_JUSTIFY_CENTER);
 
-        // ── Distance rows: B / M / F ────────────
-        // Evenly distribute 3 rows in the space between header and hints.
-        var fhMed    = dc.getFontHeight(Graphics.FONT_MEDIUM);
+        // ── Distance columns: Walk (ours) | API ─
+        var fhXtiny  = dc.getFontHeight(Graphics.FONT_XTINY);
+        var fhNum    = dc.getFontHeight(Graphics.FONT_SMALL);  // number rows
         var hintsTop = h - 44;
-        var available = hintsTop - headerH;
-        var rowStep  = available / 3;
-        var y1 = headerH + (rowStep - fhMed) / 2;
-        var y2 = y1 + rowStep;
-        var y3 = y2 + rowStep;
+        var colL     = cx / 2;           // ~60 — "Walk" column centre
+        var colR     = cx + cx / 2;      // ~180 — "API"  column centre
 
         if (!_model.gpsReady) {
-            // . → .. → ... cycling, full cycle every ~1.2 s (3 × 400 ms)
             var phase   = ((System.getTimer() / 400) % 3).toNumber();
             var dots    = phase == 0 ? "." : (phase == 1 ? ".." : "...");
-            var fhAnim  = dc.getFontHeight(Graphics.FONT_SMALL);
-            var animY   = headerH + (hintsTop - headerH - fhAnim) / 2;
-            // Centre the full "Acquiring GPS..." block so the label never drifts.
-            // Measure label + widest dots to get a fixed block width.
+            var animY   = headerH + (hintsTop - headerH - fhSmall) / 2;
             var labelW  = (dc.getTextDimensions("Acquiring GPS", Graphics.FONT_SMALL) as Array<Number>)[0];
             var maxDotW = (dc.getTextDimensions("...", Graphics.FONT_SMALL) as Array<Number>)[0];
             var pivot   = cx - (labelW + maxDotW) / 2 + labelW;
@@ -162,57 +155,76 @@ class GolfView extends WatchUi.View {
             dc.drawText(pivot, animY, Graphics.FONT_SMALL, dots,
                 Graphics.TEXT_JUSTIFY_LEFT);
         } else {
-            var front  = _model.distToFront();
-            var middle = _model.distToMiddle();
-            var back   = _model.distToBack();
+            var frontW = _model.distToFront();
+            var midW   = _model.distToMiddle();
+            var backW  = _model.distToBack();
+            var frontA = _model.distToFrontApi();
+            var midA   = _model.distToMiddleApi();
+            var backA  = _model.distToBackApi();
 
-            var labelW = (dc.getTextDimensions("M", Graphics.FONT_SMALL) as Array<Number>)[0];
-            var distW  = (dc.getTextDimensions(fmtDist(middle), Graphics.FONT_MEDIUM) as Array<Number>)[0];
-            var gap    = 8;
-            var lx     = cx - (labelW + gap + distW) / 2 + labelW;
-            var dx     = lx + gap;
-
-            dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(lx, y1, Graphics.FONT_SMALL, "B", Graphics.TEXT_JUSTIFY_RIGHT);
-            dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(dx, y1, Graphics.FONT_MEDIUM, fmtDist(back), Graphics.TEXT_JUSTIFY_LEFT);
-
-            dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(lx, y2, Graphics.FONT_SMALL, "M", Graphics.TEXT_JUSTIFY_RIGHT);
-            dc.drawText(dx, y2, Graphics.FONT_MEDIUM, fmtDist(middle), Graphics.TEXT_JUSTIFY_LEFT);
+            // ── Column header row ────────────────
+            var holeScore = _model.scores[_model.currentHole] as Number;
+            var colLabY   = headerH + 4;
 
             dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(lx, y3, Graphics.FONT_SMALL, "F", Graphics.TEXT_JUSTIFY_RIGHT);
-            dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(dx, y3, Graphics.FONT_MEDIUM, fmtDist(front), Graphics.TEXT_JUSTIFY_LEFT);
-        }
+            dc.drawText(colL, colLabY, Graphics.FONT_XTINY, "Walk",
+                Graphics.TEXT_JUSTIFY_CENTER);
+            dc.setColor(0x00BBBB, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(colR, colLabY, Graphics.FONT_XTINY, "API",
+                Graphics.TEXT_JUSTIFY_CENTER);
 
-        // ── Score badge: left gutter, vertically at M-row centre ────
-        var holeScore = _model.scores[_model.currentHole] as Number;
-        if (_model.gpsReady && holeScore > 0) {
-            var par  = _model.getPar();
-            var diff = holeScore - par;
-            var bx   = w / 8;
-            var by   = y2 + fhMed / 2;  // centre of M row
-            var r    = fhMed / 2;
-            if (diff <= -2) {
-                dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
-                dc.drawCircle(bx, by, r);
-                dc.drawCircle(bx, by, r - 3);
-            } else if (diff == -1) {
-                dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_TRANSPARENT);
-                dc.drawCircle(bx, by, r);
-            } else if (diff == 1) {
-                dc.setColor(Graphics.COLOR_ORANGE, Graphics.COLOR_TRANSPARENT);
-                dc.drawRectangle(bx - r, by - r, r * 2, r * 2);
-            } else if (diff >= 2) {
-                dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
-                dc.drawRectangle(bx - r, by - r, r * 2, r * 2);
-                dc.drawRectangle(bx - r + 2, by - r + 2, r * 2 - 4, r * 2 - 4);
+            // Score badge: centred between the two column labels
+            if (holeScore > 0) {
+                var par  = _model.getPar();
+                var diff = holeScore - par;
+                dc.setColor(scoreColor(diff), Graphics.COLOR_TRANSPARENT);
+                dc.drawText(cx, colLabY, Graphics.FONT_XTINY,
+                    "[" + holeScore + "]",
+                    Graphics.TEXT_JUSTIFY_CENTER);
             }
-            dc.setColor(scoreColor(diff), Graphics.COLOR_TRANSPARENT);
-            dc.drawText(bx, by, Graphics.FONT_TINY, holeScore.toString(),
-                Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+
+            // Divider line separating the two columns
+            dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
+            dc.drawLine(cx, headerH + 2, cx, hintsTop - 2);
+
+            // ── 3 distance rows below the column header ──
+            var rowTop  = colLabY + fhXtiny + 4;
+            var rowStep = (hintsTop - rowTop) / 3;
+            var y1 = rowTop + (rowStep - fhNum) / 2;   // B
+            var y2 = y1 + rowStep;                      // M
+            var y3 = y2 + rowStep;                      // F
+
+            // B row
+            dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(cx, y1, Graphics.FONT_XTINY, "B",
+                Graphics.TEXT_JUSTIFY_CENTER);
+            dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(colL, y1, Graphics.FONT_SMALL, fmtDist(backW),
+                Graphics.TEXT_JUSTIFY_CENTER);
+            dc.setColor(0x00BBBB, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(colR, y1, Graphics.FONT_SMALL, fmtDist(backA),
+                Graphics.TEXT_JUSTIFY_CENTER);
+
+            // M row
+            dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(cx, y2, Graphics.FONT_XTINY, "M",
+                Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(colL, y2, Graphics.FONT_SMALL, fmtDist(midW),
+                Graphics.TEXT_JUSTIFY_CENTER);
+            dc.setColor(0x008888, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(colR, y2, Graphics.FONT_SMALL, fmtDist(midA),
+                Graphics.TEXT_JUSTIFY_CENTER);
+
+            // F row
+            dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(cx, y3, Graphics.FONT_XTINY, "F",
+                Graphics.TEXT_JUSTIFY_CENTER);
+            dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(colL, y3, Graphics.FONT_SMALL, fmtDist(frontW),
+                Graphics.TEXT_JUSTIFY_CENTER);
+            dc.setColor(0x00BBBB, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(colR, y3, Graphics.FONT_SMALL, fmtDist(frontA),
+                Graphics.TEXT_JUSTIFY_CENTER);
         }
 
         drawHints(dc, w, h, "START Score", "BACK More");

@@ -21,6 +21,11 @@ import Toybox.Lang;
 //  yardsWhite: official hole yardage from White tees.
 //  Source: GolfCourseAPI.com course ID 15077
 //  (total 6,445Y; course rating 70.7; slope 121)
+//
+//  H13/H14 coordinates corrected 2026-03-28 via Golf API
+//  cross-reference (golfapi_coordinates_comparison.md).
+//  GPS logger mislabelled on-course: our walked H13 was
+//  actually the H14 green and vice versa (~350 m off).
 // ─────────────────────────────────────────────
 
 class GolfModel {
@@ -53,10 +58,10 @@ class GolfModel {
         [  4,  10,  53.28831831d,  -8.84518651d,  53.28835683d,  -8.84504663d,  53.28839535d,  -8.84490675d,  387 ],
         // H12
         [  3,  12,  53.28827572d,  -8.84326475d,  53.28815456d,  -8.84315930d,  53.28803340d,  -8.84305385d,  187 ],
-        // H13
-        [  4,   2,  53.28755124d,  -8.84343407d,  53.28758894d,  -8.84319386d,  53.28762663d,  -8.84295364d,  424 ],
-        // H14
-        [  4,   4,  53.28523855d,  -8.84631114d,  53.28509116d,  -8.84640012d,  53.28494376d,  -8.84648910d,  437 ],
+        // H13  (coords corrected 2026-03-28: GPS logger had H13/H14 swapped)
+        [  4,   2,  53.28523855d,  -8.84631114d,  53.28509116d,  -8.84640012d,  53.28494376d,  -8.84648910d,  424 ],
+        // H14  (coords corrected 2026-03-28: GPS logger had H13/H14 swapped)
+        [  4,   4,  53.28755124d,  -8.84343407d,  53.28758894d,  -8.84319386d,  53.28762663d,  -8.84295364d,  437 ],
         // H15
         [  4,   6,  53.28431435d,  -8.84562554d,  53.28421121d,  -8.84566423d,  53.28410807d,  -8.84570291d,  417 ],
         // H16
@@ -65,6 +70,48 @@ class GolfModel {
         [  3,  16,  53.28518566d,  -8.84295321d,  53.28510367d,  -8.84307860d,  53.28502168d,  -8.84320399d,  156 ],
         // H18
         [  4,  14,  53.28321317d,  -8.84504377d,  53.28308735d,  -8.84515665d,  53.28296152d,  -8.84526952d,  362 ]
+    ];
+
+    // Golf API green coordinates (courseID 012141519725013601029, fetched 2026-03-28)
+    // poi=1 (green), location 1=front, 2=mid, 3=back, sideFW=2 (centre)
+    // Format per hole: [frontLat, frontLon, midLat, midLon, backLat, backLon]
+    private var _apiHoles as Array = [
+        // H1
+        [ 53.2865441d,  -8.8488365d,  53.2866050d,  -8.8489103d,  53.2866531d,  -8.8489666d ],
+        // H2
+        [ 53.2878593d,  -8.8450140d,  53.2878938d,  -8.8448990d,  53.2879338d,  -8.8448115d ],
+        // H3
+        [ 53.2892118d,  -8.8443419d,  53.2893585d,  -8.8443599d,  53.2894708d,  -8.8443714d ],
+        // H4
+        [ 53.2890306d,  -8.8486524d,  53.2890530d,  -8.8487802d,  53.2890795d,  -8.8489327d ],
+        // H5
+        [ 53.2881721d,  -8.8521961d,  53.2881207d,  -8.8523489d,  53.2880679d,  -8.8525300d ],
+        // H6
+        [ 53.2868513d,  -8.8515427d,  53.2867642d,  -8.8514061d,  53.2866687d,  -8.8512834d ],
+        // H7
+        [ 53.2886864d,  -8.8455365d,  53.2887347d,  -8.8453309d,  53.2887850d,  -8.8451664d ],
+        // H8
+        [ 53.2877968d,  -8.8517018d,  53.2877759d,  -8.8519117d,  53.2877455d,  -8.8521377d ],
+        // H9
+        [ 53.2844566d,  -8.8485250d,  53.2843814d,  -8.8484436d,  53.2842906d,  -8.8483789d ],
+        // H10
+        [ 53.2870449d,  -8.8504533d,  53.2871594d,  -8.8505585d,  53.2872536d,  -8.8506292d ],
+        // H11
+        [ 53.2882686d,  -8.8451393d,  53.2883315d,  -8.8450130d,  53.2883945d,  -8.8449140d ],
+        // H12
+        [ 53.2882082d,  -8.8430760d,  53.2881287d,  -8.8430443d,  53.2880455d,  -8.8429861d ],
+        // H13
+        [ 53.2852088d,  -8.8463039d,  53.2851061d,  -8.8463354d,  53.2849715d,  -8.8463736d ],
+        // H14
+        [ 53.2875232d,  -8.8433300d,  53.2876011d,  -8.8431717d,  53.2876715d,  -8.8430296d ],
+        // H15
+        [ 53.2842865d,  -8.8455257d,  53.2842090d,  -8.8455991d,  53.2841302d,  -8.8456947d ],
+        // H16
+        [ 53.2861026d,  -8.8427298d,  53.2862262d,  -8.8425776d,  53.2863407d,  -8.8424750d ],
+        // H17
+        [ 53.2851750d,  -8.8428729d,  53.2851070d,  -8.8430094d,  53.2850451d,  -8.8431961d ],
+        // H18
+        [ 53.2831943d,  -8.8450091d,  53.2830728d,  -8.8450922d,  53.2829466d,  -8.8452210d ]
     ];
 
     // ── State ──────────────────────────────────
@@ -273,6 +320,27 @@ class GolfModel {
         return distYards(currentLat, currentLon,
             _holes[currentHole][6] as Double,
             _holes[currentHole][7] as Double);
+    }
+
+    function distToFrontApi() as Number {
+        if (!gpsReady) { return 0; }
+        return distYards(currentLat, currentLon,
+            _apiHoles[currentHole][0] as Double,
+            _apiHoles[currentHole][1] as Double);
+    }
+
+    function distToMiddleApi() as Number {
+        if (!gpsReady) { return 0; }
+        return distYards(currentLat, currentLon,
+            _apiHoles[currentHole][2] as Double,
+            _apiHoles[currentHole][3] as Double);
+    }
+
+    function distToBackApi() as Number {
+        if (!gpsReady) { return 0; }
+        return distYards(currentLat, currentLon,
+            _apiHoles[currentHole][4] as Double,
+            _apiHoles[currentHole][5] as Double);
     }
 
     // ── Shot tracking ─────────────────────────

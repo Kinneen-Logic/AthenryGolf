@@ -186,3 +186,31 @@ Saturday and Sunday 21/22 March time spent ~6 hours
 ---
 
 Thursday 26 March — time spent ~7.5 hours (4 hr walking greens with GPS logger, ~3.5 hrs coding)
+
+---
+
+### Session 10 — Golf API Integration & Dual Yardage Comparison
+
+**Goal:** Cross-reference our walked GPS coordinates against Golf API data, fix H13/H14 swap, add dual-column yardage display for on-course comparison.
+
+**What was done:**
+- Subscribed to Golf API (golfapi.io). Key stored in gitignored comparison doc.
+- Fetched real Athenry Golf Club coordinates: course ID `012141519725013601029`
+- Created `golfapi_coordinates_comparison.md` and `golfapi_coordinates_raw.json` (both gitignored)
+- **Confirmed H13/H14 swap**: our walked data had the two greens assigned backwards (~350 m off). The GPS logger mislabelled them on-course. Corrected by swapping the coordinate values in `GolfModel.mc` H13/H14 rows.
+- **Agreement analysis**: most holes < 10 m from API; H1/H3/H12 front pins 15–23 m off (walked from apron, not green edge — conservative/safe); H5/H6/H7 sub-3 m best-in-class.
+- Added `_apiHoles` array to `GolfModel.mc` (18 × 6 doubles, Golf API green coordinates).
+- Added `distToFrontApi()`, `distToMiddleApi()`, `distToBackApi()` to `GolfModel.mc`.
+- Redesigned green view for dual-column yardage display:
+  - Left column "Walk" (our data, white/yellow): B / M / F
+  - Right column "API" (cyan): B / M / F
+  - Divider line at screen centre
+  - Score badge `[N]` between column headers once a hole is scored
+  - Numbers in FONT_SMALL (was FONT_MEDIUM) to fit two columns
+
+**Outstanding after session 10:**
+- [ ] On-course: verify H13/H14 assignment is now correct
+- [ ] After round: decide whether to keep dual columns or revert to single (our data is good; API is close enough)
+- [ ] If keeping API data: update `_holes` coordinates to use API values for the 3 front-pin outliers (H1, H3, H12)
+
+Saturday 28 March
