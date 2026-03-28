@@ -127,8 +127,12 @@ class GolfView extends WatchUi.View {
             Graphics.TEXT_JUSTIFY_CENTER);
         var si = _model.getStrokeIndex();
         var siStr = si < 10 ? "SI 0" + si : "SI " + si;
+        var yd = _model.getYardage();
+        var ydStr = _model.useMetres
+            ? ((yd * 0.9144d + 0.5d).toNumber().toString() + "M")
+            : (yd.toString() + "Y");
         dc.drawText(cx, line1Y + fhSmall + 4, Graphics.FONT_TINY,
-            "Par " + _model.getPar() + "   " + siStr,
+            "Par " + _model.getPar() + "  " + ydStr + "  " + siStr,
             Graphics.TEXT_JUSTIFY_CENTER);
 
         // ── Distance rows: B / M / F ────────────
