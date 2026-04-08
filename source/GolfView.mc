@@ -179,11 +179,49 @@ class GolfView extends WatchUi.View {
             var mid   = _model.distToMiddleApi();
             var back  = _model.distToBackApi();
 
-            var fhMed   = dc.getFontHeight(Graphics.FONT_MEDIUM);
-            var fhLarge = dc.getFontHeight(Graphics.FONT_LARGE);
-            var gap     = 2;
-            var blockH  = fhMed + fhLarge + fhMed + gap * 2;
-            var topY    = headerH + (hintsTop - headerH - blockH) / 2;
+            var frontStr = fmtDist(front);
+            var backStr  = fmtDist(back);
+
+            // M row: split number and unit (NUMBER fonts can't render letters)
+            var midNum;
+            var midSuffix;
+            if (_model.useMetres) {
+                midNum = (mid * 0.9144d + 0.5d).toNumber().toString();
+                midSuffix = "M";
+            } else {
+                midNum = mid.toString();
+                midSuffix = "Y";
+            }
+
+            var fontBF    = Graphics.FONT_MEDIUM;
+            var fontMNum  = Graphics.FONT_NUMBER_MILD;
+            var fontMSuf  = Graphics.FONT_SMALL;
+            var fontLabel = Graphics.FONT_TINY;
+
+            var fhBF    = dc.getFontHeight(fontBF);
+            var fhMNum  = dc.getFontHeight(fontMNum);
+            var fhLabel = dc.getFontHeight(fontLabel);
+            var fhMSuf  = dc.getFontHeight(fontMSuf);
+
+            var gap    = 4;
+            var blockH = fhBF + fhMNum + fhBF + gap * 2;
+            var topY   = headerH + (hintsTop - headerH - blockH) / 2;
+
+            // Horizontal centering: measure widest row
+            var backW  = (dc.getTextDimensions(backStr, fontBF) as Array<Number>)[0];
+            var frontW = (dc.getTextDimensions(frontStr, fontBF) as Array<Number>)[0];
+            var numW   = (dc.getTextDimensions(midNum, fontMNum) as Array<Number>)[0];
+            var sufW   = (dc.getTextDimensions(midSuffix, fontMSuf) as Array<Number>)[0];
+            var midW   = numW + sufW;
+
+            var maxDistW = backW > frontW ? backW : frontW;
+            if (midW > maxDistW) { maxDistW = midW; }
+
+            var lblW   = (dc.getTextDimensions("M", fontLabel) as Array<Number>)[0];
+            var lblGap = 10;
+            var totalW = lblW + lblGap + maxDistW;
+            var labelRight = cx - totalW / 2 + lblW;
+            var distLeft   = labelRight + lblGap;
 
             // Score badge below header
             var holeScore = _model.scores[_model.currentHole] as Number;
@@ -196,31 +234,35 @@ class GolfView extends WatchUi.View {
                     Graphics.TEXT_JUSTIFY_CENTER);
             }
 
-            // B row — label left, distance right
-            var labelX = cx - 8;
-            var distX  = cx + 8;
+            // B row
+            var bLabelY = topY + (fhBF - fhLabel) / 2;
             dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(labelX, topY, Graphics.FONT_TINY, "B",
+            dc.drawText(labelRight, bLabelY, fontLabel, "B",
                 Graphics.TEXT_JUSTIFY_RIGHT);
             dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(distX, topY, Graphics.FONT_MEDIUM, fmtDist(back),
+            dc.drawText(distLeft, topY, fontBF, backStr,
                 Graphics.TEXT_JUSTIFY_LEFT);
 
-            // M row — larger, highlighted
-            var midY = topY + fhMed + gap;
+            // M row — prominent number font, yellow
+            var midY    = topY + fhBF + gap;
+            var mLabelY = midY + (fhMNum - fhLabel) / 2;
             dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(labelX, midY, Graphics.FONT_TINY, "M",
+            dc.drawText(labelRight, mLabelY, fontLabel, "M",
                 Graphics.TEXT_JUSTIFY_RIGHT);
-            dc.drawText(distX, midY, Graphics.FONT_LARGE, fmtDist(mid),
+            dc.drawText(distLeft, midY, fontMNum, midNum,
+                Graphics.TEXT_JUSTIFY_LEFT);
+            var sufY = midY + fhMNum - fhMSuf;
+            dc.drawText(distLeft + numW, sufY, fontMSuf, midSuffix,
                 Graphics.TEXT_JUSTIFY_LEFT);
 
             // F row
-            var frontY = midY + fhLarge + gap;
+            var frontY  = midY + fhMNum + gap;
+            var fLabelY = frontY + (fhBF - fhLabel) / 2;
             dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(labelX, frontY, Graphics.FONT_TINY, "F",
+            dc.drawText(labelRight, fLabelY, fontLabel, "F",
                 Graphics.TEXT_JUSTIFY_RIGHT);
             dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(distX, frontY, Graphics.FONT_MEDIUM, fmtDist(front),
+            dc.drawText(distLeft, frontY, fontBF, frontStr,
                 Graphics.TEXT_JUSTIFY_LEFT);
         }
 
