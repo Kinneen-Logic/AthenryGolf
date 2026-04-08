@@ -120,8 +120,13 @@ GPS golf app for a Garmin Forerunner 245 Music. Built in Monkey C (Connect IQ SD
 **To Do**
 - [x] Walk Athenry Golf Club greens and record GPS coordinates for all 18 holes in `GolfModel.mc`
 - [x] Update par and stroke index from official scorecard
-- [ ] Verify H11/H12 and H13/H14 green assignments on-course (GPS logger reused labels — see Session 6)
+- [x] H13/H14 swap confirmed and corrected (API comparison + visual map)
+- [ ] Verify H13/H14 on-course (API confirmed the swap — need to validate the corrected assignment is right)
 - [x] Shot tracker real-world test on course
+- [ ] On-course: compare dual Walk vs API columns and decide whether to keep or revert to single column
+- [ ] If keeping API data: update `_holes` coordinates to use API values for H1, H3, H12 front-pin outliers (15–23 m off — walked from apron)
+- [ ] Consider hazard distance display for H1/H9/H10/H13 water and H7/H18 bunkers (data available, not yet wired up)
+- [ ] Evaluate redundant `pollPosition` timer — consider removing to save battery
 
 Saturday and Sunday 21/22 March time spent ~6 hours
 
@@ -213,4 +218,83 @@ Thursday 26 March — time spent ~7.5 hours (4 hr walking greens with GPS logger
 - [ ] After round: decide whether to keep dual columns or revert to single (our data is good; API is close enough)
 - [ ] If keeping API data: update `_holes` coordinates to use API values for the 3 front-pin outliers (H1, H3, H12)
 
-Saturday 28 March
+---
+
+### Session 11 — Green Map Visualisation & Layout Comparison
+
+**Goal:** Visually verify the H13/H14 situation before playing, and sanity-check all 18 holes against the official course map.
+
+**What was done:**
+- Generated a Python/matplotlib map plotting all 18 greens (F/M/B pins) in GPS space, opened in Preview
+- Compared the generated map against `athenry_layout.png` (official course image)
+- Concluded relative hole positions look broadly correct — H13/H14 had already been fixed by the API comparison in Session 10
+
+---
+
+### Session 12 — GolfCourseAPI Official Yardages
+
+**Goal:** Pull official per-hole yardages from a second API (GolfCourseAPI, golfcourseapi.com — separate service from golfapi.io).
+
+**What was done:**
+- Searched GolfCourseAPI — found Athenry Golf Club (course ID 15077, location: Palmerstown, Oranmore, Co. Galway)
+- API returns par + yardage per hole (no GPS coordinates — only a single course-level lat/lon)
+- Added White tee yardage as element `[8]` to each hole in `_holes` array in `GolfModel.mc`
+- Added `getYardage()` helper function to `GolfModel.mc`
+- Updated green view header line 2 to show yardage alongside par and SI: `"Par 4  457Y  SI 01"`
+- Confirmed: GolfCourseAPI does not provide per-hole green/tee GPS coordinates; golfapi.io is the only source for those
+
+---
+
+### Session 13 — Coordinate Comparison Doc & Walked Mid Coordinates
+
+**Goal:** Tidy up the coordinate comparison doc, use physically walked mid values instead of computed midpoints, and fix POI code errors.
+
+**What was done:**
+- Received original GPS export from walk (GPX + KML — same data, different formats); GPX is universal fitness format, KML is Google Earth format
+- Updated `golfapi_coordinates_comparison.md` to show **three data sets** per hole:
+  - Column 1: **Raw walked GPX** — the physically recorded F, M, B waypoints exactly as logged
+  - Column 2: **Walk F/B + computed M** — what was previously in `GolfModel.mc` (computed mid as (front+back)/2)
+  - Column 3: **API (golfapi.io)** — fetched coordinates from Session 10
+- Replaced all 18 computed mid values in `GolfModel.mc` with the physically walked GPX `M` waypoints — mid is now a real GPS fix, not an arithmetic average
+- **Fixed POI codes 4 and 9 swapped** in `golfapi.mdc` and comparison doc: API schema shows `poi=4` is Water, `poi=9` is Dogleg (we had them backwards)
+- Also documented the full POI list: 1=Green, 2=Green Bunker, 3=Fairway Bunker, 4=Water, 5=Trees, 6=100m Marker, 7=150m Marker, 8=200m Marker, 9=Dogleg, 10=Road, 11=Tee Front, 12=Tee Back
+
+**GPS polling analysis:**
+- Current code runs a **double-polling** setup: `LOCATION_CONTINUOUS` callback at ~1 Hz plus an explicit 2-second `pollPosition` timer — the timer is redundant; left as-is for now (battery impact minor vs a full round)
+
+---
+
+### Session 14 — Postman Collection & golfapi.mdc Corrections
+
+**Goal:** Import the full Golf API Postman collection and fix any inaccuracies in the rule file.
+
+**What was done:**
+- Exported the Golf API Postman collection from the browser as `Golf API.postman_collection.json` (added to workspace, gitignored)
+- Updated `golfapi.mdc` from the collection:
+  - **Fixed `GET /clubs/{id}` cost** — was incorrectly marked as free; confirmed **1.0 credit** like all fetch-by-ID endpoints
+  - **Fixed `GET /courses/{id}` cost** — was marked `?`; confirmed **1.0 credit**
+  - **Added `GET /courses` search endpoint** with query params (`name`, `club_id`, `lat`, `lon`, `dist`) — same 0.1 credit as club search
+- Full API has exactly 5 endpoints; no hidden endpoints
+
+---
+
+### Session 15 — API Hazard & Feature Analysis
+
+**Goal:** Determine what else the Golf API has for Athenry that could be added to the app.
+
+**What was done:**
+- Parsed `golfapi_coordinates_raw.json` (saved from Session 10, no extra credits needed) to count all POI types
+- **Hazard data available for Athenry (12 points across 5 holes):**
+
+| POI | Type | Count | Holes |
+|-----|------|-------|-------|
+| poi=3 | Fairway bunker | 3 | H7 (×2), H18 (×1) |
+| poi=4 | Water | 7 | H1 (×2), H9 (×2), H10 (×1), H13 (×2) |
+| poi=9 | Dogleg | 2 | H4 (×1), H14 (×1) |
+
+- **Tee data**: poi=11 (Tee Front) and poi=12 (Tee Back) present for all 18 holes but are identical coordinates — API has only one tee marker per hole for Athenry
+- **Identified**: H1's poi=9 "dogleg" marker is between tee and green at ~53.2854, -8.8477 — consistent with H1's routing
+- **Note on poi=9 reliability**: H4 has a dogleg POI but there is no water on H4 — confirmed this is the API using poi=9 for hazards broadly (could be OOB/ditches), not just water exclusively; greens (poi=1) are the most reliable data
+- **Conclusion**: Hazard distance display is technically feasible but limited in scope (5 holes with data); deferred
+
+Saturday 28 March — time spent ~4 hours (evening sessions)

@@ -11,6 +11,7 @@ class GolfView extends WatchUi.View {
     private var _gpsPollTimer as Timer.Timer?;
     private var _gpsAnimTimer as Timer.Timer?;
     private var _blinkTimer as Timer.Timer?;
+    private var _idleTimer as Timer.Timer?;
 
     function initialize(model as GolfModel) {
         View.initialize();
@@ -38,6 +39,10 @@ class GolfView extends WatchUi.View {
         if (_gpsAnimTimer != null) {
             _gpsAnimTimer.stop();
             _gpsAnimTimer = null;
+        }
+        if (_idleTimer != null) {
+            _idleTimer.stop();
+            _idleTimer = null;
         }
         stopBlink();
     }
@@ -78,6 +83,26 @@ class GolfView extends WatchUi.View {
     function onBlink() as Void {
         _model.blinkOn = !_model.blinkOn;
         WatchUi.requestUpdate();
+    }
+
+    // Restart the 15-second idle timer; only arms when not on green view.
+    function resetIdleTimer() as Void {
+        if (_idleTimer != null) {
+            _idleTimer.stop();
+        }
+        if (_model.uiMode != :green) {
+            _idleTimer = new Timer.Timer();
+            _idleTimer.start(method(:onIdleTimeout), 15000, false);
+        }
+    }
+
+    function onIdleTimeout() as Void {
+        if (_model.uiMode != :green) {
+            _model.editActive = false;
+            stopBlink();
+            _model.uiMode = :green;
+            WatchUi.requestUpdate();
+        }
     }
 
     function onUpdate(dc as Graphics.Dc) as Void {

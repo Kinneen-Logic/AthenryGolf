@@ -22,6 +22,7 @@ PROGRESS.md
 # Golf API data (API key / private reference)
 golfapi_coordinates_raw.json
 golfapi_coordinates_comparison.md
+Golf API.postman_collection.json
 
 # Local scripts with hardcoded SDK paths
 sim.sh

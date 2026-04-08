@@ -39,6 +39,7 @@ class GolfDelegate extends WatchUi.BehaviorDelegate {
         } else if (mode == :light && _model.lightIndex == 2) {
             _model.settingIndex = (_model.settingIndex + 1) % 2;
         }
+        _view.resetIdleTimer();
         WatchUi.requestUpdate();
         return true;
     }
@@ -60,6 +61,7 @@ class GolfDelegate extends WatchUi.BehaviorDelegate {
         } else if (mode == :summary) {
             _model.prevHole();
         }
+        _view.resetIdleTimer();
         WatchUi.requestUpdate();
         return true;
     }
@@ -75,11 +77,9 @@ class GolfDelegate extends WatchUi.BehaviorDelegate {
             _model.nextHole();
         } else if (mode == :light && _model.lightIndex == 0) {
             if (_model.editActive) {
-                // Confirm edit — return to browsing on same hole
                 _model.editActive = false;
                 _view.stopBlink();
             } else {
-                // Enter edit for the cursor hole
                 if ((_model.scores[_model.editHole] as Number) == 0) {
                     _model.scores[_model.editHole] = _model.getParForHole(_model.editHole);
                 }
@@ -93,19 +93,18 @@ class GolfDelegate extends WatchUi.BehaviorDelegate {
                     _model.markShot();
             }
         } else if (mode == :light && _model.lightIndex == 2) {
-            // START toggles the selected setting
             if (_model.settingIndex == 0) {
                 _model.showHints = !_model.showHints;
             } else {
                 _model.useMetres = !_model.useMetres;
             }
         } else if (mode == :light && _model.lightIndex == 3) {
-            // START on exit screen — exit the app
             WatchUi.popView(WatchUi.SLIDE_IMMEDIATE);
             return true;
         } else if (mode == :summary) {
             _model.uiMode = :green;
         }
+        _view.resetIdleTimer();
         WatchUi.requestUpdate();
         return true;
     }
@@ -114,31 +113,31 @@ class GolfDelegate extends WatchUi.BehaviorDelegate {
         var mode = _model.uiMode;
 
         if (mode == :green) {
-            // Enter the secondary menu — cursor starts on current hole
             _model.lightIndex = 0;
             _model.editActive = false;
             _model.editHole   = _model.currentHole;
             _model.uiMode = :light;
+            _view.resetIdleTimer();
             WatchUi.requestUpdate();
             return true;
         }
 
         if (mode == :light) {
             if (_model.lightIndex == 0 && _model.editActive) {
-                // Cancel scorecard edit
                 _model.editActive = false;
                 _view.stopBlink();
+                _view.resetIdleTimer();
                 WatchUi.requestUpdate();
                 return true;
             }
             if (_model.lightIndex < _model.LIGHT_COUNT - 1) {
-                // Advance through submenus
                 _model.lightIndex = _model.lightIndex + 1;
+                _view.resetIdleTimer();
                 WatchUi.requestUpdate();
                 return true;
             } else {
-                // Exit screen — wrap back to green
                 _model.uiMode = :green;
+                _view.resetIdleTimer();
                 WatchUi.requestUpdate();
                 return true;
             }
@@ -146,12 +145,14 @@ class GolfDelegate extends WatchUi.BehaviorDelegate {
 
         if (mode == :scoreEntry) {
             _model.uiMode = :green;
+            _view.resetIdleTimer();
             WatchUi.requestUpdate();
             return true;
         }
 
         if (mode == :summary) {
             _model.prevHole();
+            _view.resetIdleTimer();
             WatchUi.requestUpdate();
             return true;
         }
