@@ -355,6 +355,12 @@ class GolfModel {
         lastShotDist = 0;
     }
 
+    function liveShotDist() as Number {
+        if (!shotMarked || !gpsReady) { return 0; }
+        return distYards(shotMarkedLat, shotMarkedLon,
+                         currentLat, currentLon);
+    }
+
     function calculateShotDist() as Void {
         if (!shotMarked || !gpsReady) { return; }
         lastShotDist = distYards(shotMarkedLat, shotMarkedLon,

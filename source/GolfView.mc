@@ -138,34 +138,22 @@ class GolfView extends WatchUi.View {
         var h = dc.getHeight();
         var cx = w / 2;
 
-        // ── Header band ─────────────────────────
-        var fhSmall = dc.getFontHeight(Graphics.FONT_SMALL);
-        var fhTiny  = dc.getFontHeight(Graphics.FONT_TINY);
-        var headerH = fhSmall + fhTiny + 12;
-
-        dc.setColor(0x009A44, 0x009A44);
-        dc.fillRectangle(0, 0, w, headerH);
-        dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
-
-        var line1Y = (headerH - fhSmall - fhTiny - 4) / 2;
-        dc.drawText(cx, line1Y, Graphics.FONT_SMALL,
-            "Hole " + _model.holeNumber(),
-            Graphics.TEXT_JUSTIFY_CENTER);
         var si = _model.getStrokeIndex();
         var siStr = si < 10 ? "SI 0" + si : "SI " + si;
         var yd = _model.getYardage();
         var ydStr = _model.useMetres
             ? ((yd * 0.9144d + 0.5d).toNumber().toString() + "M")
             : (yd.toString() + "Y");
-        dc.drawText(cx, line1Y + fhSmall + 4, Graphics.FONT_TINY,
-            "Par " + _model.getPar() + "  " + ydStr + "  " + siStr,
-            Graphics.TEXT_JUSTIFY_CENTER);
+        var headerH = drawHeader(dc, 0x009A44, Graphics.COLOR_BLACK,
+            "Hole " + _model.holeNumber(),
+            "Par " + _model.getPar() + "  " + ydStr + "  " + siStr);
 
         var hintsTop = h - 44;
 
         if (!_model.gpsReady) {
             var phase   = ((System.getTimer() / 400) % 3).toNumber();
             var dots    = phase == 0 ? "." : (phase == 1 ? ".." : "...");
+            var fhSmall = dc.getFontHeight(Graphics.FONT_SMALL);
             var animY   = headerH + (hintsTop - headerH - fhSmall) / 2;
             var labelW  = (dc.getTextDimensions("Acquiring GPS", Graphics.FONT_SMALL) as Array<Number>)[0];
             var maxDotW = (dc.getTextDimensions("...", Graphics.FONT_SMALL) as Array<Number>)[0];
@@ -252,23 +240,25 @@ class GolfView extends WatchUi.View {
         var h = dc.getHeight();
         var cx = w / 2;
 
-        dc.setColor(Graphics.COLOR_ORANGE, Graphics.COLOR_ORANGE);
-        dc.fillRectangle(0, 0, w, 42);
-        dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, 14, Graphics.FONT_SMALL,
-            "H" + _model.holeNumber() + "  Par " + _model.getPar(),
-            Graphics.TEXT_JUSTIFY_CENTER);
+        var headerH = drawHeader(dc, Graphics.COLOR_ORANGE, Graphics.COLOR_BLACK,
+            "H" + _model.holeNumber() + "  Par " + _model.getPar(), "");
 
         var score = _model.scores[_model.currentHole] as Number;
         var par   = _model.getPar();
         var diff  = score - par;
 
+        var hintsTop = h - 44;
+        var fhHot = dc.getFontHeight(Graphics.FONT_NUMBER_HOT);
+        var fhSm  = dc.getFontHeight(Graphics.FONT_SMALL);
+        var blockH = fhHot + fhSm + 4;
+        var topY = headerH + (hintsTop - headerH - blockH) / 2;
+
         dc.setColor(scoreColor(diff), Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, 52, Graphics.FONT_NUMBER_HOT, score.toString(),
+        dc.drawText(cx, topY, Graphics.FONT_NUMBER_HOT, score.toString(),
             Graphics.TEXT_JUSTIFY_CENTER);
 
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, 116, Graphics.FONT_SMALL, scoreLabel(score, par, diff),
+        dc.drawText(cx, topY + fhHot + 4, Graphics.FONT_SMALL, scoreLabel(score, par, diff),
             Graphics.TEXT_JUSTIFY_CENTER);
 
         drawHints(dc, w, h, "UP+ DN-", "START Next");
@@ -282,16 +272,11 @@ class GolfView extends WatchUi.View {
         var cx = w / 2;
         var editing = _model.editActive;
 
-        dc.setColor(0x008080, 0x008080);
-        dc.fillRectangle(0, 0, w, 42);
-        dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
-
-        // Header always shows the cursor hole — "Editing" prefix only when in edit mode
         var eh = _model.editHole;
         var es = _model.scores[eh] as Number;
         var ep = _model.getParForHole(eh);
-        dc.drawText(cx, 6, Graphics.FONT_XTINY, "H" + (eh + 1) + "  Par " + ep,
-            Graphics.TEXT_JUSTIFY_CENTER);
+        var headerH = drawHeader(dc, 0x008080, Graphics.COLOR_BLACK,
+            "H" + (eh + 1) + "  Par " + ep, "");
 
         // Grid: 3 rows × 6 holes
         var cellW  = 30;
@@ -301,7 +286,7 @@ class GolfView extends WatchUi.View {
         var cols   = 6;
         var rowW   = cols * cellW + (cols - 1) * colGap;
         var startX = (w - rowW) / 2;
-        var row1Y  = 50;
+        var row1Y  = headerH + 8;
         var row2Y  = row1Y + cellH + rowGap;
         var row3Y  = row2Y + cellH + rowGap;
 
@@ -434,11 +419,8 @@ class GolfView extends WatchUi.View {
         var h = dc.getHeight();
         var cx = w / 2;
 
-        dc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_BLUE);
-        dc.fillRectangle(0, 0, w, 42);
-        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, 14, Graphics.FONT_SMALL, "Shot Tracker",
-            Graphics.TEXT_JUSTIFY_CENTER);
+        var headerH = drawHeader(dc, Graphics.COLOR_BLUE, Graphics.COLOR_WHITE,
+            "Shot Dist", "");
 
         if (!_model.gpsReady) {
             dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
@@ -449,16 +431,30 @@ class GolfView extends WatchUi.View {
         }
 
         if (_model.shotMarked) {
+            var liveDist = _model.liveShotDist();
+            var liveStr;
+            var liveUnit;
+            if (_model.useMetres) {
+                liveStr = (liveDist * 0.9144d + 0.5d).toNumber().toString();
+                liveUnit = "metres";
+            } else {
+                liveStr = liveDist.toString();
+                liveUnit = "yards";
+            }
+
+            dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(cx, headerH + 14, Graphics.FONT_XTINY, "Walk to ball",
+                Graphics.TEXT_JUSTIFY_CENTER);
             dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, h / 2 - 30, Graphics.FONT_SMALL, "Walk to ball",
+            dc.drawText(cx, h / 2 - 20, Graphics.FONT_NUMBER_MEDIUM,
+                liveStr, Graphics.TEXT_JUSTIFY_CENTER);
+            dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(cx, h / 2 + 30, Graphics.FONT_SMALL, liveUnit,
                 Graphics.TEXT_JUSTIFY_CENTER);
-            dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, h / 2, Graphics.FONT_XTINY, "then press START",
-                Graphics.TEXT_JUSTIFY_CENTER);
-            drawHints(dc, w, h, "START Calc", "BACK Next");
+            drawHints(dc, w, h, "START Lock", "BACK Next");
         } else if (_model.shotCalculated) {
             dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, 50, Graphics.FONT_XTINY, "Last shot",
+            dc.drawText(cx, headerH + 14, Graphics.FONT_XTINY, "Last shot",
                 Graphics.TEXT_JUSTIFY_CENTER);
             var shotNumStr;
             var shotUnit;
@@ -493,45 +489,81 @@ class GolfView extends WatchUi.View {
         var h = dc.getHeight();
         var cx = w / 2;
 
-        dc.setColor(Graphics.COLOR_PURPLE, Graphics.COLOR_PURPLE);
-        dc.fillRectangle(0, 0, w, 42);
-        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, 14, Graphics.FONT_SMALL, "Round Over",
-            Graphics.TEXT_JUSTIFY_CENTER);
+        var headerH = drawHeader(dc, Graphics.COLOR_PURPLE, Graphics.COLOR_WHITE,
+            "Round Over", "");
 
         var total = _model.totalStrokes();
         var par   = _model.totalPar();
+        var hintsTop = h - 44;
 
         if (total == 0) {
+            var fhSm = dc.getFontHeight(Graphics.FONT_SMALL);
+            var fhXt = dc.getFontHeight(Graphics.FONT_XTINY);
+            var blockH = fhSm + fhXt + 4;
+            var topY = headerH + (hintsTop - headerH - blockH) / 2;
             dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, 80, Graphics.FONT_SMALL, "No scores entered",
+            dc.drawText(cx, topY, Graphics.FONT_SMALL, "No scores entered",
                 Graphics.TEXT_JUSTIFY_CENTER);
-            dc.drawText(cx, 110, Graphics.FONT_XTINY, "Par " + par,
+            dc.drawText(cx, topY + fhSm + 4, Graphics.FONT_XTINY, "Par " + par,
                 Graphics.TEXT_JUSTIFY_CENTER);
         } else {
             var diff = total - par;
+            var fhXt  = dc.getFontHeight(Graphics.FONT_XTINY);
+            var fhNum = dc.getFontHeight(Graphics.FONT_NUMBER_MEDIUM);
+            var gap = 4;
+            var blockH = (fhXt + gap + fhNum) * 2 + 8;
+            var y0 = headerH + (hintsTop - headerH - blockH) / 2;
 
             dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, 48, Graphics.FONT_XTINY, "Total strokes",
+            dc.drawText(cx, y0, Graphics.FONT_XTINY, "Total strokes",
                 Graphics.TEXT_JUSTIFY_CENTER);
             dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, 64, Graphics.FONT_NUMBER_MEDIUM, total.toString(),
-                Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(cx, y0 + fhXt + gap, Graphics.FONT_NUMBER_MEDIUM,
+                total.toString(), Graphics.TEXT_JUSTIFY_CENTER);
 
+            var y1 = y0 + fhXt + gap + fhNum + 8;
             dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, 104, Graphics.FONT_XTINY, "Course par " + par,
+            dc.drawText(cx, y1, Graphics.FONT_XTINY, "Course par " + par,
                 Graphics.TEXT_JUSTIFY_CENTER);
 
             var vsParStr = diff > 0 ? "+" + diff : diff.toString();
             dc.setColor(scoreColor(diff), Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx, 120, Graphics.FONT_NUMBER_MEDIUM, vsParStr,
-                Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(cx, y1 + fhXt + gap, Graphics.FONT_NUMBER_MEDIUM,
+                vsParStr, Graphics.TEXT_JUSTIFY_CENTER);
         }
 
         drawHints(dc, w, h, "DN or BACK to H18", "");
     }
 
     // ── Helpers ─────────────────────────────────
+
+    private function drawHeader(dc as Graphics.Dc, bgColor as Number, textColor as Number,
+                                line1 as String, line2 as String) as Number {
+        var w = dc.getWidth();
+        var cx = w / 2;
+        var fhSmall = dc.getFontHeight(Graphics.FONT_SMALL);
+        var headerH;
+        if (line2.length() > 0) {
+            var fhTiny = dc.getFontHeight(Graphics.FONT_TINY);
+            headerH = fhSmall + fhTiny + 12;
+            dc.setColor(bgColor, bgColor);
+            dc.fillRectangle(0, 0, w, headerH);
+            dc.setColor(textColor, Graphics.COLOR_TRANSPARENT);
+            var topY = (headerH - fhSmall - fhTiny - 4) / 2;
+            dc.drawText(cx, topY, Graphics.FONT_SMALL, line1,
+                Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(cx, topY + fhSmall + 4, Graphics.FONT_TINY, line2,
+                Graphics.TEXT_JUSTIFY_CENTER);
+        } else {
+            headerH = fhSmall + 12;
+            dc.setColor(bgColor, bgColor);
+            dc.fillRectangle(0, 0, w, headerH);
+            dc.setColor(textColor, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(cx, (headerH - fhSmall) / 2, Graphics.FONT_SMALL, line1,
+                Graphics.TEXT_JUSTIFY_CENTER);
+        }
+        return headerH;
+    }
 
     private function fmtDist(d as Number) as String {
         if (_model.useMetres) {
@@ -568,12 +600,8 @@ class GolfView extends WatchUi.View {
         var h = dc.getHeight();
         var cx = w / 2;
 
-        var headerH = 42;
-        dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_DK_GRAY);
-        dc.fillRectangle(0, 0, w, headerH);
-        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, headerH / 2, Graphics.FONT_SMALL, "Settings",
-            Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+        var headerH = drawHeader(dc, Graphics.COLOR_DK_GRAY, Graphics.COLOR_WHITE,
+            "Settings", "");
 
         // Vertically centre two rows between header bottom and hints top.
         // All positions derived from actual font height — no magic numbers.
@@ -628,16 +656,19 @@ class GolfView extends WatchUi.View {
         var h = dc.getHeight();
         var cx = w / 2;
 
-        dc.setColor(Graphics.COLOR_DK_RED, Graphics.COLOR_DK_RED);
-        dc.fillRectangle(0, 0, w, 42);
-        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, 14, Graphics.FONT_SMALL, "Exit App",
-            Graphics.TEXT_JUSTIFY_CENTER);
+        var headerH = drawHeader(dc, Graphics.COLOR_DK_RED, Graphics.COLOR_WHITE,
+            "Exit App", "");
+
+        var hintsTop = h - 44;
+        var fhSm = dc.getFontHeight(Graphics.FONT_SMALL);
+        var fhXt = dc.getFontHeight(Graphics.FONT_XTINY);
+        var blockH = fhSm + fhXt + 4;
+        var topY = headerH + (hintsTop - headerH - blockH) / 2;
 
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, h / 2 - 20, Graphics.FONT_SMALL, "Press START",
+        dc.drawText(cx, topY, Graphics.FONT_SMALL, "Press START",
             Graphics.TEXT_JUSTIFY_CENTER);
-        dc.drawText(cx, h / 2 + 4, Graphics.FONT_XTINY, "to exit the app",
+        dc.drawText(cx, topY + fhSm + 4, Graphics.FONT_XTINY, "to exit the app",
             Graphics.TEXT_JUSTIFY_CENTER);
 
         drawHints(dc, w, h, "START Exit", "BACK Green");
