@@ -67,6 +67,7 @@ class GolfView extends WatchUi.View {
     }
 
     function startBlink() as Void {
+        stopBlink();
         _model.blinkOn = true;
         _blinkTimer = new Timer.Timer();
         _blinkTimer.start(method(:onBlink), 400, true);
