@@ -123,8 +123,9 @@ GPS golf app for a Garmin Forerunner 245 Music. Built in Monkey C (Connect IQ SD
 - [x] H13/H14 swap confirmed and corrected (API comparison + visual map)
 - [ ] Verify H13/H14 on-course (API confirmed the swap — need to validate the corrected assignment is right)
 - [x] Shot tracker real-world test on course
-- [ ] On-course: compare dual Walk vs API columns and decide whether to keep or revert to single column
-- [ ] If keeping API data: update `_holes` coordinates to use API values for H1, H3, H12 front-pin outliers (15–23 m off — walked from apron)
+- [x] Dual Walk vs API columns → resolved: API-only (Session 16)
+- [x] Scorecard colour cleanup (Session 20)
+- [~] Hole shape / dogleg display → investigated, **decided not to build** (only 2 API doglegs for Athenry, not enough value — Session 19)
 - [ ] Consider hazard distance display for H1/H9/H10/H13 water and H7/H18 bunkers (data available, not yet wired up)
 - [ ] Evaluate redundant `pollPosition` timer — consider removing to save battery
 
@@ -298,3 +299,67 @@ Thursday 26 March — time spent ~7.5 hours (4 hr walking greens with GPS logger
 - **Conclusion**: Hazard distance display is technically feasible but limited in scope (5 holes with data); deferred
 
 Saturday 28 March — time spent ~4 hours (evening sessions)
+
+---
+
+### Session 16 — API-Only Distances & Auto-Return
+
+**Goal:** Simplify the green view to a single yardage source, add idle timeout.
+
+**What was done:**
+- Removed the dual Walk/API column layout — green view now shows **API distances only** (golfapi.io data is accurate enough; dual columns were cluttered on a 240 px screen)
+- Middle distance drawn largest (FONT_NUMBER_MEDIUM), Front and Back smaller — the number you glance at most is the biggest
+- Removed "Y" unit suffix from B/M/F rows — yards are implied, saves horizontal space
+- Re-centred the B/M/F text block with tighter vertical gaps
+- Added **auto-return to green view** after 15 seconds idle on any submenu — prevents the watch sitting on the scorecard or settings screen during play
+
+---
+
+### Session 17 — Irish Green Header & Live Shot Distance
+
+**Goal:** Visual identity pass and shot tracker UX improvement.
+
+**What was done:**
+- Changed header background from teal (`0x008080`) to **Irish green** (`0x009A44`) across all screens via a shared `drawHeader()` helper
+- Renamed "Shot Tracker" → **"Shot Dist"** (shorter, fits header better)
+- Added **live distance** to the shot tracker — after pressing START to mark your position, the screen shows a continuously updating distance as you walk to the ball, before pressing START again to lock it in
+- Shot tracker hints updated: "START Lock" while distance is live
+
+---
+
+### Session 18 — Timer Bug Fixes & Idle Settings
+
+**Goal:** Fix recurring "Too Many Timers" crash.
+
+**What was done:**
+- **Root cause:** Connect IQ allows a maximum of 3 concurrent timers. The app was stacking: GPS poll timer + blink timer + idle timer. Entering score edit mode could create a 4th, crashing the app.
+- **First fix** (Session 18a): added `stopBlink()` at the start of `startBlink()` to prevent stacked blink timers — insufficient, still crashed with idle timer active
+- **Final fix** (Session 18b): **removed the blink timer entirely**. Edit-mode blink now uses `System.getTimer()` modulo 400 ms, checked during the existing `onGpsAnim` 1 Hz callback. Zero additional timers for blink.
+- Made idle return timeout **configurable**: OFF / 15 / 30 / 45 / 60 seconds, selectable in Settings screen
+- Updated `app-architecture.mdc` with the new timer architecture
+
+---
+
+### Session 19 — Hole Shape Investigation (not built)
+
+**Goal:** Explore displaying hole shape / dogleg routing on the green view.
+
+**What was done:**
+- Investigated Golf API dogleg data (poi=9): Athenry has **only 2 dogleg points** (H4 and H14) — not enough to show meaningful hole routing for the other 16 holes
+- Explored BlueGolf-style hole diagrams with ratio-based scaling anchored to tee/green coordinates — conceptually viable but complex for a 240 px round screen
+- Considered satellite image tracing with a click-to-waypoint tool
+- **Decision: not built.** The API data is too sparse (2/18 holes), and manually tracing all 18 holes from satellite imagery is more effort than the feature warrants on a watch screen. The green view already shows B/M/F distances which is what you need mid-shot.
+
+---
+
+### Session 20 — Scorecard Cleanup
+
+**Goal:** Reduce visual noise on the 18-hole scorecard.
+
+**What was done:**
+- **Simplified score colours:** removed the 5-colour rainbow (yellow/green/white/orange/red). All score numbers are now **white**. PGA shapes alone convey meaning — white circles for under par, red squares for over par.
+- **Cursor unified:** replaced the rectangle border (scored holes) and underscore (unscored holes) with a single **subtle underline** beneath the cell — consistent regardless of score state
+- **Totals line simplified:** `"24 strokes (+2)"` is now a single string in `COLOR_LT_GRAY` instead of split-coloured text. Less visual competition with the score grid.
+- **Even par display:** `(0)` replaced with `(E)` — standard golf shorthand for "even"
+
+Wednesday 9 April — time spent ~1.5 hours
