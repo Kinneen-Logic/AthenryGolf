@@ -141,7 +141,8 @@ class GolfModel {
     // Settings
     var showHints    as Boolean = true;
     var useMetres    as Boolean = false;
-    var settingIndex as Number  = 0;  // 0=hints, 1=units
+    var idleTimerSec as Number  = 15;  // 0, 15, 30, 45, 60
+    var settingIndex as Number  = 0;   // 0=hints, 1=units, 2=idle timer
 
     // Scorecard edit state
     var editHole as Number = 0;

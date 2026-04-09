@@ -69,14 +69,13 @@ class GolfView extends WatchUi.View {
         WatchUi.requestUpdate();
     }
 
-    // Restart the 15-second idle timer; only arms when not on green view.
     function resetIdleTimer() as Void {
         if (_idleTimer != null) {
             _idleTimer.stop();
         }
-        if (_model.uiMode != :green) {
+        if (_model.uiMode != :green && _model.idleTimerSec > 0) {
             _idleTimer = new Timer.Timer();
-            _idleTimer.start(method(:onIdleTimeout), 15000, false);
+            _idleTimer.start(method(:onIdleTimeout), _model.idleTimerSec * 1000, false);
         }
     }
 
@@ -585,16 +584,15 @@ class GolfView extends WatchUi.View {
         var headerH = drawHeader(dc, Graphics.COLOR_DK_GRAY, Graphics.COLOR_WHITE,
             "Settings", "");
 
-        // Vertically centre two rows between header bottom and hints top.
-        // All positions derived from actual font height — no magic numbers.
         var fh       = dc.getFontHeight(Graphics.FONT_TINY);
         var hintsTop = h - 44;
         var rowGap   = fh / 2;
-        var blockH   = fh * 2 + rowGap;
+        var rows     = 3;
+        var blockH   = fh * rows + rowGap * (rows - 1);
         var row0Y    = headerH + (hintsTop - headerH - blockH) / 2;
         var row1Y    = row0Y + fh + rowGap;
+        var row2Y    = row1Y + fh + rowGap;
 
-        // Chevron sits a fixed gap left of the widest label ("Button hints")
         var labelW   = (dc.getTextDimensions("Button hints", Graphics.FONT_TINY) as Array<Number>)[0];
         var chevronX = cx - 8 - labelW - 8;
 
@@ -629,7 +627,23 @@ class GolfView extends WatchUi.View {
                 Graphics.TEXT_JUSTIFY_LEFT);
         }
 
-        // Keep each hint line short — the round bezel clips the bottom corners
+        // Row 2: Idle timer
+        var row2Sel = (_model.settingIndex == 2);
+        dc.setColor(row2Sel ? Graphics.COLOR_WHITE : Graphics.COLOR_LT_GRAY,
+            Graphics.COLOR_TRANSPARENT);
+        dc.drawText(cx - 8, row2Y, Graphics.FONT_TINY, "Idle return",
+            Graphics.TEXT_JUSTIFY_RIGHT);
+        dc.setColor(_model.idleTimerSec > 0 ? Graphics.COLOR_YELLOW : Graphics.COLOR_RED,
+            Graphics.COLOR_TRANSPARENT);
+        dc.drawText(cx + 8, row2Y, Graphics.FONT_TINY,
+            _model.idleTimerSec > 0 ? (_model.idleTimerSec + "s") : "OFF",
+            Graphics.TEXT_JUSTIFY_LEFT);
+        if (row2Sel) {
+            dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(chevronX, row2Y, Graphics.FONT_TINY, ">",
+                Graphics.TEXT_JUSTIFY_LEFT);
+        }
+
         drawHints(dc, w, h, "UP/DN Select", "START Toggle  BACK");
     }
 

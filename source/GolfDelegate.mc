@@ -9,7 +9,7 @@ import Toybox.Lang;
 // SCORECARD browse:  UP/DN move cursor, START enter edit, BACK → shot
 // SCORECARD edit:    UP/DN adjust score, START confirm, BACK cancel
 // SHOT TRACKER:      START mark/calc, BACK → settings
-// SETTINGS:          UP/DN toggle options, START toggle, BACK → exit screen
+// SETTINGS:          UP/DN select option, START toggle/cycle, BACK → exit screen
 // EXIT SCREEN:       START exits app, BACK → green
 // SUMMARY:           DN/BACK → H18
 
@@ -37,7 +37,7 @@ class GolfDelegate extends WatchUi.BehaviorDelegate {
                 _model.editHole = (_model.editHole + 1) % 18; // browse next
             }
         } else if (mode == :light && _model.lightIndex == 2) {
-            _model.settingIndex = (_model.settingIndex + 1) % 2;
+            _model.settingIndex = (_model.settingIndex + 1) % 3;
         }
         _view.resetIdleTimer();
         WatchUi.requestUpdate();
@@ -57,7 +57,7 @@ class GolfDelegate extends WatchUi.BehaviorDelegate {
                 _model.editHole = (_model.editHole + 17) % 18; // browse prev
             }
         } else if (mode == :light && _model.lightIndex == 2) {
-            _model.settingIndex = (_model.settingIndex + 1) % 2;
+            _model.settingIndex = (_model.settingIndex + 1) % 3;
         } else if (mode == :summary) {
             _model.prevHole();
         }
@@ -93,8 +93,11 @@ class GolfDelegate extends WatchUi.BehaviorDelegate {
         } else if (mode == :light && _model.lightIndex == 2) {
             if (_model.settingIndex == 0) {
                 _model.showHints = !_model.showHints;
-            } else {
+            } else if (_model.settingIndex == 1) {
                 _model.useMetres = !_model.useMetres;
+            } else {
+                var s = _model.idleTimerSec + 15;
+                _model.idleTimerSec = s > 60 ? 0 : s;
             }
         } else if (mode == :light && _model.lightIndex == 3) {
             WatchUi.popView(WatchUi.SLIDE_IMMEDIATE);
