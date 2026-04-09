@@ -294,17 +294,9 @@ class GolfView extends WatchUi.View {
             var isCursor  = (i == _model.editHole);
             var isEditCell = editing && isCursor;
 
-            if (isCursor && !editing && score == 0) {
-                // Browsing an unscored hole — show underscore placeholder only
-                dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-                dc.drawText(tx, ty, Graphics.FONT_XTINY, "_",
-                    Graphics.TEXT_JUSTIFY_CENTER);
-                continue;
-            }
             if (isCursor && !editing) {
-                // Browsing a scored hole — dim border shows cursor position
                 dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
-                dc.drawRectangle(x, y, cellW, cellH);
+                dc.drawLine(x + 4, y + cellH - 1, x + cellW - 4, y + cellH - 1);
             }
             // ~400 ms flash phase; driven by onGpsAnim requestUpdate (same interval as old blink timer)
             if (isEditCell && ((System.getTimer() / 400) % 2) != 0) {
@@ -317,14 +309,14 @@ class GolfView extends WatchUi.View {
                     Graphics.TEXT_JUSTIFY_CENTER);
             } else {
                 if (diff <= -2) {
-                    dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
+                    dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
                     dc.drawCircle(shapeCx, shapeCy, r);
                     dc.drawCircle(shapeCx, shapeCy, r - 3);
                 } else if (diff == -1) {
-                    dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_TRANSPARENT);
+                    dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
                     dc.drawCircle(shapeCx, shapeCy, r);
                 } else if (diff == 1) {
-                    dc.setColor(Graphics.COLOR_ORANGE, Graphics.COLOR_TRANSPARENT);
+                    dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
                     dc.drawRectangle(shapeCx - r, shapeCy - r, r * 2, r * 2);
                 } else if (diff >= 2) {
                     dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
@@ -332,7 +324,7 @@ class GolfView extends WatchUi.View {
                     dc.drawRectangle(shapeCx - r + 2, shapeCy - r + 2, r * 2 - 4, r * 2 - 4);
                 }
 
-                dc.setColor(scoreColor(diff), Graphics.COLOR_TRANSPARENT);
+                dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
                 dc.drawText(tx, ty, Graphics.FONT_XTINY, score.toString(),
                     Graphics.TEXT_JUSTIFY_CENTER);
             }
@@ -360,18 +352,11 @@ class GolfView extends WatchUi.View {
         dc.drawLine(40, divY, w - 40, divY);
 
         if (total > 0) {
-            var vparStr   = vpar > 0 ? "(+" + vpar + ")" : "(" + vpar.toString() + ")";
-            var vparColor = vpar < 0 ? Graphics.COLOR_GREEN
-                                     : (vpar > 0 ? Graphics.COLOR_RED
-                                                 : Graphics.COLOR_WHITE);
+            var vparStr = vpar > 0 ? "(+" + vpar + ")" : (vpar < 0 ? "(" + vpar + ")" : "(E)");
             dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx - 2, divY + 6, Graphics.FONT_TINY,
-                total + " strokes ",
-                Graphics.TEXT_JUSTIFY_RIGHT);
-            dc.setColor(vparColor, Graphics.COLOR_TRANSPARENT);
-            dc.drawText(cx - 2, divY + 6, Graphics.FONT_TINY,
-                vparStr,
-                Graphics.TEXT_JUSTIFY_LEFT);
+            dc.drawText(cx, divY + 6, Graphics.FONT_TINY,
+                total + " strokes " + vparStr,
+                Graphics.TEXT_JUSTIFY_CENTER);
 
             var outDone = _model.front9Complete();
             var inDone  = _model.back9Complete();
