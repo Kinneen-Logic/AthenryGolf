@@ -142,7 +142,7 @@ class GolfView extends WatchUi.View {
         var fhTiny  = dc.getFontHeight(Graphics.FONT_TINY);
         var headerH = fhSmall + fhTiny + 12;
 
-        dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_GREEN);
+        dc.setColor(0x009A44, 0x009A44);
         dc.fillRectangle(0, 0, w, headerH);
         dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
 
