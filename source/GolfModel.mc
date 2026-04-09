@@ -146,8 +146,6 @@ class GolfModel {
     // Scorecard edit state
     var editHole as Number = 0;
     var editActive as Boolean = false;
-    var blinkOn as Boolean = true;
-
     function initialize() {
     }
 

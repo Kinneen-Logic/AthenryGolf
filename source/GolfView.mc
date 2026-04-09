@@ -10,7 +10,6 @@ class GolfView extends WatchUi.View {
     private var _model as GolfModel;
     private var _gpsPollTimer as Timer.Timer?;
     private var _gpsAnimTimer as Timer.Timer?;
-    private var _blinkTimer as Timer.Timer?;
     private var _idleTimer as Timer.Timer?;
 
     function initialize(model as GolfModel) {
@@ -44,11 +43,15 @@ class GolfView extends WatchUi.View {
             _idleTimer.stop();
             _idleTimer = null;
         }
-        stopBlink();
     }
 
     function onGpsAnim() as Void {
         if (!_model.gpsReady) {
+            WatchUi.requestUpdate();
+        }
+        // Scorecard edit blink uses System.getTimer() in draw — tick here so it animates
+        // without a fourth Timer (CIQ enforces a low concurrent timer limit).
+        if (_model.uiMode == :light && _model.lightIndex == 0 && _model.editActive) {
             WatchUi.requestUpdate();
         }
     }
@@ -66,26 +69,6 @@ class GolfView extends WatchUi.View {
         WatchUi.requestUpdate();
     }
 
-    function startBlink() as Void {
-        stopBlink();
-        _model.blinkOn = true;
-        _blinkTimer = new Timer.Timer();
-        _blinkTimer.start(method(:onBlink), 400, true);
-    }
-
-    function stopBlink() as Void {
-        if (_blinkTimer != null) {
-            _blinkTimer.stop();
-            _blinkTimer = null;
-        }
-        _model.blinkOn = true;
-    }
-
-    function onBlink() as Void {
-        _model.blinkOn = !_model.blinkOn;
-        WatchUi.requestUpdate();
-    }
-
     // Restart the 15-second idle timer; only arms when not on green view.
     function resetIdleTimer() as Void {
         if (_idleTimer != null) {
@@ -100,7 +83,6 @@ class GolfView extends WatchUi.View {
     function onIdleTimeout() as Void {
         if (_model.uiMode != :green) {
             _model.editActive = false;
-            stopBlink();
             _model.uiMode = :green;
             WatchUi.requestUpdate();
         }
@@ -273,7 +255,6 @@ class GolfView extends WatchUi.View {
         var editing = _model.editActive;
 
         var eh = _model.editHole;
-        var es = _model.scores[eh] as Number;
         var ep = _model.getParForHole(eh);
         var headerH = drawHeader(dc, 0x008080, Graphics.COLOR_BLACK,
             "H" + (eh + 1) + "  Par " + ep, "");
@@ -326,7 +307,8 @@ class GolfView extends WatchUi.View {
                 dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
                 dc.drawRectangle(x, y, cellW, cellH);
             }
-            if (isEditCell && !_model.blinkOn) {
+            // ~400 ms flash phase; driven by onGpsAnim requestUpdate (same interval as old blink timer)
+            if (isEditCell && ((System.getTimer() / 400) % 2) != 0) {
                 continue;  // blink-off: hide number+shape to make it flash
             }
 

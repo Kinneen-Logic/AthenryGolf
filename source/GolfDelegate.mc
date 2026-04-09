@@ -78,13 +78,11 @@ class GolfDelegate extends WatchUi.BehaviorDelegate {
         } else if (mode == :light && _model.lightIndex == 0) {
             if (_model.editActive) {
                 _model.editActive = false;
-                _view.stopBlink();
             } else {
                 if ((_model.scores[_model.editHole] as Number) == 0) {
                     _model.scores[_model.editHole] = _model.getParForHole(_model.editHole);
                 }
                 _model.editActive = true;
-                _view.startBlink();
             }
         } else if (mode == :light && _model.lightIndex == 1) {
             if (_model.shotMarked) {
@@ -125,7 +123,6 @@ class GolfDelegate extends WatchUi.BehaviorDelegate {
         if (mode == :light) {
             if (_model.lightIndex == 0 && _model.editActive) {
                 _model.editActive = false;
-                _view.stopBlink();
                 _view.resetIdleTimer();
                 WatchUi.requestUpdate();
                 return true;
